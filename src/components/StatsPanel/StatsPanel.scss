@@ -1,0 +1,22 @@
+@import "../../config/variables";
+
+.stats-panel {
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	color: #fff;
+	z-index: $z-index-top+100;
+	background-color: rgba(0,0,0,0.8);
+	opacity: 0.5;
+	padding: 0 .5rem;
+	border-radius: 0;
+
+	&:hover {
+		opacity: 1;
+	}
+	ul {
+		padding: 0;
+		margin: .5rem 0;
+		list-style-type: none;
+	}
+}

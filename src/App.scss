@@ -1,0 +1,70 @@
+@import "./config/variables";
+
+
+html {
+	font-size: 16px;
+	background-color: $bg-light;
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+#root {
+	position: relative;
+	z-index: 10;
+	// min-height: 100vh;
+	height: 100%;
+	width: 100%;
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: stretch;
+	// align-items:     stretch;
+	z-index: $z-index-bottom;
+	background-color: rgba(#000,0.3);
+}
+.page-root {
+	min-height: 100vh;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+	align-items:     stretch;
+}
+
+main {
+	height: 100%;
+	width: 100%;
+	min-height: 100vh;
+	min-width: 100vw;
+	// max-height: 100vh;
+	// max-width: 100vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.behind-root {
+	background: url('./static/fortnite-map-s6.jpg');
+	background-size: cover;
+	background-position: 50% 50%;
+	filter: blur(16px);
+	position: fixed;
+	top: -5%;
+	left: -5%;
+	width: 110%;
+	height: 110%;
+	z-index: 1;
+}

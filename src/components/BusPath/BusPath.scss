@@ -1,0 +1,30 @@
+@import "../../config/variables";
+
+.bus-path {
+	width: 90vw;
+	max-width: 90vh;
+	height: 12px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	// transform has to be used to control line rotation, so it is passed in as an inline style in the jsx
+	z-index: $z-index-bottom + 100;
+	background: url('../../static/bus-path-unit-flipped.svg');
+	// background: $bus-arrow;
+	background-repeat: repeat-x;
+	animation: pulse 2s ease-in-out infinite;
+
+	$opacity-a: 0.7;
+	$opacity-b: 1;
+
+	@-webkit-keyframes pulse {
+		0%    { opacity: $opacity-a; }
+		50%   { opacity: $opacity-b; }
+		100%  { opacity: $opacity-a; }
+	}
+	@keyframes pulse {
+		0%    { opacity: $opacity-a; }
+		50%   { opacity: $opacity-b; }
+		100%  { opacity: $opacity-a; }
+	}
+}

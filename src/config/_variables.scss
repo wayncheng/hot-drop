@@ -1,0 +1,44 @@
+$offwhite: #ecf0f1;
+$gray    : #bdc3c7;
+$purple  : #9b59b6;
+$purple-d: #8e44ad;
+$blue    : #3498db;
+$blue-d  : #2980b9;
+$turq    : #1abc9c;
+$turq-d  : #16a085;
+$green   : #2ecc71;
+$green-d : #27ae60;
+$yellow  : #f1c40f;
+$yellow-d: #f39c12;
+$orange  : #e67e22;
+$orange-d: #d35400;
+$red     : #c0392b;
+$red-d   : #c0392b;
+
+$bg-light: #ecf0f1;
+
+$icon-active:     rgba(0,0,0,.54);
+$icon-inactive:   rgba(0,0,0,.38);
+$icon-white-active:     rgba(255,255,255,1);
+$icon-white-inactive:   rgba(255,255,255,.5);
+
+$fg-primary: rgba(#000,0.87);
+$fg-secondary: rgba(#000,0.5);
+$fg-disabled: rgba(#000,0.32);
+$fg-divider: rgba(#000,0.12);
+
+
+$z-index-bottom: 100;
+$z-index-mid: 1000;
+$z-index-top: 3000;
+
+$btn-bg-inactive: $offwhite;
+$btn-bg         : $yellow-d;
+$btn-focus      : $orange;
+$btn-hover      : $btn-focus;
+
+$btn-fg-inactive: $fg-disabled;
+$btn-fg         : #fff;
+
+
+$bus-arrow: url('../static/bus-path-unit-flipped.svg');
