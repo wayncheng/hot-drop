@@ -3,15 +3,36 @@
   const express = require("express");
 	const router = express.Router();
   const dbMarkers = require("../db/models/Markers");
+  const dbPaths = require("../db/models/Paths");
   // const ORM = require("../config/orm");
 
 
   /////////////////////////////////////////////////////
-  router.get("/markers/all", (req, res) => {
-    dbMarkers.all().then( data => {
-      console.log("GET /markers/all >>> data", data);
-      return res.json(data);
-    });
+  router.get("/angle/:angle?", (req, res) => {
+		const {angle} = req.params;
+
+		dbMarkers.getByAngle( angle, data => {
+			console.log('data:',data);
+			return res.json(data)
+		})
+	});
+  router.get("/markers/:id?", (req, res) => {
+		// const {id} = req.params;
+
+		dbMarkers.all( data => {
+			console.log('data:',data);
+			return res.json(data)
+		})
+	});
+
+  router.get("/paths/:id?", (req, res) => {
+		// const {id} = req.params;
+
+		dbPaths.all( data => {
+			console.log('data:',data);
+			return res.json(data)
+		})
+
 	});
 	/////////////////////////////////////////////////////
 	// router.get('/paths/:id', (req,res) => {

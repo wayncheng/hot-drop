@@ -5,61 +5,77 @@
 const connection = require("./connection.js"); 
 
 // Database / Table variables to use in ORM
-const DB = process.env.DB_NAME;
-const PATHS_TABLE = DB+'.paths';
-const MARKERS_TABLE = DB+'.markers';
+const DB = process.env.JAWSDB_DB;
+const PTBL = DB+'.paths';
+const MTBL = DB+'.markers';
+console.log('MTBL:',MTBL)
 
 ////////////////////////////////////////////////////
 	const orm = {
 
-		////////////////////////////////////////////////////
-		getAllMarkers: () => {
-			console.log(`ORM >>> getAllMarkers`);
-			
-			const qs = ` SELECT * FROM ${MARKERS_TABLE};`;
 
-			connection.query(qs, (err,result) => {
-				if (err) throw err;
-				let dbResponse = result[0];
-				cb(dbResponse);
-			});
-		},
-		////////////////////////////////////////////////////
-		getMarkersByAngle: angle => {
-			console.log(`ORM >>> getMarkersByAngle (${angle})`);
-			
-			let query = 
-			` SELECT markers.id, 
-				  markers.x AS mark_x, 
-				  markers.y AS mark_y, 
-				  paths.angle,
-				  paths.x AS path_x, 
-				  paths.y AS path_y
-				FROM markers, paths
-				WHERE markers.path_id = paths.id
-				AND paths.angle = ${angle}
-			;`;
+	//+ MARKERS ========================================
+		markers: {
+
+			getAll: cb => {
+				console.log(`---> getAll (markers)`);
+				const query = ` SELECT * FROM ${MTBL};`;
+				connection.query(query, (err,result) => {
+					if (err) throw err;
+					cb(result)
+				});
+			},
+
+			getByAngle: (angle,cb) => {
+				console.log(`---> getByAngle (${angle})`);
+				
+				let query = 
+				` SELECT ${MTBL}.id, 
+						${MTBL}.x AS mark_x, 
+						${MTBL}.y AS mark_y,
+						${MTBL}.path_id,
+						${PTBL}.angle,
+						${PTBL}.x AS path_x, 
+						${PTBL}.y AS path_y
+					FROM ${MTBL}, ${PTBL}
+					WHERE ${MTBL}.path_id = ${PTBL}.id
+					AND ${PTBL}.angle = ${angle}
+				;`;
 
 
-			connection.query(query, (err,result) => {
-				if (err) throw err;
-				let dbResponse = result[0];
-				cb(dbResponse);
-			});
-		},
-		
-		////////////////////////////////////////////////////
-		addMarker: (path_id, x, y, cb) => {
-			const qs = `INSERT INTO markers ('path_id','x','y') 
-			            VALUES (${path_id},${x},${y});`
-			console.log(qs);
+				connection.query(query, (err,result) => {
+					if (err) throw err;
+					cb(result)
+				});
+			},
 			
-		
-			connection.query( qs, vals, (err,result) => {
-				if (err) throw err;
-				cb(result);
-			});
+			add: (path_id, x, y, cb) => {
+				const query = `INSERT INTO markers ('path_id','x','y') 
+											 VALUES (${path_id},${x},${y});`			
+				connection.query( query, vals, (err,result) => {
+					if (err) throw err;
+					cb(result);
+				});
+			},
+			
+
 		},
+
+
+	//+ PATHS ==========================================
+		paths: {
+			getAll: (cb) => {
+				console.log(`---> getAll (paths)`);
+				const query = ` SELECT * FROM ${PTBL};`;
+				connection.query(query, (err,result) => {
+					if (err) throw err;
+					cb(result)
+				});
+			},
+		}
+	};
+//+==================================================
+	
 		////////////////////////////////////////////////////
 		// update: function(id, text, cb) {			
 		// 	var queryString = `UPDATE ${PAGES_TABLE} SET text = "${text}" WHERE id = ${id}`;
@@ -70,11 +86,9 @@ const MARKERS_TABLE = DB+'.markers';
 		// 		cb(result);
 		// 	});
 		// }
-	};
-	
-	// Export the orm object for the model
-	module.exports = orm;
-	
+
+
+		module.exports = orm; // Export the orm object for the model
 
 	////////////////////////////////////////////////////
 	// Helper function for SQL syntax.
