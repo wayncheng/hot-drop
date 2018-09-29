@@ -144,20 +144,20 @@ module.exports = {
             },
           },
 					// > SVG -----------------------------------
-					{
-						test: /\.svg$/,
-						use: [
-							{
-								loader: "babel-loader"
-							},
-							{
-								loader: "react-svg-loader",
-								options: {
-									jsx: true // true outputs JSX tags
-								}
-							}
-						]
-					},
+					// {
+					// 	test: /\.svg$/,
+					// 	use: [
+					// 		{
+					// 			loader: "babel-loader"
+					// 		},
+					// 		{
+					// 			loader: "react-svg-loader",
+					// 			options: {
+					// 				jsx: true // true outputs JSX tags
+					// 			}
+					// 		}
+					// 	]
+					// },
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
