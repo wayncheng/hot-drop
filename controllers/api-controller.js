@@ -2,8 +2,8 @@
 (function() {
   const express = require("express");
 	const router = express.Router();
-  const dbMarkers = require("../db/models/Markers");
-  const dbPaths = require("../db/models/Paths");
+  const dbMarkers = require("../models/Markers");
+  const dbPaths = require("../models/Paths");
   // const ORM = require("../config/orm");
 
 

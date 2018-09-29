@@ -1,5 +1,5 @@
 // Import the ORM to create functions that will interact with the database.
-const fullORM = require("../orm.js");
+const fullORM = require("../db/orm.js");
 const orm = fullORM.paths;
 
 const Paths = {

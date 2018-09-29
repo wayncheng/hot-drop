@@ -3,7 +3,6 @@ import './Map.scss';
 import mapImg from '../../static/fortnite-map-s6.jpg';
 // import Overlay from '../interface/Overlay';
 import BusPath from '../BusPath/BusPath';
-import SubmitBtn from '../SubmitBtn/SubmitBtn';
 import Interface from '../Interface/Interface';
 
 
@@ -17,7 +16,6 @@ const Map = props => {
 			/>
 			<BusPath/>
 			<Interface/>
-			<SubmitBtn/>
 		</div>
 	)
 }

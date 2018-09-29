@@ -5,6 +5,7 @@ import { placeMarker, removeMarker, getNewBus } from '../../modules/picker';
 import './Interface.scss';
 import Overlay from './Overlay';
 import Marker from './Marker';
+import SubmitBtn from './SubmitBtn';
 
 class Interface extends Component {
 	constructor(props) {
@@ -15,18 +16,7 @@ class Interface extends Component {
 	componentDidMount = () => {
 		this.props.getNewBus();
 	}
-	
-	handleSubmit = event => {
-		// event.preventDefault();
-		console.log('event:',event)
-		console.log('event.which:',event.which)
-		if (this.props.markerPlaced){
-			alert('Submitted!')
-		}
-		else {
-			alert ('Place a marker first')
-		}
-	}
+
 
 	render() {
 		return (
@@ -37,6 +27,7 @@ class Interface extends Component {
 			>
 				<Overlay/>
 				<Marker/>
+				<SubmitBtn/>
 			</section>
 		)
 	}
