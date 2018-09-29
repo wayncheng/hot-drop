@@ -168,6 +168,17 @@ module.exports = {
               compact: true,
             },
           },
+					
+					// > SCSS --------------------------------
+					{
+						test: /\.scss$/,
+						include: paths.appSrc,
+						use: [
+							require.resolve('style-loader'),
+							require.resolve('css-loader'),
+							require.resolve('sass-loader'),
+						]
+					},
           // The notation here is somewhat confusing.
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
