@@ -16,6 +16,7 @@ const StatsPanel = props => {
 				<li>Marker:</li>
 				<li>{'x: '+props.location.x}</li>
 				<li>{'y: '+props.location.y}</li>
+				<li>{'markerPlaced: '+props.markerPlaced}</li>
 			</ul>
 		</div>
 	)

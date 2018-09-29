@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { placeMarker, removeMarker, getNewBus } from '../../modules/picker';
-import './Overlay.scss';
-// import Mask from '../Mask/Mask';
 
 class Overlay extends Component {
 	constructor(props) {
@@ -11,9 +9,9 @@ class Overlay extends Component {
 		this.state = {}
 	}
 
-	componentDidMount = () => {
-		this.props.getNewBus();
-	}
+	// componentDidMount = () => {
+	// 	this.props.getNewBus();
+	// }
 	
 	formatDecimal = n => {
 		let factor = 100000;
@@ -49,38 +47,22 @@ class Overlay extends Component {
 		})
 	}
 
-	handleRemoval = event => {
-		event.stopPropagation();
-		
-		this.props.removeMarker();
-	}
 	
 
 	render() {
 		return (
-			<section
+			<div
 				id="overlay"
 				className="overlay"
 				onMouseDown={this.handlePlacement}
 			>
-
-				<div 
-					className="marker"
-					style={{
-						top: `${this.props.location.y * 100}%`,
-						left: `${this.props.location.x * 100}%`,
-					}}
-					onClick={this.handleRemoval}
-				/>
-
-				{/* <Mask onMouseDown={this.handlePlacement}/> */}
-			</section>
+			</div>
 		)
 	}
 }
 
 const mapStateToProps = state => ({
-	location: state.picker.location,
+	// location: state.picker.location,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

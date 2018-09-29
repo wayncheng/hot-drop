@@ -1,9 +1,10 @@
 import React from 'react';
 import './Map.scss';
 import mapImg from '../../static/fortnite-map-s6.jpg';
-import Overlay from '../Overlay/Overlay';
+// import Overlay from '../interface/Overlay';
 import BusPath from '../BusPath/BusPath';
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
+import Interface from '../Interface/Interface';
 
 
 const Map = props => {
@@ -15,7 +16,7 @@ const Map = props => {
 				alt="Fortnite Map Season 6" 
 			/>
 			<BusPath/>
-			<Overlay/>
+			<Interface/>
 			<SubmitBtn/>
 		</div>
 	)

@@ -1,0 +1,68 @@
+@import "../../config/variables";
+
+.interface {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: $z-index-mid;
+	overflow: hidden;
+	cursor: crosshair;
+}
+
+.marker {
+	// $marker-size: 2rem;
+	$marker-shadow: rgba(#000,0.3);
+
+	font-size: 2rem;
+
+	display: inline-block;
+	position: absolute;
+	height: 1em;
+	border-radius: 50%;		
+	box-shadow: 0 0 16px 4px $marker-shadow;
+	
+	// Using margin to offset rather than transform since dimensions are known and better compatibility
+	// transform: translate(-50%,-100%);
+	margin-left: -0.5em;
+	// margin-top: -1em;
+	margin-top: -0.5em;
+
+	
+	cursor: pointer;
+	z-index: $z-index-mid+1;
+	
+	.marker-icon {
+		font-size: inherit;
+		color: #fff;
+		border-radius: 50%;
+		float: left;
+		background-color: $marker-shadow;
+
+		&::before {
+			content: 'my_location';
+		}
+		
+		&:hover {
+			&::before {
+				// content: 'location_disabled';
+				content: 'location_searching';
+			}
+		}
+		// &:focus {
+		// 	&::before {
+		// 		content: 'my_location';
+		// 	}
+		// }
+	}
+
+}
