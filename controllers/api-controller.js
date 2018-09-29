@@ -9,13 +9,11 @@
 
   /////////////////////////////////////////////////////
   router.get("/angle/:angle?", (req, res) => {
-		const {angle} = req.params;
-
-		dbMarkers.getByAngle( angle, data => {
-			console.log('data:',data);
-			return res.json(data)
-		})
+		dbMarkers.getByAngle( req.params.angle , 
+			data => res.json(data) 
+		)
 	});
+	
   router.get("/markers/:id?", (req, res) => {
 		// const {id} = req.params;
 
