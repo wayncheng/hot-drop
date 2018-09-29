@@ -49,10 +49,9 @@ console.log('MTBL:',MTBL)
 				});
 			},
 			
-			add: (path_id, x, y, cb) => {
-				const query = `INSERT INTO markers ('path_id','x','y') 
-											 VALUES (${path_id},${x},${y});`			
-				connection.query( query, vals, (err,result) => {
+			save: (path_id, x, y, cb) => {
+				const query = `INSERT INTO ${MTBL} (\`path_id\`,\`x\`,\`y\`) VALUES (${path_id},${x},${y});`			
+				connection.query( query, (err,result) => {
 					if (err) throw err;
 					cb(result);
 				});
@@ -64,7 +63,7 @@ console.log('MTBL:',MTBL)
 
 	//+ PATHS ==========================================
 		paths: {
-			getAll: (cb) => {
+			getAll: cb => {
 				console.log(`---> getAll (paths)`);
 				const query = ` SELECT * FROM ${PTBL};`;
 				connection.query(query, (err,result) => {
@@ -72,6 +71,26 @@ console.log('MTBL:',MTBL)
 					cb(result)
 				});
 			},
+
+			getOneRandom: cb => {
+				console.log(`---> getOneRandom (paths)`);
+				const query = ` SELECT * FROM ${PTBL} ORDER BY RAND() LIMIT 1;`;
+				connection.query(query, (err,result) => {
+					if (err) throw err;
+					cb(result[0])
+				});
+			},
+
+			getCount: cb => {
+				console.log(`---> getCount (paths)`);
+				const query = ` SELECT COUNT(*) FROM ${PTBL};`;
+				connection.query(query, (err,result) => {
+					if (err) throw err;
+					cb(result)
+				});
+			},
+			
+			
 		}
 	};
 //+==================================================

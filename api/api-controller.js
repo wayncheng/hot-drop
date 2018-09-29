@@ -2,8 +2,8 @@
 (function() {
   const express = require("express");
 	const router = express.Router();
-  const dbMarkers = require("../models/Markers");
-  const dbPaths = require("../models/Paths");
+  const dbMarkers = require("./models/Markers");
+  const dbPaths =   require("./models/Paths");
   // const ORM = require("../config/orm");
 
 
@@ -27,6 +27,24 @@
 		// const {id} = req.params;
 
 		dbPaths.all( data => {
+			console.log('data:',data);
+			return res.json(data)
+		})
+
+	});
+  router.get("/random", (req, res) => {
+		dbPaths.random( data => {
+			console.log('data:',data);
+			return res.json(data)
+		})
+	});
+
+
+  router.post("/save", (req, res) => {
+		console.log('req.body:',req.body);
+		const {path_id,x,y} = req.body;
+
+		dbMarkers.save( path_id, x, y, data => {
 			console.log('data:',data);
 			return res.json(data)
 		})

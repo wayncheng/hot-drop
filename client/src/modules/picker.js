@@ -1,3 +1,5 @@
+import API from '../utils/API';
+
 export const PLACE_MARKER = 'map/PLACE_MARKER'
 export const REMOVE_MARKER = 'map/REMOVE_MARKER'
 export const GET_NEW_BUS = 'map/GET_NEW_BUS'
@@ -11,7 +13,10 @@ const initialState = {
 		y: -1,
 	},
 	bus: {
+		id: 1,
 		angle: 360,
+		x: 50,
+		y: 50,
 	},
 	markerPlaced: false,
 };
@@ -53,17 +58,17 @@ export default (state = initialState, action) => {
 }
 
 // DATABASE =======================================
-export const submitPlacement = (bus,location) => dispatch => {
+export const submitPlacement = (path_id,location) => dispatch => {
 	console.log('> submitPlacement')
-	
-	const dbEntry = {
-		bus,
-		location
-	}
 
-	// Save to Database............
-	db.push(dbEntry);
-	console.log('db:',db)
+	API.saveMarker(path_id, location.x, location.y).then( response => {
+		if (response.status === 200) {
+			console.log('Successfully Saved!')
+		}
+		else {
+			console.log('There was an error saving the marker')
+		}
+	})
 
 	// Reset......................
 	dispatch( reset() )
@@ -73,17 +78,15 @@ export const submitPlacement = (bus,location) => dispatch => {
 // CYCLE,RESET ====================================
 export const getNewBus = () => dispatch => {
 
-	const angleStep = 20;
-	const newAngle = getRandomIntInclusive(1,360/angleStep) * angleStep;
+	API.getRandomPath().then( response => {
+		const pathData = response.data;
 
-	const bus = {
-		angle: newAngle
-	}
-
-	dispatch({
-		type: GET_NEW_BUS,
-		bus,
+		dispatch({
+			type: GET_NEW_BUS,
+			bus: pathData,
+		})
 	})
+
 }
 
 export const reset = () => dispatch => {
@@ -108,11 +111,11 @@ export const removeMarker = () => dispatch => {
 ///////////////////////////////////////////////////////////////////////
 
 	
-function getRandomIntInclusive(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
-}
+// function getRandomIntInclusive(min, max) {
+// 	min = Math.ceil(min);
+// 	max = Math.floor(max);
+// 	return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+// }
 
 // function formatDecimal(n){
 // 	let factor = 1000;

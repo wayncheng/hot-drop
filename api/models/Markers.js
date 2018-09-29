@@ -1,5 +1,5 @@
 // Import the ORM to create functions that will interact with the database.
-const fullORM = require("../db/orm.js");
+const fullORM = require("../db/orm");
 const orm = fullORM.markers;
 
 const Markers = {
@@ -7,8 +7,8 @@ const Markers = {
 		orm.getAll( res => cb(res) )
   },
   // The variables cols and vals are arrays.
-  add: (path_id, x, y, cb) => {
-    orm.add(path_id,x,y, 
+  save: (path_id, x, y, cb) => {
+    orm.save(path_id,x,y, 
 			res => cb(res)
 		)
 	},

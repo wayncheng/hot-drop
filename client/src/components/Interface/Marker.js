@@ -20,8 +20,8 @@ class Marker extends Component {
 			<div
 				className="marker"
 				style={{
-					top: `${this.props.location.y * 100}%`,
-					left: `${this.props.location.x * 100}%`,
+					top: `${this.props.location.y}%`,
+					left: `${this.props.location.x}%`,
 				}}
 				onClick={this.handleRemoval}
 			>

@@ -14,7 +14,7 @@ class SubmitBtn extends Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-		this.props.submitPlacement(this.props.bus,this.props.location)
+		this.props.submitPlacement(this.props.bus.id,this.props.location)
 	}
 	
 

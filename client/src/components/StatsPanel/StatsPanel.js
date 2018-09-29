@@ -11,6 +11,7 @@ const StatsPanel = props => {
 			<ul>
 				<li>Bus:</li>
 				<li>{'angle: '+props.bus.angle}</li>
+				<li>{'id: '+props.bus.id}</li>
 			</ul>
 			<ul>
 				<li>Marker:</li>

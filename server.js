@@ -29,7 +29,7 @@
 
 	
 	// API Routes
-	const apiRoutes = require('./controllers/api-controller')
+	const apiRoutes = require('./api/api-controller')
 	app.use('/api', apiRoutes)
 
 

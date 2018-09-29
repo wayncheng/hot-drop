@@ -14,7 +14,7 @@ class Overlay extends Component {
 	// }
 	
 	formatDecimal = n => {
-		let factor = 100000;
+		let factor = 1000;
 		let formatted = Math.floor(n * factor) / factor;
 		return formatted;
 	}
@@ -31,14 +31,14 @@ class Overlay extends Component {
 		// Location of Mouse Click on Map in relation to the top left corner of the window
 		const { clientX, clientY } = event;
 		
-		// Calculate Mouse Location (decimal %) relative to the top-left corner of the Map (not window)
-		const locationX = (clientX - offsetLeft) / clientWidth;
-		const locationY = (clientY - offsetTop) / clientHeight;
+		// Calculate Mouse Location (%) relative to the top-left corner of the Map (not window)
+		const locationX = 100 * (clientX - offsetLeft) / clientWidth;
+		const locationY = 100 * (clientY - offsetTop) / clientHeight;
 		
 		// Trim decimal
 		const finalX = this.formatDecimal(locationX);
 		const finalY = this.formatDecimal(locationY);
-		console.log('x,y (%):',finalX,finalY)
+		// console.log('x,y (%):',finalX,finalY)
 
 		// Place the marker via redux
 		this.props.placeMarker({
