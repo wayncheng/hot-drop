@@ -40,7 +40,7 @@
 	}
 
 	// Set Static Directory
-	// app.use(express.static(path.join(__dirname, "public")));
+	app.use(express.static(path.join(__dirname, "public")));
 	
 	// API Routes
 	const apiRoutes = require('./controllers/api-controller')
