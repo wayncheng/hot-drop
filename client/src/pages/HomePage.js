@@ -2,6 +2,8 @@ import React from 'react';
 import Map from '../components/Map/Map';
 import StatsPanel from '../components/StatsPanel/StatsPanel';
 // import SubmitBtn from '../components/SubmitBtn/SubmitBtn';
+import NotificationCenter from '../components/Notifications/NotificationCenter';
+
 
 const HomePage = props => {
     return (
@@ -9,6 +11,7 @@ const HomePage = props => {
 				<main>
 					<Map/>
 					<StatsPanel/>
+					<NotificationCenter/>
 					{/* <SubmitBtn/> */}
 				</main>
       </div>
