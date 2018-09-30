@@ -19,7 +19,7 @@
 }
 
 .marker {
-	$pulse-duration: 1.5s;
+	$pulse-duration: 2.4s;
 	$bg-a: rgba(#242424,0.3);
 	$bg-b: rgba(#242424,0.5);
 	$shadow-a: 0 0 12px 6px $bg-a;
@@ -75,18 +75,18 @@
 	
 	@keyframes shadow-pulse {
 		0%    { box-shadow: $shadow-a; }
-		20%   { box-shadow: $shadow-b; }
-		30%   { box-shadow: $shadow-a; }
-		40%   { box-shadow: $shadow-b; }
-		60%   { box-shadow: $shadow-a; }
+		10%   { box-shadow: $shadow-b; }
+		20%   { box-shadow: $shadow-a; }
+		30%   { box-shadow: $shadow-b; }
+		40%   { box-shadow: $shadow-a; }
 		100%  { box-shadow: $shadow-a; }
 	}
 	@keyframes bg-pulse {
 		0%    { background-color: $bg-a; }
-		20%   { background-color: $bg-b; }
-		30%   { background-color: $bg-a; }
-		40%   { background-color: $bg-b; }
-		60%   { background-color: $bg-a; }
+		10%   { background-color: $bg-b; }
+		20%   { background-color: $bg-a; }
+		30%   { background-color: $bg-b; }
+		40%   { background-color: $bg-a; }
 		100%  { background-color: $bg-a; }
 	}
 	@keyframes marker-single-pulse {
