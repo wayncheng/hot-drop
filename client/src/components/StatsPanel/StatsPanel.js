@@ -11,14 +11,14 @@ const StatsPanel = props => {
 		<div className="stats-panel">
 			<ul>
 				<li>Bus:</li>
-				<li>{'angle: '+props.bus.angle}</li>
 				<li>{'id: '+props.bus.id}</li>
+				<li>{'angle: '+props.bus.angle}</li>
 			</ul>
 			<ul>
 				<li>Marker:</li>
 				<li>{'x: '+props.location.x}</li>
 				<li>{'y: '+props.location.y}</li>
-				<li>{'markerPlaced: '+props.markerPlaced}</li>
+				<li>{'placed: '+props.markerPlaced}</li>
 			</ul>
 		</div>
 	)

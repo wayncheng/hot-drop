@@ -57,7 +57,7 @@ export default (state = initialState, action) => {
 
 // DATABASE =======================================
 export const submitPlacement = (path_id,location) => dispatch => {
-	console.log('> submitPlacement')
+	console.log('> submit')
 
 	API.saveMarker(path_id, location.x, location.y).then( response => {
 		if (response.status === 200) {
@@ -66,10 +66,11 @@ export const submitPlacement = (path_id,location) => dispatch => {
 		else {
 			console.log('There was an error saving the marker')
 		}
+
+		// Reset......................
+		dispatch( reset() )
 	})
 
-	// Reset......................
-	dispatch( reset() )
 
 }
 
@@ -88,10 +89,9 @@ export const getNewBus = () => dispatch => {
 }
 
 export const reset = () => dispatch => {
-	console.log('> reset');
-	
 	dispatch( removeMarker() );
 	dispatch( getNewBus() );
+	console.log('--------------------------------------------')	
 }
 
 // MARKERS ========================================

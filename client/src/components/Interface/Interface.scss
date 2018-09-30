@@ -19,45 +19,92 @@
 }
 
 .marker {
-	// $marker-size: 2rem;
-	$marker-shadow: rgba(#000,0.3);
+	$pulse-duration: 1.5s;
+	$bg-a: rgba(#242424,0.3);
+	$bg-b: rgba(#242424,0.5);
+	$shadow-a: 0 0 12px 6px $bg-a;
+	$shadow-b: 0 0 12px 9px $bg-b;
+
+
+	$marker-color: #fff;
+	// $marker-color: rgba(#fff,0.9);
+	// $marker-color-alt: rgba(#fff,0.8);
+	// $marker-color-alt: #fff;
+	// $marker-color-alt: #a5d0e8;
+	$marker-color-alt: #89C4F4;
 
 	font-size: 2rem;
-
 	display: inline-block;
 	position: absolute;
 	height: 1em;
 	border-radius: 50%;		
-	box-shadow: 0 0 16px 4px $marker-shadow;
-	
-	// Using margin to offset rather than transform since dimensions are known and better compatibility
-	// transform: translate(-50%,-100%);
-	margin-left: -0.5em;
-	// margin-top: -1em;
+	box-shadow: $shadow-a;
+	margin-left: -0.5em; // Using margin to offset rather than transform since dimensions are known and better compatibility
 	margin-top: -0.5em;
-
-	
 	cursor: pointer;
 	z-index: $z-index-mid+50;
+
+	&:hover {
+		animation: shadow-pulse $pulse-duration cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+
+	}
 	
 	.marker-icon {
 		font-size: inherit;
-		color: #fff;
+		color: $marker-color;
 		border-radius: 50%;
+		background-color: $bg-a;
 		float: left;
-		background-color: $marker-shadow;
 
 		&::before {
 			content: 'my_location';
 		}
 		
-		// &:hover {
-		// 	&::before {
-		// 		// content: 'location_disabled';
-		// 		content: 'location_searching';
-		// 	}
-		// }
+		&:hover {
+			// background-color: $bg-b;
+			
+			// color: $accent;
+			// animation: marker-double-pulse $pulse-duration cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+			// animation: marker-single-pulse 1s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+			animation: bg-pulse $pulse-duration cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+		}
+	}
+
+
+	// Pulse animation when hovering marker to indicate it is waiting for confirmation
+	
+	@keyframes shadow-pulse {
+		0%    { box-shadow: $shadow-a; }
+		20%   { box-shadow: $shadow-b; }
+		30%   { box-shadow: $shadow-a; }
+		40%   { box-shadow: $shadow-b; }
+		60%   { box-shadow: $shadow-a; }
+		100%  { box-shadow: $shadow-a; }
+	}
+	@keyframes bg-pulse {
+		0%    { background-color: $bg-a; }
+		20%   { background-color: $bg-b; }
+		30%   { background-color: $bg-a; }
+		40%   { background-color: $bg-b; }
+		60%   { background-color: $bg-a; }
+		100%  { background-color: $bg-a; }
+	}
+	@keyframes marker-single-pulse {
+		0%    { color: $marker-color;     }
+		25%   { color: $marker-color-alt; }
+		50%   { color: $marker-color;     }
+		100%  { color: $marker-color;     }
+	};
+
+	@keyframes marker-double-pulse {
+		0%    { color: $marker-color;     }
+		20%   { color: $marker-color-alt; }
+		30%   { color: $marker-color;     }
+		40%   { color: $marker-color-alt; }
+		60%   { color: $marker-color;     }
+		100%  { color: $marker-color;     }
 	}
 
 }
+
 

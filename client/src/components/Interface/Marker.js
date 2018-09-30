@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { removeMarker } from '../../modules/picker';
+import { removeMarker, submitPlacement } from '../../modules/picker';
 
 
 class Marker extends Component {
@@ -10,10 +10,21 @@ class Marker extends Component {
 		this.state = {}
 	}
 
-	handleRemoval = event => {
+	
+	handleConfirmation = event => {
 		event.stopPropagation();
-		this.props.removeMarker();
+		
+		// Submit the Marker Location to be saved in database according to path_id
+		this.props.submitPlacement(
+			this.props.bus.id,
+			this.props.location
+		)
 	}
+	
+	// handleRemoval = event => {
+	// 	event.stopPropagation();
+	// 	this.props.removeMarker();
+	// }
 
 	render() {
 		return (
@@ -23,7 +34,8 @@ class Marker extends Component {
 					top: `${this.props.location.y}%`,
 					left: `${this.props.location.x}%`,
 				}}
-				onDoubleClick={this.handleRemoval}
+				onClick={this.handleConfirmation}
+				// onDoubleClick={this.handleRemoval}
 			>
 				<i className="material-icons marker-icon"></i>
 				{/* <i className="material-icons">location_on</i> */}
@@ -35,11 +47,12 @@ class Marker extends Component {
 }
 
 const mapStateToProps = state => ({
-	location: state.picker.location,
+	...state.picker
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
 	removeMarker,
+	submitPlacement,
 }, dispatch)
 
 export default connect(
