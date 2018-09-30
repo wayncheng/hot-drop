@@ -51,15 +51,10 @@
 			content: 'my_location';
 		}
 		
-		&:hover {
-			&::before {
-				// content: 'location_disabled';
-				content: 'location_searching';
-			}
-		}
-		// &:focus {
+		// &:hover {
 		// 	&::before {
-		// 		content: 'my_location';
+		// 		// content: 'location_disabled';
+		// 		content: 'location_searching';
 		// 	}
 		// }
 	}

@@ -23,7 +23,7 @@ class Marker extends Component {
 					top: `${this.props.location.y}%`,
 					left: `${this.props.location.x}%`,
 				}}
-				onClick={this.handleRemoval}
+				onDoubleClick={this.handleRemoval}
 			>
 				<i className="material-icons marker-icon"></i>
 				{/* <i className="material-icons">location_on</i> */}

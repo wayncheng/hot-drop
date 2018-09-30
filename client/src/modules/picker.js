@@ -5,12 +5,10 @@ export const REMOVE_MARKER = 'map/REMOVE_MARKER'
 export const GET_NEW_BUS = 'map/GET_NEW_BUS'
 export const SUBMIT_PLACEMENT = 'map/SUBMIT_PLACEMENT'
 
-let db = [];
-
 const initialState = {
 	location: { 
-		x: -1, // Coordinates are percentages in decimal form. e.g. the center of the map would be x=0.5, y=0.5 
-		y: -1,
+		x: -100, // Coordinates are percentages in decimal form. e.g. the center of the map would be x=0.5, y=0.5 
+		y: -100,
 	},
 	bus: {
 		id: 1,
@@ -35,8 +33,8 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				location: {
-					x: -1,
-					y: -1,
+					x: -100,
+					y: -100,
 				},
 				markerPlaced: false,
 			}
