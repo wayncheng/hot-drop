@@ -1,9 +1,9 @@
 import API from '../utils/API';
 
-export const PLACE_MARKER = 'map/PLACE_MARKER'
-export const REMOVE_MARKER = 'map/REMOVE_MARKER'
-export const GET_NEW_BUS = 'map/GET_NEW_BUS'
-export const SUBMIT_PLACEMENT = 'map/SUBMIT_PLACEMENT'
+export const PLACE_MARKER = 'picker/PLACE_MARKER'
+export const REMOVE_MARKER = 'picker/REMOVE_MARKER'
+export const GET_NEW_BUS =   'picker/GET_NEW_BUS'
+export const SUBMIT_PLACEMENT = 'picker/SUBMIT_PLACEMENT'
 
 const initialState = {
 	location: { 

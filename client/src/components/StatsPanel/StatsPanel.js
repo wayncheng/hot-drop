@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {  } from '../../modules/picker';
 
+
 const StatsPanel = props => {
 
 	return(

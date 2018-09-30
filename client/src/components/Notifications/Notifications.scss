@@ -1,0 +1,27 @@
+.notification-center {
+	$in-speed: 0.4s;
+	$out-speed: 0.3s;
+
+  .notification-enter {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0) scale(0, 0);
+  }
+
+  .notification-enter.notification-enter-active {
+    visibility: visible;
+    transform: translate3d(0, 0, 0) scale(1, 1);
+    transition: all ease-in-out $in-speed;
+  }
+
+  .notification-leave {
+    visibility: visible;
+    transform: translate3d(0, 0, 0) scale(1, 1);
+  }
+
+  .notification-leave.notification-leave-active {
+    visibility: hidden;
+    // transform: translate3d(100%, 0, 0) scale(0, 0);
+    transform: translate3d(100%, 0, 0);
+    transition: all ease-in-out $out-speed;
+  }
+}

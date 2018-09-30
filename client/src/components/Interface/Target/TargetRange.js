@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import { Circle, Rect } from './TargetPieces';
 import './Target.scss';
+import { 
+	// sendError,
+	sendWarning 
+} from '../../Notifications/NotificationCenter';
+
 
 class TargetRange extends Component {
 
 
 	handleClick = e => {
 		e.preventDefault();
-
-		alert('Sorry, you must land on land.')
-
+		sendWarning('You must land on land.',null,3000)
 	}
 
 
