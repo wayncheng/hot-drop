@@ -10,9 +10,8 @@ const HomePage = props => {
       <div className="page-root">
 				<main>
 					<Map/>
-					<StatsPanel/>
 					<NotificationCenter/>
-					{/* <SubmitBtn/> */}
+					{(process.env.NODE_ENV !== 'production') && <StatsPanel/> }
 				</main>
       </div>
     );
