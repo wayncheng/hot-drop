@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { placeMarker, removeMarker, getNewBus } from '../../modules/picker';
+import { 
+	// setMarker, 
+	// removeMarker, 
+	getNewBus 
+} from '../../modules/picker';
 import './Interface.scss';
 import Overlay from './Overlay';
 import Marker from './Marker';
+import TargetRange from './Target/TargetRange';
 import SubmitBtn from './SubmitBtn';
 
 class Interface extends Component {
@@ -26,6 +31,7 @@ class Interface extends Component {
 				onKeyDown={this.handleSubmit}
 			>
 				<Overlay/>
+				<TargetRange/>
 				<Marker/>
 				<SubmitBtn/>
 			</section>
@@ -40,8 +46,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
 	getNewBus,
-	placeMarker,
-	removeMarker,
+	// setMarker,
+	// removeMarker,
 }, dispatch)
 
 export default connect(

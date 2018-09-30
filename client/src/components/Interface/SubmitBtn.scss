@@ -11,6 +11,7 @@
 	// border: 2px solid transparent;
 	box-shadow: none;
 	font-weight: 300;
+	cursor: pointer;
 	
 	&:hover,
 	&:focus {
@@ -21,14 +22,14 @@
 	
 	&.disabled {
 		display: none;
-		background-color: $btn-bg-inactive;
-		color: $btn-fg-inactive;
+
+		// background-color: $btn-bg-inactive;
+		// color: $btn-fg-inactive;
 		
-		&:hover, &:focus {
-			background-color: $btn-bg-inactive;
-			color: $btn-fg-inactive;
-			// border-color: transparent;
-		}
+		// &:hover, &:focus {
+		// 	background-color: $btn-bg-inactive;
+		// 	color: $btn-fg-inactive;
+		// }
 	}
 }
 

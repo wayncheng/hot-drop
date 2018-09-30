@@ -7,50 +7,81 @@
   // const ORM = require("../config/orm");
 
 
-  /////////////////////////////////////////////////////
-  router.get("/angle/:angle?", (req, res) => {
+
+
+//* MARKERS ========================================
+
+	//> GET ALL MARKERS in DATABASE ...................
+	router.get("/mark/all", (req, res) => {
+		dbMarkers.all( data => res.json(data) )
+	});
+
+	//> GET ALL MARKERS FOR AN ANGLE ..................
+	router.get("/mark/angle/:angle?", (req, res) => {
 		dbMarkers.getByAngle( req.params.angle , 
 			data => res.json(data) 
 		)
 	});
-	
-  router.get("/markers/:id?", (req, res) => {
-		// const {id} = req.params;
 
-		dbMarkers.all( data => {
-			console.log('data:',data);
-			return res.json(data)
-		})
+	//> GET ALL MARKERS for PATH_ID .................
+  router.get("/mark/:path_id?", (req, res) => {
+		
+		// If an path_id is provided, return all the markers for that path_id.
+		// If not provided, return all markers in database.
+		if (req.param.path_id){
+			dbMarkers.getByPathId( req.params.path_id , 
+				data => res.json(data) 
+			)
+		}
+		else {
+			dbMarkers.all( data => {
+				return res.json(data)
+			})
+		}
+		
 	});
-
-  router.get("/paths/:id?", (req, res) => {
-		// const {id} = req.params;
-
-		dbPaths.all( data => {
-			console.log('data:',data);
-			return res.json(data)
-		})
-
-	});
-  router.get("/random", (req, res) => {
-		dbPaths.random( data => {
-			console.log('data:',data);
-			return res.json(data)
-		})
-	});
-
-
-  router.post("/save", (req, res) => {
+		
+	//> SAVE TO DATABASE ........................
+	router.post("/mark/save", (req, res) => {
 		console.log('req.body:',req.body);
 		const {path_id,x,y} = req.body;
-
+		
 		dbMarkers.save( path_id, x, y, data => {
 			console.log('data:',data);
 			return res.json(data)
 		})
-
+		
 	});
-	/////////////////////////////////////////////////////
+
+
+
+
+
+//* PATHS ==========================================
+	
+	//> GET ALL PATHS ..........................
+	router.get("/path/all", (req, res) => {
+		dbPaths.all( data => res.json(data) )
+	});
+
+	//> GET ONE RANDOM PATH ....................
+  router.get("/path/random", (req, res) => {
+		dbPaths.random( data => res.json(data) )
+	});
+
+	//> GET QUANTITY of PATHS in DB .............
+	router.get("/path/count", (req, res) => {
+		dbPaths.count( data => res.json(data) )
+	});
+
+
+
+
+
+
+
+	
+//==================================================
 	// router.get('/paths/:id', (req,res) => {
 	// 	const {id} = req.params;
 	// 	console.log('path_id',id);

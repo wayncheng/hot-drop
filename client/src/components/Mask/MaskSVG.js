@@ -1,6 +1,7 @@
 import React from 'react';
-import './Mask.scss';
 import MaskSVG from '../../static/map-land-clip.svg';
+import './Mask.scss';
+
 
 const Mask = props => {
 	return (

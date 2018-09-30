@@ -16,7 +16,6 @@
 	height: 100%;
 	z-index: $z-index-mid;
 	overflow: hidden;
-	cursor: crosshair;
 }
 
 .marker {
@@ -39,7 +38,7 @@
 
 	
 	cursor: pointer;
-	z-index: $z-index-mid+1;
+	z-index: $z-index-mid+50;
 	
 	.marker-icon {
 		font-size: inherit;

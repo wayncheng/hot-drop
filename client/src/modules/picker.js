@@ -97,7 +97,7 @@ export const reset = () => dispatch => {
 }
 
 // MARKERS ========================================
-export const placeMarker = location => dispatch => {
+export const setMarker = location => dispatch => {
 	dispatch({
 		type: PLACE_MARKER,
 		location

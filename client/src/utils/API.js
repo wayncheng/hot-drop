@@ -4,7 +4,7 @@ const API = {
 	saveMarker: (path_id, x, y) => {
 		return axios({
 			method: "POST",
-			url: "/api/save",
+			url: "/api/mark/save",
 			data: {
 				path_id,
 				x,
@@ -17,7 +17,7 @@ const API = {
 	getRandomPath: () => {
 		return axios({
 			method: "GET",
-			url: "/api/random"
+			url: "/api/path/random"
 		})
 			.then(response => response)
 			.catch(error => console.log("error", error));
