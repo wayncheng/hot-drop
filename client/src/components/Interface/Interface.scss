@@ -14,7 +14,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: $z-index-mid;
+	z-index: $zidx-mid;
 	overflow: hidden;
 }
 
@@ -42,7 +42,7 @@
 	margin-left: -0.5em; // Using margin to offset rather than transform since dimensions are known and better compatibility
 	margin-top: -0.5em;
 	cursor: pointer;
-	z-index: $z-index-mid+50;
+	z-index: $zidx-mid+50;
 
 	&:hover {
 		animation: shadow-pulse $pulse-duration cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;

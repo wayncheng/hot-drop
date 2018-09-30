@@ -1,20 +1,34 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Map from '../components/Map/Map';
-import StatsPanel from '../components/StatsPanel/StatsPanel';
-// import SubmitBtn from '../components/SubmitBtn/SubmitBtn';
-import NotificationCenter from '../components/Notifications/NotificationCenter';
+import CloudLayer from '../components/layers/CloudLayer';
+// import { bindActionCreators } from 'redux';
+// import { connect } from 'react-redux';
+// import { showGuide } from '../modules/general';
 
+class HomePage extends Component {
 
-const HomePage = props => {
-    return (
-      <div className="page-root">
+	render(){
+		return (
+			<div className="page-root">
 				<main>
+					<CloudLayer/>
 					<Map/>
-					<NotificationCenter/>
-					{(process.env.NODE_ENV !== 'production') && <StatsPanel/> }
 				</main>
       </div>
     );
+	}
 }
-
 export default HomePage;
+
+// const mapStateToProps = state => ({
+// 	...state.general,
+// })
+
+// const mapDispatchToProps = dispatch => bindActionCreators({
+// 	showGuide,
+// }, dispatch)
+
+// export default connect(
+//   mapStateToProps, 
+//   mapDispatchToProps
+// )(HomePage)

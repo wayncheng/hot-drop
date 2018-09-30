@@ -3,12 +3,12 @@
 .bus-path {
 	width: 90vw;
 	max-width: 90vh;
-	height: 12px;
+	height: 1rem;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	// transform has to be used to control line rotation, so it is passed in as an inline style in the jsx
-	z-index: $z-index-bottom + 100;
+	z-index: $zidx-low + 100;
 	background: url('../../static/bus-path-unit-flipped.svg');
 	// background: $bus-arrow;
 	background-repeat: repeat-x;

@@ -5,7 +5,6 @@ import mapImg from '../../static/fortnite-map-s6.jpg';
 import BusPath from '../BusPath/BusPath';
 import Interface from '../Interface/Interface';
 
-
 const Map = props => {
 	return (
 		<div id="container" className="map-container">

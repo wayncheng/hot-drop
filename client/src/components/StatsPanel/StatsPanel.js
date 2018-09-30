@@ -20,13 +20,18 @@ const StatsPanel = props => {
 				<li>{'y: '+props.location.y}</li>
 				<li>{'placed: '+props.markerPlaced}</li>
 			</ul>
+			<ul>
+				<li>Clouds:</li>
+				<li>{'visible: '+props.cloudsVisible}</li>
+			</ul>
 		</div>
 	)
 }
 
 const mapStateToProps = state => ({
 	// location: state.picker.location,
-	...state.picker
+	...state.picker,
+	...state.general
 })
 const mapDispatchToProps = dispatch => bindActionCreators({
 	
