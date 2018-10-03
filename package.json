@@ -14,7 +14,9 @@
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "dev:server": "cd client && yarn build && cd .. && yarn start",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+		"heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+		
+		"logger": "scripting/commands/logger.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -23,8 +25,13 @@
     "mysql": "^2.16.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chalk": "^2.4.1",
     "commander": "^2.18.0",
-    "concurrently": "^3.6.0"
+    "concurrently": "^3.6.0",
+    "lodash": "^4.17.11",
+    "mocha": "^5.2.0",
+    "puppeteer": "^1.8.0"
   },
   "repository": {
     "type": "git",
