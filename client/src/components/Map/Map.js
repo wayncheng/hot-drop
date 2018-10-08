@@ -7,7 +7,7 @@ import Interface from '../Interface/Interface';
 
 const Map = props => {
 	return (
-		<div id="container" className="map-container">
+		<div id="map-container" className="container">
 			<img
 				className="map" 
 				src={mapImg} 

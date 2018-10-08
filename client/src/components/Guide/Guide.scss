@@ -2,7 +2,10 @@
 
 .guide {
 	font-size: 1.1rem;
-	position: relative;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 	z-index: $zidx-top;
 	background-color: #fff;
 	padding: 2em 3em;
@@ -11,5 +14,5 @@
 	max-width: 900px;
 
 	border-radius: .5em;
-
+	
 }
