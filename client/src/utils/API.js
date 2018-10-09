@@ -1,4 +1,7 @@
 import axios from 'axios';
+import publicIp from 'public-ip';
+// import bcrypt from 'bcryptjs';
+import { setUUID } from '../modules/picker';
 
 const API = {
 	saveMarker: (path_id, x, y) => {
@@ -24,19 +27,22 @@ const API = {
 	},
 
 
-	getIP: () => {
-		return axios({
-			method: 'GET',
-			url: 'https://json.geoiplookup.io/api?',
-			// url: 'https://json.geoiplookup.io/api',
-		})
-		.then( response =>  {
-			console.log(JSON.stringify(response, null, 2));
-		})
-		.catch( error => {
-			console.log('error:',error)
-		})
-	}
+	getUUID: () => {
+		return publicIp.v4().then(ip => {
+			console.log(ip);
+
+			// let hashID = bcrypt.hashSync(ip, 3, function(err, hash) {
+			// 	if (err) throw err;
+			// 	// console.log('hash',hash)
+			// 	return hash
+			// });
+			
+			// let hashID = bcrypt.hashSync(ip)
+			// return hashID
+
+			return ip;
+		});
+	},
 
 }
 

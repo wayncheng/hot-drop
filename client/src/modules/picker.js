@@ -4,6 +4,7 @@ export const PLACE_MARKER = 'picker/PLACE_MARKER'
 export const REMOVE_MARKER = 'picker/REMOVE_MARKER'
 export const GET_NEW_BUS =   'picker/GET_NEW_BUS'
 export const SUBMIT_PLACEMENT = 'picker/SUBMIT_PLACEMENT'
+export const SET_UUID = 'picker/SET_UUID'
 
 const initialState = {
 	location: { 
@@ -16,6 +17,7 @@ const initialState = {
 		x: 50,
 		y: 50,
 	},
+	uuid: null,
 	markerPlaced: false,
 };
 
@@ -45,9 +47,14 @@ export default (state = initialState, action) => {
 				bus: action.bus
 			}
 
-		case SUBMIT_PLACEMENT:
+		// case SUBMIT_PLACEMENT:
+		// 	return {
+		// 		...state,
+		// 	}
+		case SET_UUID:
 			return {
 				...state,
+				uuid: action.uuid
 			}
 
 		default:
@@ -106,6 +113,15 @@ export const removeMarker = () => dispatch => {
 		type: REMOVE_MARKER
 	})
 }
+
+// UUID ========================================
+export const setUUID = uuid => dispatch => {
+	dispatch({
+		type: SET_UUID,
+		uuid,
+	})
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 	

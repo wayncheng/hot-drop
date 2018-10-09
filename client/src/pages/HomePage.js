@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-// import Map from '../components/Map/Map';
-// import CloudLayer from '../components/layers/CloudLayer';
-// import StatsPanel from '../components/StatsPanel/StatsPanel';
-// import NotificationCenter from '../components/Notifications/NotificationCenter';
-// import Guide from '../components/Guide/Guide'
 import {
 	Map,
 	StatsPanel,
@@ -12,6 +7,10 @@ import {
 	Guide,
 } from '../components';
 import API from '../utils/API';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { setUUID } from '../modules/picker';
+
 
 class HomePage extends Component {
 	constructor(props){
@@ -21,8 +20,11 @@ class HomePage extends Component {
 	}
 
 	componentDidMount = () => {
-
-		API.getIP();
+		
+		API.getUUID().then(res => {
+			console.log('res:',res)
+			this.props.setUUID(res)
+		});
 		
 	}
 
@@ -47,4 +49,15 @@ class HomePage extends Component {
 		);
 	}
 }
-export default HomePage;
+// export default HomePage;
+
+const mapStateToProps = state => ({
+	uuid: state.picker.uuid,
+})
+const mapDispatchToProps = dispatch => bindActionCreators({
+	setUUID,
+}, dispatch)
+export default connect(
+	mapStateToProps, 
+	mapDispatchToProps
+)(HomePage)
