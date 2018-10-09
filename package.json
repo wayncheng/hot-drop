@@ -14,15 +14,15 @@
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "dev:server": "cd client && yarn build && cd .. && yarn start",
     "start": "node server.js",
-		"heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-		
-		"logger": "scripting/commands/logger.js"
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "logger": "scripting/commands/logger.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "react-modal": "^3.6.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",

@@ -23,6 +23,21 @@ const API = {
 			.catch(error => console.log("error", error));
 	},
 
+
+	getIP: () => {
+		return axios({
+			method: 'GET',
+			url: 'https://json.geoiplookup.io/api?',
+			// url: 'https://json.geoiplookup.io/api',
+		})
+		.then( response =>  {
+			console.log(JSON.stringify(response, null, 2));
+		})
+		.catch( error => {
+			console.log('error:',error)
+		})
+	}
+
 }
 
 export default API;
