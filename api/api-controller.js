@@ -26,9 +26,9 @@
 	//> GET ALL MARKERS for PATH_ID .................
   router.get("/mark/:path_id?", (req, res) => {
 		
-		// If an path_id is provided, return all the markers for that path_id.
+		// If a path_id is provided, return all the markers for that path_id.
 		// If not provided, return all markers in database.
-		if (req.param.path_id){
+		if (req.params.path_id){
 			dbMarkers.getByPathId( req.params.path_id , 
 				data => res.json(data) 
 			)
@@ -59,6 +59,8 @@
 
 //* PATHS ==========================================
 	
+	
+
 	//> GET ALL PATHS ..........................
 	router.get("/path/all", (req, res) => {
 		dbPaths.all( data => res.json(data) )
@@ -73,6 +75,22 @@
 	router.get("/path/count", (req, res) => {
 		dbPaths.count( data => res.json(data) )
 	});
+
+	//> GET PATH BY PATH_ID ....................
+	router.get("/path/:path_id?", (req, res) => {
+		// If a path_id is provided, return path for that path_id.
+		// If not provided, return all paths in database.
+		if (req.params.path_id){
+			dbPaths.getById( req.params.path_id , 
+				data => res.json(data[0]) 
+			)
+		}
+		else {
+			dbPaths.all( data => {
+				return res.json(data)
+			})
+		}
+	})
 
 
 

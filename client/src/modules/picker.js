@@ -3,6 +3,7 @@ import API from '../utils/API';
 export const PLACE_MARKER = 'picker/PLACE_MARKER'
 export const REMOVE_MARKER = 'picker/REMOVE_MARKER'
 export const GET_NEW_BUS =   'picker/GET_NEW_BUS'
+export const SET_BUS_PATH =   'picker/SET_BUS_PATH'
 export const SUBMIT_PLACEMENT = 'picker/SUBMIT_PLACEMENT'
 export const SET_UUID = 'picker/SET_UUID'
 
@@ -42,6 +43,12 @@ export default (state = initialState, action) => {
 			}
 		
 		case GET_NEW_BUS:
+			return {
+				...state,
+				bus: action.bus
+			}
+		
+		case SET_BUS_PATH:
 			return {
 				...state,
 				bus: action.bus
@@ -88,10 +95,29 @@ export const getNewBus = () => dispatch => {
 		const pathData = response.data;
 
 		dispatch({
-			type: GET_NEW_BUS,
+			type: SET_BUS_PATH,
 			bus: pathData,
 		})
 	})
+
+}
+// * Set the Bus Path ----------------
+// - path_id as input
+// - query DB to find corresponsing angle
+// - set in state
+
+export const setBusPath = path_id => dispatch => {
+
+		API.getPathById(path_id).then( response => {
+			const pathData = response.data;
+			console.log('pathData:',pathData)
+			
+			dispatch({
+				type: SET_BUS_PATH,
+				bus: pathData,
+			})
+		})
+	
 
 }
 

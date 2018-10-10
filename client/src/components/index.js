@@ -1,5 +1,5 @@
 export {default as Map} from './Map/Map';
-
+export {default as StaticMap} from './Map/StaticMap';
 export {default as BusPath} from './BusPath/BusPath';
 
 export {default as Interface} from './Interface/Interface';
@@ -17,5 +17,7 @@ export {default as HelpTrigger} from './Modals/HelpTrigger';
 export {default as Guide} from './Modals/Guide';
 
 export {default as NotificationCenter} from './Notifications/NotificationCenter';
-
 export {default as StatsPanel} from './StatsPanel/StatsPanel';
+
+// * Display ---------------
+export {default as PointsDisplay} from './Display/PointsDisplay';

@@ -1,12 +1,16 @@
 {
   "name": "fortnite-drops-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fortnite Drop Heat Map",
   "author": {
     "name": "Wayne Cheng",
     "email": "wayne@che.ng",
     "url": "https://che.ng"
   },
+	"engines" : { 
+		"node" : "8.12.0",
+		"yarn" : "1.10.1"
+	},
   "license": "Apache-2.0",
   "scripts": {
     "client": "cd client && yarn start",
@@ -14,7 +18,7 @@
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "dev:server": "cd client && yarn build && cd .. && yarn start",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "heroku-postbuild": "cd client && yarn install && yarn install --only=dev --no-shrinkwrap && yarn build",
     "logger": "scripting/commands/logger.js"
   },
   "dependencies": {
@@ -35,7 +39,7 @@
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
     "puppeteer": "^1.8.0"
-  },
+	},
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/wayn/drop-it-like-its-hot.git"
