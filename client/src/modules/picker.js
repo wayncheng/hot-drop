@@ -62,7 +62,7 @@ export default (state = initialState, action) => {
 	}
 }
 
-// DATABASE =======================================
+// * DATABASE =======================================
 export const submitPlacement = (path_id,location,uuid) => dispatch => {
 	console.log('> submit')
 
@@ -81,7 +81,7 @@ export const submitPlacement = (path_id,location,uuid) => dispatch => {
 
 }
 
-// CYCLE,RESET ====================================
+// * CYCLE,RESET ====================================
 export const getNewBus = () => dispatch => {
 
 	API.getRandomPath().then( response => {
@@ -101,7 +101,7 @@ export const reset = () => dispatch => {
 	console.log('--------------------------------------------')	
 }
 
-// MARKERS ========================================
+// * MARKERS ========================================
 export const setMarker = location => dispatch => {
 	dispatch({
 		type: PLACE_MARKER,
@@ -114,7 +114,7 @@ export const removeMarker = () => dispatch => {
 	})
 }
 
-// UUID ========================================
+// * UUID ========================================
 export const setUUID = uuid => dispatch => {
 	dispatch({
 		type: SET_UUID,

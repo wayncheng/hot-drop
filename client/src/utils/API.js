@@ -1,6 +1,6 @@
 import axios from 'axios';
 import publicIp from 'public-ip';
-import bcrypt from 'bcryptjs';
+// import bcrypt from 'bcryptjs';
 
 const API = {
 	saveMarker: (path_id, x, y, uuid) => {
@@ -39,9 +39,9 @@ const API = {
 			// 	return hash
 			// });
 			
-			let hashID = bcrypt.hashSync(ip)
+			// let hashID = bcrypt.hashSync(ip)
+			// console.log('hashID:',hashID)
 			// return hashID
-			console.log('hashID:',hashID)
 
 			return uuid
 		});
