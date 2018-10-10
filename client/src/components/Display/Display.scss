@@ -1,0 +1,18 @@
+@import '../../config/variables';
+
+.display {
+	@extend %copycat;
+	background-color: rgba(#000,0.3);
+	z-index: $zidx-top;
+	
+	// & + .bus-path {
+	// 	opacity: 0.5;
+	// 	animation: none;
+	// }
+	.data-point {
+		box-shadow: none;
+		animation: none;
+		// background-color: rgba(#fff,0.5);
+		opacity: 0.8;
+	}
+}

@@ -17,16 +17,6 @@ const API = {
 			.then(response => response)
 			.catch(error => console.log("error", error));
 	},
-	getRandomPath: () => {
-		return axios({
-			method: "GET",
-			url: "/api/path/random"
-		})
-			.then(response => response)
-			.catch(error => console.log("error", error));
-	},
-
-
 	getUUID: () => {
 		return publicIp.v4().then(ip => {
 			console.log(ip);
@@ -46,6 +36,33 @@ const API = {
 			return uuid
 		});
 	},
+
+	getRandomPath: () => {
+		return axios({
+			method: "GET",
+			url: "/api/path/random"
+		})
+			.then(response => response)
+			.catch(error => console.log("error", error));
+	},
+	getPathById: (path_id) => {
+		return axios({
+			method: "GET",
+			url: "/api/path/"+path_id
+		})
+			.then(response => response)
+			.catch(error => console.log("error", error));
+	},
+
+	getMarkersByPathId: path_id => {
+		return axios({
+			method: "GET",
+			url: "/api/mark/"+path_id
+		})
+			.then(response => response)
+			.catch(error => console.warn("error", error));
+	},
+
 
 }
 

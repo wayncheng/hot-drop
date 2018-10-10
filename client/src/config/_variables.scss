@@ -60,3 +60,11 @@ $big-box-shadow-focused: 0px 8px 50px 2px rgba(0, 0, 0, 0.45);
 
 
 // $bus-arrow: url('../static/bus-path-unit-flipped.svg');
+
+%copycat {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;	
+}

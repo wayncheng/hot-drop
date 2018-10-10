@@ -8,7 +8,7 @@ import {  } from '../../modules/picker';
 const StatsPanel = props => {
 
 	return(
-		<div className="stats-panel">
+		<aside className="stats-panel">
 			<ul>
 				<li>Bus:</li>
 				<li>{'id: '+props.bus.id}</li>
@@ -23,7 +23,7 @@ const StatsPanel = props => {
 			<ul>
 				<li>{'uuid: ' + props.uuid}</li>
 			</ul>
-		</div>
+		</aside>
 	)
 }
 

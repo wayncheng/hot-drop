@@ -1,21 +1,19 @@
 import React from 'react';
-import './Map.scss';
-import mapImg from '../../static/fortnite-map-s6.jpg';
+// import './Map.scss';
+// import mapImg from '../../static/fortnite-map-s6.jpg';
 // import Overlay from '../interface/Overlay';
-import BusPath from '../BusPath/BusPath';
-import Interface from '../Interface/Interface';
+import {
+	StaticMap,
+	BusPath,
+	Interface,
+} from '../';
 
 const Map = props => {
 	return (
-		<div id="map-container" className="container">
-			<img
-				className="map" 
-				src={mapImg} 
-				alt="Fortnite Map Season 6" 
-			/>
-			<BusPath/>
-			<Interface/>
-		</div>
+		<StaticMap>
+			<BusPath />
+			<Interface />
+		</StaticMap>
 	)
 }
 export default Map;

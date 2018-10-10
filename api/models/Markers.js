@@ -16,6 +16,11 @@ const Markers = {
 		orm.getByAngle( angle, 
 			res => cb(res) 
 		)
+	},
+  getByPathId: (path_id,cb) => {
+		orm.getByPathId( path_id, 
+			res => cb(res) 
+		)
 	}
 };
 

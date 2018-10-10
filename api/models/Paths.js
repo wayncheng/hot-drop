@@ -6,6 +6,9 @@ const Paths = {
   all: cb => {
 		orm.getAll( res => cb(res) )
 	},
+  getById: (path_id,cb) => {
+		orm.getPathById( path_id, res => cb(res) )
+	},
 	random: cb => {
 		orm.getOneRandom( res => cb(res) )
 	},

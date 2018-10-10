@@ -48,6 +48,25 @@ console.log('MTBL:',MTBL)
 					cb(result)
 				});
 			},
+
+			getByPathId: (path_id,cb) => {
+				console.log(`---> getByPathId (${path_id})`);
+				
+				let query = 
+				` SELECT ${MTBL}.id, 
+						${MTBL}.x AS mark_x, 
+						${MTBL}.y AS mark_y,
+						${MTBL}.path_id
+					FROM ${MTBL}
+					WHERE ${MTBL}.path_id = ${path_id}
+				;`;
+
+
+				connection.query(query, (err,result) => {
+					if (err) throw err;
+					cb(result)
+				});
+			},
 			
 			save: (path_id, x, y, uuid, cb) => {
 
@@ -68,6 +87,22 @@ console.log('MTBL:',MTBL)
 			getAll: cb => {
 				console.log(`---> getAll (paths)`);
 				const query = ` SELECT * FROM ${PTBL};`;
+				connection.query(query, (err,result) => {
+					if (err) throw err;
+					cb(result)
+				});
+			},
+			
+			getPathById: (path_id,cb) => {
+				console.log(`---> getPathById (paths)`);
+				const query = 
+				` SELECT ${PTBL}.id, 
+						${PTBL}.x, 
+						${PTBL}.y,
+						${PTBL}.angle
+					FROM ${PTBL}
+					WHERE ${PTBL}.id = ${path_id}
+				;`;
 				connection.query(query, (err,result) => {
 					if (err) throw err;
 					cb(result)
