@@ -17,12 +17,14 @@
 #INSERT INTO kuaon40lr5t0xkav.paths (`angle`) VALUES (40);
 #INSERT INTO kuaon40lr5t0xkav.paths (`angle`) VALUES (20);
 
-INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,25,25);
-INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,25,50);
-INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,25,75);
-INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,50,50);
-INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,50,75);
-INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,75,75);
+#INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,25,25);
+#INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,25,50);
+#INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,25,75);
+#INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,50,50);
+#INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,50,75);
+#INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (1,75,75);
+#INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (2,24,24);
+#INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (2,81,81);
 
-INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (2,24,24);
-INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`) VALUES (2,81,81);
+
+INSERT INTO kuaon40lr5t0xkav.markers (`path_id`,`x`,`y`,`uuid`) VALUES (2,81,81,'108_64_213_75');

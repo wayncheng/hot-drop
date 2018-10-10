@@ -17,7 +17,8 @@ class Marker extends Component {
 		// Submit the Marker Location to be saved in database according to path_id
 		this.props.submitPlacement(
 			this.props.bus.id,
-			this.props.location
+			this.props.location,
+			this.props.uuid
 		)
 	}
 	

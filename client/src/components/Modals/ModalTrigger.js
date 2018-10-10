@@ -34,22 +34,11 @@ class ModalTrigger extends Component {
 		else {
 			this.props.toggleModal(modal_id)
 		}
-
-		// // If guide is visible, click should hide
-		// if (this.props.allModal['guide-modal']){
-		// 	this.props.toggleModal('guide-modal')
-		// }
-		// // If guide is hidden, click should show
-		// else {
-		// 	this.props.showModal('guide-modal')
-		// }
-
 	}
 
 	render(){
 		return(
 			<button
-				// {...this.props}
 				className={classNames("modal-trigger","default-trigger",this.props.className)}
 				onClick={this.handleClick}
 				id={this.props.id}
@@ -58,7 +47,6 @@ class ModalTrigger extends Component {
 				modal_action={this.props.modal_action || 'open'}
 			>
 						{this.props.children}
-						{/* {this.props.guideVisible ? 'cancel' : 'info'} */}
 			</button>
 		)
 	}

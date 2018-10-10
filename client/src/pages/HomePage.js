@@ -3,7 +3,8 @@ import {
 	Map,
 	StatsPanel,
 	NotificationCenter,
-	ModalTrigger,
+	// ModalTrigger,
+	HelpTrigger,
 	Guide,
 } from '../components';
 import API from '../utils/API';
@@ -39,9 +40,7 @@ class HomePage extends Component {
 					
 					<Map />
 					
-					<ModalTrigger modal_id="guide_modal" modal_action="open">
-						<i className="material-icons">help</i>
-					</ModalTrigger>
+					<HelpTrigger/>
 					
 					<Guide />
 				</main>

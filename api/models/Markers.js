@@ -7,8 +7,8 @@ const Markers = {
 		orm.getAll( res => cb(res) )
   },
   // The variables cols and vals are arrays.
-  save: (path_id, x, y, cb) => {
-    orm.save(path_id,x,y, 
+  save: (path_id, x, y, uuid, cb) => {
+    orm.save(path_id,x,y,uuid,
 			res => cb(res)
 		)
 	},

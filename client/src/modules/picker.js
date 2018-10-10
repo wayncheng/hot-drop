@@ -63,10 +63,10 @@ export default (state = initialState, action) => {
 }
 
 // DATABASE =======================================
-export const submitPlacement = (path_id,location) => dispatch => {
+export const submitPlacement = (path_id,location,uuid) => dispatch => {
 	console.log('> submit')
 
-	API.saveMarker(path_id, location.x, location.y).then( response => {
+	API.saveMarker(path_id, location.x, location.y, uuid).then( response => {
 		if (response.status === 200) {
 			console.log('Successfully Saved!')
 		}
