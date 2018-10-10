@@ -17,7 +17,7 @@ class PointsDisplay extends Component {
 							{...point}
 							key={id} 
 							id={id}
-							className="marker data-point"
+							className="data-point"
 							style={{
 								top:  `${point.mark_y}%`,
 								left: `${point.mark_x}%`,

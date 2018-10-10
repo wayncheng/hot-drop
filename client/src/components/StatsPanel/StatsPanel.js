@@ -2,27 +2,30 @@ import React from 'react'
 import "./StatsPanel.scss";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {  } from '../../modules/picker';
+import { } from '../../modules/picker';
 
 
 const StatsPanel = props => {
 
-	return(
+	return (
 		<aside className="stats-panel">
-			<ul>
-				<li>Bus:</li>
-				<li>{'id: '+props.bus.id}</li>
-				<li>{'angle: '+props.bus.angle}</li>
-			</ul>
-			<ul>
-				<li>Marker:</li>
-				<li>{'x: '+props.location.x}</li>
-				<li>{'y: '+props.location.y}</li>
-				<li>{'placed: '+props.markerPlaced}</li>
-			</ul>
-			<ul>
-				<li>{'uuid: ' + props.uuid}</li>
-			</ul>
+			<i className="material-icons" >insert_chart</i>
+			<div className="panel-content">
+				<ul>
+					<li>Bus:</li>
+					<li>{'id: ' + props.bus.id}</li>
+					<li>{'angle: ' + props.bus.angle}</li>
+				</ul>
+				<ul>
+					<li>Marker:</li>
+					<li>{'x: ' + props.location.x}</li>
+					<li>{'y: ' + props.location.y}</li>
+					<li>{'placed: ' + props.markerPlaced}</li>
+				</ul>
+				<ul>
+					<li>{'uuid: ' + props.uuid}</li>
+				</ul>
+			</div>
 		</aside>
 	)
 }
@@ -33,10 +36,10 @@ const mapStateToProps = state => ({
 	...state.general
 })
 const mapDispatchToProps = dispatch => bindActionCreators({
-	
+
 }, dispatch)
 
 export default connect(
-	mapStateToProps, 
+	mapStateToProps,
 	mapDispatchToProps
 )(StatsPanel)

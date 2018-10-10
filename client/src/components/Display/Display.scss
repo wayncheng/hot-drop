@@ -2,7 +2,7 @@
 
 .display {
 	@extend %copycat;
-	background-color: rgba(#000,0.3);
+	background-color: rgba(8,8,8,0.24);
 	z-index: $zidx-top;
 	
 	// & + .bus-path {
@@ -10,9 +10,16 @@
 	// 	animation: none;
 	// }
 	.data-point {
-		box-shadow: none;
-		animation: none;
-		// background-color: rgba(#fff,0.5);
+		display: inline-block;
+		position: absolute;
+		font-size: .75rem !important;
+		height: 1em;
+		width: 1em;
+		margin-left: -0.5em; // Using margin to offset rather than transform since dimensions are known and better compatibility
+		margin-top: -0.5em;
+		border-radius: 50%;
+		background-color: rgba(red,0.8);
 		opacity: 0.8;
+		border: 1px solid #fff;
 	}
 }
