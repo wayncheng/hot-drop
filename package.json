@@ -8,7 +8,8 @@
     "url": "https://che.ng"
   },
 	"engines" : { 
-		"node" : "8.12.0" 
+		"node" : "8.12.0",
+		"yarn" : "1.10.1"
 	},
   "license": "Apache-2.0",
   "scripts": {
@@ -17,7 +18,7 @@
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "dev:server": "cd client && yarn build && cd .. && yarn start",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "heroku-postbuild": "cd client && yarn install && yarn install --only=dev --no-shrinkwrap && yarn build",
     "logger": "scripting/commands/logger.js"
   },
   "dependencies": {
