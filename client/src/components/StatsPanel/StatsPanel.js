@@ -21,8 +21,7 @@ const StatsPanel = props => {
 				<li>{'placed: '+props.markerPlaced}</li>
 			</ul>
 			<ul>
-				<li>Clouds:</li>
-				<li>{'visible: '+props.cloudsVisible}</li>
+				<li>{'uuid: ' + props.uuid}</li>
 			</ul>
 		</div>
 	)

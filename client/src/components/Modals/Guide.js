@@ -1,17 +1,15 @@
 import React from 'react'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { hideGuide } from '../../modules/general';
-import './Guide.scss'
+import {
+	Modal,
+	ModalTrigger,
+} from '..'
 
 const Guide = props => {
 
 	return(
-		<section className="guide" onClick={ event => {
-			event.preventDefault();
-			props.hideGuide()
-		}}>
-			{/* <h2>Instructions</h2> */}
+		<Modal id="guide_modal" className="default-modal">
 
 			<section className="guide-section">
 				<h3>How to Choose your Drop Location:</h3>
@@ -25,15 +23,19 @@ const Guide = props => {
 				</ol>
 			</section>
 
-		</section>
+			<ModalTrigger modal_id="guide_modal" modal_action="close">
+				<i className="material-icons">cancel</i>
+			</ModalTrigger>
+
+		</Modal>
 	)
 }
 const mapStateToProps = state => ({
-	
+	// allModals: state.modal.allModals,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-	hideGuide,
+	// hideGuide,
 }, dispatch)
 
 export default connect(

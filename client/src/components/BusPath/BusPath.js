@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import './BusPath.scss';
 
-const BusLine = props => {
+const BusPath = props => {
 	// let transformValue = `translate(-50%,-50%) rotateZ(${props.angle}+deg)`;
 
 	// let lineStyle = {
@@ -35,4 +35,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps, 
   mapDispatchToProps
-)(BusLine)
+)(BusPath)

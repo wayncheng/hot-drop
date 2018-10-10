@@ -18,14 +18,14 @@ class Target extends Component {
 	}
 
 	handleTargetClick = event => {
-		// event.preventDefault();
+		event.preventDefault();
 		event.stopPropagation();
 
 		// Get map dimensions in px
 		const { clientWidth , clientHeight } = document.getElementById('overlay');
 
 		// Map Offset from top left corner of window (in order to determine mouse offset)
-		const { offsetLeft , offsetTop } = document.getElementById('container');
+		const { offsetLeft , offsetTop } = document.getElementById('map-container');
 
 		// Location of Mouse Click on Map in relation to the top left corner of the window
 		const { clientX, clientY } = event;
@@ -52,7 +52,8 @@ class Target extends Component {
 		return (
 			
 			<span 
-				{...this.props} 
+				// {...this.props}
+				style={this.props.style}
 				className={classNames('target',this.props.className)} 
 				onClick={this.handleTargetClick}
 			></span>

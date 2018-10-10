@@ -49,8 +49,10 @@ console.log('MTBL:',MTBL)
 				});
 			},
 			
-			save: (path_id, x, y, cb) => {
-				const query = `INSERT INTO ${MTBL} (\`path_id\`,\`x\`,\`y\`) VALUES (${path_id},${x},${y});`			
+			save: (path_id, x, y, uuid, cb) => {
+
+				const query = `INSERT INTO ${MTBL} (\`path_id\`,\`x\`,\`y\`,\`uuid\`) VALUES (${path_id},${x},${y},\'${uuid}\');`			
+
 				connection.query( query, (err,result) => {
 					if (err) throw err;
 					cb(result);

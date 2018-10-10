@@ -18,7 +18,11 @@
 	}
 	ul {
 		padding: 0;
-		margin: .5rem 0;
+		margin: 1rem .5rem;
 		list-style-type: none;
+	}
+	li {
+		margin: 5px auto;
+		line-height: 1.2;
 	}
 }

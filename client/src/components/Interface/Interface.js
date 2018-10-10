@@ -28,7 +28,7 @@ class Interface extends Component {
 			<section 
 				id="interface" 
 				className="ui-container" 
-				onKeyDown={this.handleSubmit}
+				// onKeyDown={this.handleSubmit}
 			>
 				<Overlay/>
 				<TargetRange/>

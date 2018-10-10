@@ -44,9 +44,9 @@
 	//> SAVE TO DATABASE ........................
 	router.post("/mark/save", (req, res) => {
 		console.log('req.body:',req.body);
-		const {path_id,x,y} = req.body;
+		const {path_id,x,y,uuid} = req.body;
 		
-		dbMarkers.save( path_id, x, y, data => {
+		dbMarkers.save( path_id, x, y, uuid, data => {
 			console.log('data:',data);
 			return res.json(data)
 		})

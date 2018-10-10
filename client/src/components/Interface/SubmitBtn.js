@@ -14,7 +14,11 @@ class SubmitBtn extends Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-		this.props.submitPlacement(this.props.bus.id,this.props.location)
+		this.props.submitPlacement(
+			this.props.bus.id,
+			this.props.location,
+			this.props.uuid
+		)
 	}
 	
 
@@ -32,9 +36,7 @@ class SubmitBtn extends Component {
 }
 
 const mapStateToProps = state => ({
-	location: state.picker.location,
-	bus: state.picker.bus,
-	markerPlaced: state.picker.markerPlaced,
+	...state.picker
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

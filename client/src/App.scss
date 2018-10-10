@@ -21,7 +21,6 @@ body {
 
 #root {
 	position: relative;
-	z-index: 10;
 	// min-height: 100vh;
 	height: 100%;
 	width: 100%;
@@ -32,6 +31,15 @@ body {
 	z-index: $zidx-low;
 	background-color: rgba(81,81,81,0.24);
 }
+
+#outer-space {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: $zidx-top;
+}
+
 .page-root {
 	min-height: 100vh;
 	height: 100%;
@@ -67,4 +75,9 @@ main {
 	width: 110%;
 	height: 110%;
 	z-index: 1;
+}
+
+li {
+	line-height: 1.5;
+	margin: 0.75em auto;
 }

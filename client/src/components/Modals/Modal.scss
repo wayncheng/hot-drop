@@ -1,0 +1,153 @@
+@import "../../config/variables";
+
+// * Modal Root that exists outside of the app's root (sibling to #root) * //
+// - NOT the overlay / backdrop
+// - No "styling" here
+// - Purpose is to ensure it covers the app properly (modal on top, fills window, etc)
+.w-modal-root {
+	position: relative;
+	// position: fixed;
+	// height: 100vh;
+	// width: 100vw;
+	height: initial;
+	width: 100%;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	// z-index: 100000;
+}
+
+// * Container just inside the modal-root * //
+// - handles styling of the backdrop that will cover the app (overlay)
+.w-modal-overlay {
+	min-height: 100vh;
+	width: 100%;
+	margin: 0;
+	padding: 5vh 10%;
+	background-color: rgba(0,0,0,0.25);
+	display: none; // * IMPORTANT: hide overlay by default
+
+	&.w-modal-overlay_after-open {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+
+// * "HIDDEN" Modal Window ---------------------------------
+//   - Generally contains properties that are independent 
+//     of modal state (open or closed)
+//   - HOWEVER, modal's default state is closed, so it 
+//     should be hidden initially as the starting point
+//     and have the active style in another class (w-modal_after-open)
+// ---------------------------------------------------------
+.w-modal {
+	height: initial;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	overflow: hidden; // hides corners of action bar
+	
+
+	// .ws-header {
+	// 	background-color: $blue;
+	// 	color: $primary;
+	// }
+	.modal-body {
+		padding: 2rem 1rem;
+	}
+	.overlay-btn {
+		background-color: rgba(#000,0.4);
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		z-index: 10010;
+		font-size: 1.2rem;
+		width: 1.2em;
+		line-height: 1.2em;
+		// height: 2em;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 50%;
+		opacity: 0.81;
+
+		&:hover { opacity: 1; }
+
+		span {
+			color: $fg-light-primary;
+		}
+	}
+}
+
+
+// * VISIBLE Modal Window ------------------------------------
+//   - ACTIVE, VISIBLE state of the modal window
+//   - This class is toggled on the modal when opened/closed
+.w-modal_after-open {
+	display: block; /*** IMPORTANT ***/
+	position: relative;
+	height: 100%;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+
+
+// * Change Position Type for the root wrappers 
+// * so <body> dimensions is determined by the 
+// * modal's size rather than the app's root dimensions
+.w-modal_is-open {
+	#root {
+		position: fixed;
+		filter: blur(8px);
+	}
+	#outer-space {
+		position: relative;
+	}
+}
+
+
+
+.default-modal {
+	background-color: #fff;
+	border-radius: 0.5rem;
+	overflow-x: hidden;
+	padding: 2rem 3rem;
+	box-shadow: $big-box-shadow;
+
+	&:focus {
+		outline: none;
+		// border: 2px solid $blue;
+		box-shadow: $big-box-shadow-focused;
+	}
+}
+
+.modal-trigger {
+	background-color: transparent;
+	padding: 0;
+	line-height: 0;
+	z-index: $zidx-top;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 2rem;
+	position: fixed;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.default-trigger {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+}

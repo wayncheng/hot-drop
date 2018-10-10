@@ -4,6 +4,7 @@ export const PLACE_MARKER = 'picker/PLACE_MARKER'
 export const REMOVE_MARKER = 'picker/REMOVE_MARKER'
 export const GET_NEW_BUS =   'picker/GET_NEW_BUS'
 export const SUBMIT_PLACEMENT = 'picker/SUBMIT_PLACEMENT'
+export const SET_UUID = 'picker/SET_UUID'
 
 const initialState = {
 	location: { 
@@ -16,6 +17,7 @@ const initialState = {
 		x: 50,
 		y: 50,
 	},
+	uuid: null,
 	markerPlaced: false,
 };
 
@@ -45,9 +47,14 @@ export default (state = initialState, action) => {
 				bus: action.bus
 			}
 
-		case SUBMIT_PLACEMENT:
+		// case SUBMIT_PLACEMENT:
+		// 	return {
+		// 		...state,
+		// 	}
+		case SET_UUID:
 			return {
 				...state,
+				uuid: action.uuid
 			}
 
 		default:
@@ -55,11 +62,11 @@ export default (state = initialState, action) => {
 	}
 }
 
-// DATABASE =======================================
-export const submitPlacement = (path_id,location) => dispatch => {
+// * DATABASE =======================================
+export const submitPlacement = (path_id,location,uuid) => dispatch => {
 	console.log('> submit')
 
-	API.saveMarker(path_id, location.x, location.y).then( response => {
+	API.saveMarker(path_id, location.x, location.y, uuid).then( response => {
 		if (response.status === 200) {
 			console.log('Successfully Saved!')
 		}
@@ -74,7 +81,7 @@ export const submitPlacement = (path_id,location) => dispatch => {
 
 }
 
-// CYCLE,RESET ====================================
+// * CYCLE,RESET ====================================
 export const getNewBus = () => dispatch => {
 
 	API.getRandomPath().then( response => {
@@ -94,7 +101,7 @@ export const reset = () => dispatch => {
 	console.log('--------------------------------------------')	
 }
 
-// MARKERS ========================================
+// * MARKERS ========================================
 export const setMarker = location => dispatch => {
 	dispatch({
 		type: PLACE_MARKER,
@@ -106,6 +113,15 @@ export const removeMarker = () => dispatch => {
 		type: REMOVE_MARKER
 	})
 }
+
+// * UUID ========================================
+export const setUUID = uuid => dispatch => {
+	dispatch({
+		type: SET_UUID,
+		uuid,
+	})
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 	
