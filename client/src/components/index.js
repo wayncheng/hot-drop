@@ -8,7 +8,7 @@ export {default as Overlay} from './Interface/Overlay';
 export {default as SubmitBtn} from './Interface/SubmitBtn';
 
 export {default as Target} from './Interface/Target/Target';
-export {default as TargetPieces} from './Interface/Target/TargetPieces';
+// export {default as TargetPieces} from './Interface/Target/TargetPieces';
 export {default as TargetRange} from './Interface/Target/TargetRange';
 
 export {default as Modal} from './Modals/Modal';
