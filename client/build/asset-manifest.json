@@ -1,12 +1,18 @@
 {
-  "main.css": "static/css/main.31e5d811.css",
-  "main.css.map": "static/css/main.31e5d811.css.map",
-  "main.js": "static/js/main.196b395b.js",
-  "main.js.map": "static/js/main.196b395b.js.map",
-  "static/media/bus-path-unit-flipped.svg": "static/media/bus-path-unit-flipped.a3b9409e.svg",
-  "static/media/fortnite-map-s6.jpg": "static/media/fortnite-map-s6.37410cfe.jpg",
-  "static/media/notification.eot": "static/media/notification.c0d3c94c.eot",
-  "static/media/notification.svg?s3g3t9": "static/media/notification.5bee74ca.svg",
-  "static/media/notification.ttf?s3g3t9": "static/media/notification.0b4ac1dc.ttf",
-  "static/media/notification.woff?s3g3t9": "static/media/notification.651771e1.woff"
+  "main.css": "/static/css/main.b10b7d5b.chunk.css",
+  "main.js": "/static/js/main.94e96e40.chunk.js",
+  "main.js.map": "/static/js/main.94e96e40.chunk.js.map",
+  "static/css/1.9c73db9c.chunk.css": "/static/css/1.9c73db9c.chunk.css",
+  "static/js/1.b6b28ab0.chunk.js": "/static/js/1.b6b28ab0.chunk.js",
+  "static/js/1.b6b28ab0.chunk.js.map": "/static/js/1.b6b28ab0.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
+  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "static/media/App.scss": "/static/media/fortnite-map-s6.37410cfe.jpg",
+  "static/media/notifications.css": "/static/media/notification.5bee74ca.svg",
+  "static/media/BusPath.scss": "/static/media/bus-path-unit-flipped.a3b9409e.svg",
+  "static/css/main.b10b7d5b.chunk.css.map": "/static/css/main.b10b7d5b.chunk.css.map",
+  "static/css/1.9c73db9c.chunk.css.map": "/static/css/1.9c73db9c.chunk.css.map",
+  "index.html": "/index.html",
+  "precache-manifest.ada4bb1ba7868e747f6d8a9cea0c14bd.js": "/precache-manifest.ada4bb1ba7868e747f6d8a9cea0c14bd.js",
+  "service-worker.js": "/service-worker.js"
 }
