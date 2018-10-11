@@ -7,6 +7,7 @@
 	const bodyParser = require("body-parser");
 	const path = require("path");
 	require("dotenv").config();
+	// const extIP = require('external-ip');
 
 	// CONFIG =======================================
 	const app = express();
@@ -24,6 +25,23 @@
 		console.log("url : " + req.url);
 		res.header('Access-Control-Allow-Origin', '*')
 		res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+
+		
+	// 	let getIP = extIP({
+	// 		replace: true,
+	// 		services: ['http://ifconfig.co/x-real-ip', 'http://ifconfig.io/ip'],
+	// 		timeout: 600,
+	// 		getIP: 'parallel',
+	// 		userAgent: 'Chrome 15.0.874 / Mac OS X 10.8.1'
+	// });
+	// 		getIP((err, ip) => {
+	// 				if (err) {
+	// 						// every service in the list has failed
+	// 						throw err;
+	// 				}
+	// 				console.log(ip);
+	// 		});
+
 		next();
 	});
 
