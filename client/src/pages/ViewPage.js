@@ -39,9 +39,9 @@ class ViewPage extends Component {
 		})
 
 
-		API.getUUID().then(res => {
-			this.props.setUUID(res)
-		});
+		// API.getUUID().then(res => {
+		// 	this.props.setUUID(res)
+		// });
 		
 	}
 

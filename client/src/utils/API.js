@@ -1,6 +1,8 @@
 import axios from 'axios';
-import publicIp from 'public-ip';
+// import address from 'address';
+// import publicIp from 'public-ip';
 // import bcrypt from 'bcryptjs';
+
 
 const API = {
 	saveMarker: (path_id, x, y, uuid) => {
@@ -18,23 +20,28 @@ const API = {
 			.catch(error => console.log("error", error));
 	},
 	getUUID: () => {
-		return publicIp.v4().then(ip => {
-			console.log(ip);
-			let uuid = ip;
-			// let uuid = ip.split('.').join('_')
+		// return publicIp.v4().then(ip => {
+		// 	console.log(ip);
+		// 	let uuid = ip;
+		// 	// let uuid = ip.split('.').join('_')
 
-			// let hashID = bcrypt.hashSync(ip, 3, function(err, hash) {
-			// 	if (err) throw err;
-			// 	// console.log('hash',hash)
-			// 	return hash
-			// });
+		// 	// let hashID = bcrypt.hashSync(ip, 3, function(err, hash) {
+		// 	// 	if (err) throw err;
+		// 	// 	// console.log('hash',hash)
+		// 	// 	return hash
+		// 	// });
 			
-			// let hashID = bcrypt.hashSync(ip)
-			// console.log('hashID:',hashID)
-			// return hashID
+		// 	// let hashID = bcrypt.hashSync(ip)
+		// 	// console.log('hashID:',hashID)
+		// 	// return hashID
 
-			return uuid
-		});
+		// 	return uuid
+		// });
+		
+		// return address.ip();
+
+		// console.log('ip:',ip)
+		// return ip;
 	},
 
 	getRandomPath: () => {
