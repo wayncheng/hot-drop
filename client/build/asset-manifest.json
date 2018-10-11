@@ -1,5 +1,12 @@
 {
-  "main.js": "static/js/main.3a00627c.js",
-  "main.js.map": "static/js/main.3a00627c.js.map",
-  "static\\media\\fortnite-map-s6.jpg": "static/media/fortnite-map-s6.37410cfe.jpg"
+  "main.css": "static/css/main.31e5d811.css",
+  "main.css.map": "static/css/main.31e5d811.css.map",
+  "main.js": "static/js/main.196b395b.js",
+  "main.js.map": "static/js/main.196b395b.js.map",
+  "static/media/bus-path-unit-flipped.svg": "static/media/bus-path-unit-flipped.a3b9409e.svg",
+  "static/media/fortnite-map-s6.jpg": "static/media/fortnite-map-s6.37410cfe.jpg",
+  "static/media/notification.eot": "static/media/notification.c0d3c94c.eot",
+  "static/media/notification.svg?s3g3t9": "static/media/notification.5bee74ca.svg",
+  "static/media/notification.ttf?s3g3t9": "static/media/notification.0b4ac1dc.ttf",
+  "static/media/notification.woff?s3g3t9": "static/media/notification.651771e1.woff"
 }

@@ -15,6 +15,7 @@
 /build
 /public/bundle.js*
 bundle.js
+build
 
 # misc
 .DS_Store
