@@ -22,7 +22,7 @@ class Target extends Component {
 		event.stopPropagation();
 
 		// Get map dimensions in px
-		const { clientWidth , clientHeight } = document.getElementById('overlay');
+		const { offsetWidth , offsetHeight } = document.getElementById('overlay');
 
 		// Map Offset from top left corner of window (in order to determine mouse offset)
 		const { offsetLeft , offsetTop } = document.getElementById('map-container');
@@ -31,8 +31,8 @@ class Target extends Component {
 		const { clientX, clientY } = event;
 		
 		// Calculate Mouse Location (%) relative to the top-left corner of the Map (not window)
-		const locationX = 100 * (clientX - offsetLeft) / clientWidth;
-		const locationY = 100 * (clientY - offsetTop) / clientHeight;
+		const locationX = 100 * (clientX - offsetLeft) / offsetWidth;
+		const locationY = 100 * (clientY - offsetTop) / offsetHeight;
 		
 		// Trim decimal
 		const finalX = this.formatDecimal(locationX);

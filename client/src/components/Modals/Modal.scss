@@ -28,6 +28,10 @@
 	background-color: rgba(0,0,0,0.25);
 	display: none; // * IMPORTANT: hide overlay by default
 
+	@media all and (max-width: 420px){
+		padding: 5vh 5%;
+	}
+
 	&.w-modal-overlay_after-open {
 		display: flex;
 		flex-direction: column;
@@ -54,6 +58,8 @@
 	padding: 0;
 	position: relative;
 	overflow: hidden; // hides corners of action bar
+	
+	
 	
 
 	// .ws-header {
@@ -122,7 +128,10 @@
 	overflow-x: hidden;
 	padding: 2rem 3rem;
 	box-shadow: $big-box-shadow;
-
+	@media all and (max-width: 420px){
+		padding: .5rem 1.5rem;
+		font-size: 1.2rem;
+	}
 	&:focus {
 		outline: none;
 		// border: 2px solid $blue;
