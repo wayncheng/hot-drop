@@ -28,11 +28,12 @@ class Target extends Component {
 		const { offsetLeft , offsetTop } = document.getElementById('map-container');
 
 		// Location of Mouse Click on Map in relation to the top left corner of the window
-		const { clientX, clientY } = event;
+		const x = event.pageX;
+		const y = event.pageY;
 		
 		// Calculate Mouse Location (%) relative to the top-left corner of the Map (not window)
-		const locationX = 100 * (clientX - offsetLeft) / offsetWidth;
-		const locationY = 100 * (clientY - offsetTop) / offsetHeight;
+		const locationX = 100 * (x - offsetLeft) / offsetWidth;
+		const locationY = 100 * (y - offsetTop) / offsetHeight;
 		
 		// Trim decimal
 		const finalX = this.formatDecimal(locationX);

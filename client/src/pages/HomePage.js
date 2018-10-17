@@ -7,7 +7,7 @@ import {
 	HelpTrigger,
 	Guide,
 } from '../components';
-import API from '../utils/API';
+// import API from '../utils/API';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setUUID } from '../modules/picker';
