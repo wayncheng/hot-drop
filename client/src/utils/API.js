@@ -44,10 +44,6 @@ const API = {
 		// return ip;
 	},
 
-	setIdState: () => {
-
-	},
-
 	getUUID: () => {
 		let uuid = Date.now();
 		return uuid;
