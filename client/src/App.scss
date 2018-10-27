@@ -77,15 +77,16 @@ main {
 	z-index: 1;
 }
 
-li {
-	line-height: 1.5;
-	margin: 0.75em auto;
-}
 
 ol {
 	padding-left: 2rem;
-
+	
 	@media all and (max-width: 420px){
 		padding-left: 1.25rem;
+	}
+	
+	li {
+		line-height: 1.5;
+		margin: 0.75em auto;
 	}
 }
