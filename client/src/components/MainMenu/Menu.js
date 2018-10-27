@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import './Menu.scss';
 import {
 	Modal,
-	ModalTrigger,
+	// ModalTrigger,
+	CloseBtn,
 } from '..'
 
 const Menu = props => {
@@ -19,22 +20,25 @@ const Menu = props => {
 			<section className="menu-section">
 				<ul>
 					<li><Link to='/'>Drop Markers</Link></li>
-					<li><Link to='/view'>Heat Maps</Link></li>
-					<li> <a href="#">View on GitHub</a> </li>
+					{process.env.NODE_ENV !== 'production' && (
+						<li><Link to='/view'>Heat Maps</Link></li>
+					)}
+					<li> <a href="https://github.com/wayncheng/hot-drop">View on GitHub</a> </li>
 				</ul>
 			</section>
 			<section className="menu-footer">
-				<p>by Wayne Cheng</p>
+				<p>Created by Wayne Cheng</p>
 				<ul>
-					<li><a href="#">GitHub</a></li>
-					<li><a href="#">Instagram</a></li>
-					<li><a href="#">LinkedIn</a></li>
+					<li><a href="https://github.com/wayncheng">GitHub</a></li>
+					<li><a href="https://www.instagram.com/wayncheng/">Instagram</a></li>
+					<li><a href="https://twitter.com/wayncheng">Twitter</a></li>
+					<li><a href="https://www.linkedin.com/in/wayncheng/">LinkedIn</a></li>
 				</ul>
 			</section>
-
-			<ModalTrigger className="close-btn" modal_id="menu_modal" modal_action="close">
+	<CloseBtn modal_id="menu_modal" top right />
+			{/* <ModalTrigger className="close-btn" modal_id="menu_modal" modal_action="close">
 				<i className="material-icons">cancel</i>
-			</ModalTrigger>
+			</ModalTrigger> */}
 
 		</Modal>
 	)

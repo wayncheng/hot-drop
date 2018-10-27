@@ -17,7 +17,7 @@ class MenuBtn extends Component {
 	}
 
 	render(){
-		let display = 'initial';
+		let display;
 		if (this.props.allModals.menu) {
 			display = 'none';
 		}
@@ -30,6 +30,7 @@ class MenuBtn extends Component {
 				className="menu-btn"
 			>
 				<i className="material-icons info-btn" > menu </i>
+				{/* <span>Menu</span> */}
 			</ModalTrigger>
 
 		)

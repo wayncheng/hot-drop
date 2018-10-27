@@ -27,8 +27,9 @@ class HelpTrigger extends Component {
 				modal_id="guide_modal"
 				modal_action="open"
 				style={{ display: display }}
+				className='default-trigger help-btn'
 			>
-				<i className="material-icons info-btn" > help </i>
+				<i className="material-icons" > help </i>
 			</ModalTrigger>
 
 		)

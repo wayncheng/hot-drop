@@ -39,7 +39,7 @@ class ModalTrigger extends Component {
 	render(){
 		return(
 			<button
-				className={classNames("modal-trigger","default-trigger",this.props.className)}
+				className={classNames("modal-trigger",this.props.className)}
 				onClick={this.handleClick}
 				id={this.props.id}
 				style={this.props.style}

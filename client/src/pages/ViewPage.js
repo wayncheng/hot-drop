@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import {
-	StaticMap,
-	StatsPanel,
-	NotificationCenter,
-	PointsDisplay,
-	BusPath,
-	PageRoot,
-} from '../components';
+import { StaticMap, PointsDisplay, BusPath, PageRoot } from '../components';
 import API from '../utils/API';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -33,14 +26,8 @@ class ViewPage extends Component {
 			console.log('data:', data);
 
 			// Set markers array in state equal to data returned
-			this.setState({
-				markers: data
-			});
+			this.setState({ markers: data });
 		});
-
-		// API.getUUID().then(res => {
-		// 	this.props.setUUID(res)
-		// });
 	};
 
 	render() {
@@ -50,26 +37,20 @@ class ViewPage extends Component {
 					<PointsDisplay data={this.state.markers} />
 					<BusPath />
 				</StaticMap>
-
-				{process.env.NODE_ENV !== 'production' && <StatsPanel />}
-				<NotificationCenter />
 			</PageRoot>
 		);
 	}
 }
-// export default ViewPage;
 
-const mapStateToProps = state => ({
-	uuid: state.picker.uuid
+const mapStateToProps = state => ({ 
+	uuid: state.picker.uuid 
 });
-const mapDispatchToProps = dispatch =>
-	bindActionCreators(
-		{
-			setUUID,
-			setBusPath
-		},
-		dispatch
-	);
+
+const mapDispatchToProps = dispatch => bindActionCreators( {
+	setUUID,
+	setBusPath
+}, dispatch );
+
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps

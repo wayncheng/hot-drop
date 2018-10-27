@@ -15,6 +15,7 @@ export {default as TargetRange} from './Interface/Target/TargetRange';
 //+ Modals ----------------
 export {default as Modal} from './Modals/Modal';
 export {default as ModalTrigger} from './Modals/ModalTrigger';
+export {default as CloseBtn} from './Modals/CloseBtn';
 export {default as HelpTrigger} from './Modals/HelpTrigger';
 export {default as Guide} from './Modals/Guide';
 

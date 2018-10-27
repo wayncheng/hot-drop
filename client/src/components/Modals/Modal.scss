@@ -158,5 +158,17 @@
 .default-trigger {
 	position: fixed;
 	top: 1rem;
-	right: 1rem;
+	left: 1rem;
+}
+
+.close-btn {
+	$p: 1rem;
+	position: fixed;
+	// top: $p;
+	// left: $p;
+
+	&.pos-left { left: $p; }
+	&.pos-top { top: $p; }
+	&.pos-right { right: $p; }
+	&.pos-bottom { bottom: $p; }
 }

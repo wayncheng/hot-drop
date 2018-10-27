@@ -3,7 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
 	Modal,
-	ModalTrigger,
+	// ModalTrigger,
+	CloseBtn,
 } from '..'
 
 const Guide = props => {
@@ -23,9 +24,10 @@ const Guide = props => {
 				</ol>
 			</section>
 
-			<ModalTrigger modal_id="guide_modal" modal_action="close">
+			{/* <ModalTrigger className="modal-trigger close-btn" modal_id="guide_modal" modal_action="close">
 				<i className="material-icons">cancel</i>
-			</ModalTrigger>
+			</ModalTrigger> */}
+			<CloseBtn modal_id="guide_modal" top left />
 
 		</Modal>
 	)
