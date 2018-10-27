@@ -16,17 +16,13 @@ class TargetRange extends Component {
 		event.stopPropagation();
 		let { target } = event;
 		let isTarget = target.classList.contains('target');
-		console.log('target:', target);
-		console.log('isTarget:', isTarget);
 
 		if (isTarget) {
 			// Get map dimensions in px
 			const { offsetWidth, offsetHeight } = document.getElementById('overlay');
 
 			// Map Offset from top left corner of window (in order to determine mouse offset)
-			const { offsetLeft, offsetTop } = document.getElementById(
-				'map-container'
-			);
+			const { offsetLeft, offsetTop } = document.getElementById( 'map-container' );
 
 			// Location of Mouse Click on Map in relation to the top left corner of the window
 			const x = event.pageX;
@@ -47,7 +43,7 @@ class TargetRange extends Component {
 				y: finalY
 			});
 		} else {
-			sendWarning('You must land on land.', null, 3000);
+			sendWarning('You must land on land.', null, 2000);
 		}
 	};
 
@@ -60,7 +56,7 @@ class TargetRange extends Component {
 	render() {
 		return (
 			<div className="target-container" onClick={this.handleClick}>
-				<AreaLand/>
+				<AreaLand />
 			</div>
 		);
 	}

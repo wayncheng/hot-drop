@@ -53,7 +53,8 @@ class Target extends Component {
 		return (
 			
 			<span 
-				{...this.props}
+				// {...this.props}
+				location_name={this.props.location_name}
 				style={this.props.style}
 				className={ classNames(
 					'target',

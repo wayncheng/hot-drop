@@ -1,6 +1,7 @@
 import React from 'react';
 import './Map.scss';
-import mapImg from '../../static/fortnite-map-s6.jpg';
+// import mapImg from '../../static/fortnite-map-s6.jpg';
+import mapImg from '../../static/fortnite-map-q5-1920.jpg';
 
 const StaticMap = props => {
 	return (

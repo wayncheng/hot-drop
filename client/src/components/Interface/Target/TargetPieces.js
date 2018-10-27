@@ -1,6 +1,5 @@
 import React from 'react';
 import Target from './Target';
-import classNames from 'classnames';
 
 export const Circle = props => {
 	let circleStyle = {
@@ -13,10 +12,7 @@ export const Circle = props => {
 	return (
 		<Target
 			location_name={props.name}
-			className={
-				classNames(
-					'circle'
-				)}
+			className="circle"
 			style={circleStyle}
 		/>
 	);
@@ -32,7 +28,7 @@ export const Rect = props => {
 	};
 	return (
 		<Target
-			data-named-location={props.name}
+			location_name={props.name}
 			className="rect"
 			style={rectStyle}
 		/>
