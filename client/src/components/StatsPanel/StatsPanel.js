@@ -9,7 +9,6 @@ const StatsPanel = props => {
 
 	return (
 		<aside className="stats-panel">
-			<i className="material-icons" >insert_chart</i>
 			<div className="panel-content">
 				<ul>
 					<li>Bus:</li>
@@ -26,6 +25,8 @@ const StatsPanel = props => {
 					<li>{'uuid: ' + props.uuid}</li>
 				</ul>
 			</div>
+			
+			<i className="material-icons" >insert_chart</i>
 		</aside>
 	)
 }

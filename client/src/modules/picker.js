@@ -1,11 +1,15 @@
 import API from '../utils/API';
+import {
+	sendError,
+	sendSuccess,
+} from '../components/Notifications/NotificationCenter';
 
-export const PLACE_MARKER = 'picker/PLACE_MARKER'
-export const REMOVE_MARKER = 'picker/REMOVE_MARKER'
-export const GET_NEW_BUS =   'picker/GET_NEW_BUS'
-export const SET_BUS_PATH =   'picker/SET_BUS_PATH'
-export const SUBMIT_PLACEMENT = 'picker/SUBMIT_PLACEMENT'
-export const SET_UUID = 'picker/SET_UUID'
+export const PLACE_MARKER = 'picker/PLACE_MARKER';
+export const REMOVE_MARKER = 'picker/REMOVE_MARKER';
+export const GET_NEW_BUS =   'picker/GET_NEW_BUS';
+export const SET_BUS_PATH =   'picker/SET_BUS_PATH';
+export const SUBMIT_PLACEMENT = 'picker/SUBMIT_PLACEMENT';
+export const SET_UUID = 'picker/SET_UUID';
 
 const initialState = {
 	location: { 
@@ -18,8 +22,8 @@ const initialState = {
 		x: 50,
 		y: 50,
 	},
-	uuid: null,
 	markerPlaced: false,
+	uuid: null,
 };
 
 export default (state = initialState, action) => {
@@ -71,14 +75,16 @@ export default (state = initialState, action) => {
 
 // * DATABASE =======================================
 export const submitPlacement = (path_id,location,uuid) => dispatch => {
-	console.log('> submit')
+	console.log('--> submit')
 
 	API.saveMarker(path_id, location.x, location.y, uuid).then( response => {
 		if (response.status === 200) {
-			console.log('Successfully Saved!')
+			console.log('... success')
+			sendSuccess('Successfully submitted!', null, 2000)
 		}
 		else {
-			console.log('There was an error saving the marker')
+			console.error('... error')
+			sendError('Something went wrong while submitting', 'Oops', 2000)
 		}
 
 		// Reset......................
@@ -88,7 +94,7 @@ export const submitPlacement = (path_id,location,uuid) => dispatch => {
 
 }
 
-// * CYCLE,RESET ====================================
+// CYCLE,RESET ====================================
 export const getNewBus = () => dispatch => {
 
 	API.getRandomPath().then( response => {
@@ -101,7 +107,7 @@ export const getNewBus = () => dispatch => {
 	})
 
 }
-// * Set the Bus Path ----------------
+// Set the Bus Path ----------------
 // - path_id as input
 // - query DB to find corresponsing angle
 // - set in state
@@ -127,7 +133,7 @@ export const reset = () => dispatch => {
 	console.log('--------------------------------------------')	
 }
 
-// * MARKERS ========================================
+// MARKERS ========================================
 export const setMarker = location => dispatch => {
 	dispatch({
 		type: PLACE_MARKER,
@@ -140,7 +146,7 @@ export const removeMarker = () => dispatch => {
 	})
 }
 
-// * UUID ========================================
+// UUID ========================================
 export const setUUID = uuid => dispatch => {
 	dispatch({
 		type: SET_UUID,

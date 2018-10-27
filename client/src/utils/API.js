@@ -19,7 +19,7 @@ const API = {
 			.then(response => response)
 			.catch(error => console.log("error", error));
 	},
-	getUUID: () => {
+	getIP: () => {
 		// return publicIp.v4().then(ip => {
 		// 	console.log(ip);
 		// 	let uuid = ip;
@@ -42,6 +42,11 @@ const API = {
 
 		// console.log('ip:',ip)
 		// return ip;
+	},
+
+	getUUID: () => {
+		let uuid = Date.now();
+		return uuid;
 	},
 
 	getRandomPath: () => {

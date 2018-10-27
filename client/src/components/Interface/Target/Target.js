@@ -11,41 +11,41 @@ class Target extends Component {
 	}
 
 	
-	formatDecimal = n => {
-		let factor = 1000;
-		let formatted = Math.floor(n * factor) / factor;
-		return formatted;
-	}
+	// formatDecimal = n => {
+	// 	let factor = 1000;
+	// 	let formatted = Math.floor(n * factor) / factor;
+	// 	return formatted;
+	// }
 
-	handleTargetClick = event => {
-		event.preventDefault();
-		event.stopPropagation();
+	// handleTargetClick = event => {
+	// 	event.preventDefault();
+	// 	event.stopPropagation();
 
-		// Get map dimensions in px
-		const { offsetWidth , offsetHeight } = document.getElementById('overlay');
+	// 	// Get map dimensions in px
+	// 	const { offsetWidth , offsetHeight } = document.getElementById('overlay');
 
-		// Map Offset from top left corner of window (in order to determine mouse offset)
-		const { offsetLeft , offsetTop } = document.getElementById('map-container');
+	// 	// Map Offset from top left corner of window (in order to determine mouse offset)
+	// 	const { offsetLeft , offsetTop } = document.getElementById('map-container');
 
-		// Location of Mouse Click on Map in relation to the top left corner of the window
-		const x = event.pageX;
-		const y = event.pageY;
+	// 	// Location of Mouse Click on Map in relation to the top left corner of the window
+	// 	const x = event.pageX;
+	// 	const y = event.pageY;
 		
-		// Calculate Mouse Location (%) relative to the top-left corner of the Map (not window)
-		const locationX = 100 * (x - offsetLeft) / offsetWidth;
-		const locationY = 100 * (y - offsetTop) / offsetHeight;
+	// 	// Calculate Mouse Location (%) relative to the top-left corner of the Map (not window)
+	// 	const locationX = 100 * (x - offsetLeft) / offsetWidth;
+	// 	const locationY = 100 * (y - offsetTop) / offsetHeight;
 		
-		// Trim decimal
-		const finalX = this.formatDecimal(locationX);
-		const finalY = this.formatDecimal(locationY);
-		// console.log('x,y (%):',finalX,finalY)
+	// 	// Trim decimal
+	// 	const finalX = this.formatDecimal(locationX);
+	// 	const finalY = this.formatDecimal(locationY);
+	// 	// console.log('x,y (%):',finalX,finalY)
 
-		// Place the marker via redux
-		this.props.setMarker({
-			x: finalX,
-			y: finalY,
-		})
-	}
+	// 	// Place the marker via redux
+	// 	this.props.setMarker({
+	// 		x: finalX,
+	// 		y: finalY,
+	// 	})
+	// }
 
 
 	render(){
@@ -54,9 +54,14 @@ class Target extends Component {
 			
 			<span 
 				// {...this.props}
+				location_name={this.props.location_name}
 				style={this.props.style}
-				className={classNames('target',this.props.className)} 
-				onClick={this.handleTargetClick}
+				className={ classNames(
+					'target',
+					this.props.className,
+					{ 'named-location': this.props.location_name }
+				)} 
+				// onClick={this.handleTargetClick}
 			></span>
 			)
 	}

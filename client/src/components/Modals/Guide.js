@@ -19,7 +19,7 @@ const Guide = props => {
 					<li>Confirm the marker location by either clicking on the marker or clicking the submit button. </li>
 					<li>Once you have confirmed, you're all set!</li>
 					<li>A new bus will appear and just rinse and repeat however many times you'd like. The more the better!</li>
-					<h4>More Contributions &rarr; Better Results</h4>
+					{/* <h4>More Contributions &rarr; Better Results</h4> */}
 				</ol>
 			</section>
 
