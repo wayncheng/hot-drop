@@ -10,21 +10,29 @@
 	z-index: $zidx-mid + 10;
 	// cursor: not-allowed;
 }
+.target-group {
+	@extend %copycat;
+}
 
 .target {
 	display: inline-block;
 	position: absolute;
-	// background-color: rgba(#fff,0.5);
+	background-color: rgba(#fff,0.5);
 	background: none;
 	cursor: crosshair;
 	cursor: pointer;
 	top: 0;
 	left: 0;
 }
-.circle {
-	border-radius: 50%;
+.named-location {
+	border: 2px solid blue;
+	z-index: $zidx-mid + 15;
 }
 
+.circle {
+	border-radius: 50%;
+	z-index: $zidx-mid + 10;
+}
 .rectangle {
-
+	z-index: $zidx-mid + 5;
 }
