@@ -29,7 +29,8 @@ class SubmitBtn extends Component {
 				className={ classNames('btn','submit-btn',{ disabled: !this.props.markerPlaced })} 
 				onClick={this.handleSubmit}
 			>
-				Submit
+				<span> Submit </span>
+				<i className="material-icons">send</i>
 			</button>
 		)
 	}
