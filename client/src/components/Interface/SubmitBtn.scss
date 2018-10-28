@@ -1,41 +1,132 @@
 @import "../../config/variables";
 
-.btn {
-	background-color: $btn-bg;
-	color: $btn-fg;
-	font-size: 1rem;
-	padding: 0 1em;
-	line-height: 2.5;
-	border-radius: .3em;
-	border: none;
-	// border: 2px solid transparent;
-	box-shadow: none;
-	font-weight: 300;
-	cursor: pointer;
+// .btn {
+// 	background-color: $btn-bg;
+// 	color: $btn-fg;
+// 	// font-size: 1rem default;
+// 	// padding: 0 1em;
+// 	// line-height: 2.5;
+// 	border-radius: .3em;
+// 	border: none;
+// 	// border: 2px solid transparent;
+// 	box-shadow: none;
+// 	font-weight: 300;
+// 	cursor: pointer;
 	
-	&:hover,
-	&:focus {
-		outline: none;
-		background-color: $btn-focus;
-		// border-color: $btn-bg;
-	}
+// 	&:hover,
+// 	&:focus {
+// 		outline: none;
+// 		background-color: $btn-focus;
+// 		// border-color: $btn-bg;
+// 	}
 	
-	&.disabled {
-		display: none;
+// 	&.disabled {
+// 		display: none;
 
-		// background-color: $btn-bg-inactive;
-		// color: $btn-fg-inactive;
+// 		// background-color: $btn-bg-inactive;
+// 		// color: $btn-fg-inactive;
 		
-		// &:hover, &:focus {
-		// 	background-color: $btn-bg-inactive;
-		// 	color: $btn-fg-inactive;
-		// }
-	}
+// 		// &:hover, &:focus {
+// 		// 	background-color: $btn-bg-inactive;
+// 		// 	color: $btn-fg-inactive;
+// 		// }
+// 	}
+// }
+
+@mixin big-btn-base {
+	font-size: 1.3rem !important;
+	line-height: 3;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	font-weight: 600;
+	transform: unset;
 }
 
+@mixin enlarged-btn {
+	@include big-btn-base;
+	border-radius: .5rem;
+	position: absolute;
+	width: 200px;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%,150%);
+	
+}
+@mixin full-width-btn {
+	@include big-btn-base;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	border-radius: 0;
+	width: 100vw;
+}
+
+
 .submit-btn {
+	font-size: 1.2rem;
 	position: absolute;
 	bottom: 1rem;
 	left: 1rem;
+	line-height: 3;
+	padding: 0 1em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 8em;
+
 	z-index: $zidx-mid + 900;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	font-weight: 600;
+	background-color: $btn-bg;
+	color: $btn-fg;
+	border-radius: .3em;
+	border: none;
+	box-shadow: none;
+	cursor: pointer;
+		
+	&:hover, &:focus {
+		outline: none;
+		background-color: $btn-focus;
+	}
+	
+	&.disabled { 
+		display: none; 
+	}
+
+	i {
+		// margin-left: .5em;
+		// position: absolute;
+		// right: 1em;
+	}
+
+
+	@media screen
+	and (orientation: portrait)
+	and (max-aspect-ratio: 3/4)
+	{
+		@media (max-width: 800px){
+			@include enlarged-btn;
+		}
+		@media (max-width: 500px){
+			@include full-width-btn;
+		}
+	}
+	// @media screen
+	// and (orientation: portrait)
+	// and (max-aspect-ratio: 3/4)
+	// and (max-width : 420px) 
+	// {
+	// 	@include full-width-btn;
+	// }
+	// @media only screen and (max-width : 420px) and (orientation: portrait) {
+	// 	background-color: red;
+	// }
+	// @media only screen and (max-device-width : 420px) and (orientation: portrait) {
+	// 	background-color: blue;
+	// }
+
+	// probably just scaled down version of desktop? or maybe shift to one side and have a sort of split view.
+
 }
