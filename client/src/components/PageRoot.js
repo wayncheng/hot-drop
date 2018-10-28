@@ -5,6 +5,7 @@ import {
 	NotificationCenter,
 	StatsPanel,
 } from './index';
+import classNames from 'classnames';
 
 class PageRoot extends Component {
 	// constructor(props){
@@ -14,19 +15,36 @@ class PageRoot extends Component {
 
 	render(){
 		return(
-			<div className="page-root asdfasdfads">
+			
+				<div {...this.props} className={classNames('page-root',this.props.className)} >
 
-				<MenuBtn/>
-				<Menu/>
+					<MenuBtn/>
+					<Menu/>
 
-				<main>
-					{this.props.children}
-				</main>
-				
-				<NotificationCenter />
-				{process.env.NODE_ENV !== 'production' && <StatsPanel />}
+					<main>
+						{this.props.children}
+					</main>
+					
+					<NotificationCenter />
+					{process.env.NODE_ENV !== 'production' && <StatsPanel />}
 
-			</div>
+				</div>
+			// [
+			// 	<div {...this.props} className={classNames('page-root',this.props.className)} key="main-page">
+
+			// 		<MenuBtn/>
+			// 		<Menu/>
+
+			// 		<main>
+			// 			{this.props.children}
+			// 		</main>
+					
+			// 		<NotificationCenter />
+			// 		{process.env.NODE_ENV !== 'production' && <StatsPanel />}
+
+			// 	</div>,
+			// 	<div className="behind-root" key="page-backdrop"></div>
+			// ]
 		)
 	}
 }

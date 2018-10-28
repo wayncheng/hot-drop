@@ -1,0 +1,154 @@
+@import '../../config/variables';
+
+#dev-sandbox-root {
+	section {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 300px;
+		min-width: 300px;
+
+		div {
+			position: relative;
+		}
+
+		$duration: 1s;
+		$dot-color: #07f;
+		$height: 1.2rem;
+		$marker-color: #fff;
+		$marker-color-alt: #89c4f4;
+		$pulse-color: #000;
+		$spread: 1rem;
+
+		.marker {
+			// flex: 1;
+			position: relative;
+
+			&.mk-1 {
+				$bg-a: rgba(#000, 0.85);
+				$bg-b: rgba(#000, 0.25);
+				$shadow-a: 0 0 0px 0px $bg-a;
+				$shadow-b: 0 0 0px $spread $bg-b;
+				$shadow-c: 0 0 0px $spread transparent;
+				$shadow-d: 0 0 0px 0px transparent;
+
+				animation: shadow-pulse $duration cubic-bezier(0.17, 0.67, 0.37, 0.94)
+					infinite;
+
+				@keyframes shadow-pulse {
+					0% {
+						box-shadow: $shadow-a;
+					}
+					80% {
+						box-shadow: $shadow-c;
+					}
+					// 30%   { box-shadow: $shadow-a; }
+					// 40%   { box-shadow: $shadow-b; }
+					// 50%   { box-shadow: $shadow-a; }
+					// 98%   { box-shadow: $shadow-c; }
+					99% {
+						box-shadow: $shadow-d;
+					}
+					100% {
+						box-shadow: $shadow-a;
+					}
+				}
+			}
+		}
+
+		.mk-2 {
+			$pulse-a: rgba($pulse-color, 0.4);
+			$pulse-b: rgba($pulse-color, 0);
+			$dot-color: lime;
+
+			font-size: $height;
+			height: 1em;
+			width: 1em;
+			margin-left: -0.5em;
+			margin-top: -0.5em;
+			border: 0.2em solid #fff;
+			background-color: $dot-color;
+			display: inline-block;
+			border-radius: 50%;
+			cursor: pointer;
+			z-index: $zidx-mid + 50;
+			display: block;
+			box-shadow: 0 0 0 $pulse-a;
+			animation: pulse $duration infinite;
+
+			@-webkit-keyframes pulse {
+				0% {
+					-webkit-box-shadow: 0 0 0 0 $pulse-a;
+				}
+				70% {
+					-webkit-box-shadow: 0 0 0 $spread $pulse-b;
+				}
+				100% {
+					-webkit-box-shadow: 0 0 0 0 $pulse-b;
+				}
+			}
+			@keyframes pulse {
+				0% {
+					-moz-box-shadow: 0 0 0 0 $pulse-a;
+					box-shadow: 0 0 0 0 $pulse-a;
+				}
+				70% {
+					-moz-box-shadow: 0 0 0 $spread $pulse-b;
+					box-shadow: 0 0 0 $spread $pulse-b;
+				}
+				100% {
+					-moz-box-shadow: 0 0 0 0 $pulse-b;
+					box-shadow: 0 0 0 0 $pulse-b;
+				}
+			}
+		}
+
+		.mk-3 {
+			$pulse-a: rgba($pulse-color, 0.8);
+			$pulse-b: rgba($pulse-color, 0);
+			$dot-color: red;
+
+			font-size: $height;
+			height: 1em;
+			width: 1em;
+			margin-left: -0.5em;
+			margin-top: -0.5em;
+			border: 0.2em solid #fff;
+			background-color: $dot-color;
+			display: inline-block;
+			border-radius: 50%;
+			cursor: pointer;
+			z-index: $zidx-mid + 50;
+			display: block;
+			box-shadow: 0 0 0 $pulse-a;
+			animation: pulse $duration infinite;
+
+			@-webkit-keyframes pulse {
+				0% {
+					-webkit-box-shadow: 0 0 0 0 $pulse-a;
+				}
+				70% {
+					-webkit-box-shadow: 0 0 0 $spread $pulse-b;
+				}
+				100% {
+					-webkit-box-shadow: 0 0 0 0 $pulse-b;
+				}
+			}
+			@keyframes pulse {
+				0% {
+					-moz-box-shadow: 0 0 0 0 $pulse-a;
+					box-shadow: 0 0 0 0 $pulse-a;
+				}
+				70% {
+					-moz-box-shadow: 0 0 0 $spread $pulse-b;
+					box-shadow: 0 0 0 $spread $pulse-b;
+				}
+				100% {
+					-moz-box-shadow: 0 0 0 0 $pulse-b;
+					box-shadow: 0 0 0 0 $pulse-b;
+				}
+			}
+		}
+	}
+}

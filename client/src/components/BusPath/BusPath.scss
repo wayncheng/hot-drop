@@ -14,17 +14,17 @@
 	background: url('../../static/bus-path-unit-flipped.svg');
 	// background: $bus-arrow;
 	background-repeat: repeat-x;
-	animation: pulse 2s ease-in-out infinite;
+	animation: bus-pulse 2s ease-in-out infinite;
 
 	$opacity-a: 0.7;
 	$opacity-b: 1;
 
-	@-webkit-keyframes pulse {
+	@-webkit-keyframes bus-pulse {
 		0%    { opacity: $opacity-a; }
 		50%   { opacity: $opacity-b; }
 		100%  { opacity: $opacity-a; }
 	}
-	@keyframes pulse {
+	@keyframes bus-pulse {
 		0%    { opacity: $opacity-a; }
 		50%   { opacity: $opacity-b; }
 		100%  { opacity: $opacity-a; }

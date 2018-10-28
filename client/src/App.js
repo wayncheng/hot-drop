@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import ViewPage from './pages/ViewPage';
 import './App.scss';
 import API from './utils/API';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setUUID } from './modules/picker';
+
+import HomePage from './pages/HomePage';
+import ViewPage from './pages/ViewPage';
+import DevSandboxPage from './pages/Sandbox/DevSandboxPage';
 
 
 class App extends Component {
@@ -38,6 +40,9 @@ class App extends Component {
 		return (
 			<BrowserRouter>
 				<Switch>
+					{process.env.NODE_ENV !== 'production' && (
+						<Route exact path="/dev" component={DevSandboxPage} />
+					)}
 					<Route exact path="/view/:path_id" component={ViewPage} />
 					<Route exact path="/" component={HomePage} />
 				</Switch>
