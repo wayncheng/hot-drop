@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import {
-	Map,
-	HelpTrigger,
-	Guide,
-	PageRoot
-} from '../components';
+import { Map, HelpTrigger, Guide, PageRoot } from '../components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 // import { } from '../modules/picker';
@@ -18,12 +13,21 @@ class HomePage extends Component {
 	render() {
 		return (
 			<PageRoot>
-
-				<Map />
+				<Map>
+					<section className="hero-section">
+						<h2 className="headline">
+							{"Where We "}
+							<em>hypothetically</em>
+							{" Droppin?"}
+						</h2>
+						{/* <h2 className="headline">
+							Where We Hypothetically Droppin?
+						</h2> */}
+					</section>
+				</Map>
 
 				<HelpTrigger />
 				<Guide />
-
 			</PageRoot>
 		);
 	}
@@ -33,8 +37,9 @@ class HomePage extends Component {
 const mapStateToProps = state => ({
 	// uuid: state.picker.uuid
 });
-const mapDispatchToProps = dispatch => bindActionCreators( {}, dispatch );
+const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 
-export default connect( mapStateToProps, mapDispatchToProps )(
-	HomePage
-);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(HomePage);
