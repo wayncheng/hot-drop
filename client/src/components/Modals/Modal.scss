@@ -76,7 +76,7 @@
 		position: absolute;
 		top: 1rem;
 		right: 1rem;
-		z-index: 10010;
+		z-index: $zidx-top;
 		font-size: 1.2rem;
 		width: 1.2em;
 		line-height: 1.2em;
@@ -140,12 +140,46 @@
 		box-shadow: $big-box-shadow-focused;
 	}
 }
+$fullpg-theme: #fff;
+.fullpage-modal-root {
+	.w-modal-overlay {
+		padding: 0;
+		// background-color: rgba($fullpg-theme,0.5);
+		background-color: rgba(#000,0.25);
+	}
+}
+.fullpage-modal {
+
+	background-color: rgba($fullpg-theme,0.95);
+	border-radius: 0;
+	overflow-x: hidden;
+	padding: 2rem 3rem;
+	box-shadow: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-width: 100vw;
+	height: 100vh;
+	
+	// &:focus {
+	// 	outline: none;
+	// }
+	.close-btn {
+		position: absolute;
+	}
+
+	@media all and (max-width: 420px){
+		padding: 1rem 1.5rem;
+		font-size: 1.2rem;
+	}
+}
 
 .modal-trigger {
 	background-color: transparent;
 	padding: 0;
 	line-height: 0;
-	z-index: $zidx-top;
+	z-index: $zidx-top + 10;
 	border: none;
 	color: #fff;
 	cursor: pointer;
@@ -168,6 +202,7 @@
 	position: fixed;
 	// top: $p;
 	// left: $p;
+	color: inherit;
 
 	&.pos-left { left: $p; }
 	&.pos-top { top: $p; }
@@ -175,7 +210,27 @@
 	&.pos-bottom { bottom: $p; }
 }
 
+.start-btn {
+	display: block;
+	font-size: 1.3rem;
+	background-color: $blue;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: 500;
+	text-transform: uppercase;
+	min-width: 2em;
+	min-height: 1em;
+	padding: 1em 2em;
+	margin-top: 1rem;
+	position: relative;
+}
 
+.modal-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
 /// Guide Modal _______________________________
 .guide-modal-root {
 	.w-modal-overlay {
@@ -185,5 +240,9 @@
 	}
 	.w-modal {
 		margin: 0;
+	}
+
+	.close-btn {
+		color: #fff;
 	}
 }

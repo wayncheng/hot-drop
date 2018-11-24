@@ -12,7 +12,9 @@ import {
 const Menu = props => {
 
 	return(
-		<Modal id="menu_modal" className="default-modal main-menu" rootClass="menu-modal-root">
+		// <Modal id="menu_modal" className="default-modal main-menu" rootClass="menu-modal-root">
+		<Modal id="menu_modal" className="fullpage-modal main-menu" rootClass="menu-modal-root fullpage-modal-root">
+			<div className="modal-body">
 			<section className="menu-header">
 				<h2 className="title">Fortnite Hot Drops</h2>
 				{/* <h4 className="subtitle">by Wayne Cheng</h4> */}
@@ -22,7 +24,7 @@ const Menu = props => {
 					<li><Link to='/'>Drop Markers</Link></li>
 					{process.env.NODE_ENV !== 'production' && (
 						<li><Link to='/view'>Heat Maps</Link></li>
-					)}
+						)}
 					<li> <a href="https://github.com/wayncheng/hot-drop">View on GitHub</a> </li>
 				</ul>
 			</section>
@@ -35,6 +37,7 @@ const Menu = props => {
 					<li><a href="https://www.linkedin.com/in/wayncheng/">LinkedIn</a></li>
 				</ul>
 			</section>
+		</div>
 	<CloseBtn modal_id="menu_modal" top right />
 			{/* <ModalTrigger className="close-btn" modal_id="menu_modal" modal_action="close">
 				<i className="material-icons">cancel</i>

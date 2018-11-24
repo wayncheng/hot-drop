@@ -53,17 +53,20 @@
 .main-menu {
 	font-size: 1.1rem;
 	padding: 2.5rem 2rem 1rem;
-	max-width: 320px;
-	min-height: 400px;
+	// max-width: 320px;
+	// min-height: 400px;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: stretch;
+	align-items: center;
+	
 	text-align: left;
-		// align-items: center;
-		// text-align: center;
-		// padding-top: 3rem;
 
+	.modal-body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: stretch;
+		flex-basis: 100%;
+	}
 	.menu-header {
 		margin-bottom: 1.5rem;
 	}

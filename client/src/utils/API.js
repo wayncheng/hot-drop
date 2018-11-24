@@ -19,30 +19,6 @@ const API = {
 			.then(response => response)
 			.catch(error => console.log("error", error));
 	},
-	getIP: () => {
-		// return publicIp.v4().then(ip => {
-		// 	console.log(ip);
-		// 	let uuid = ip;
-		// 	// let uuid = ip.split('.').join('_')
-
-		// 	// let hashID = bcrypt.hashSync(ip, 3, function(err, hash) {
-		// 	// 	if (err) throw err;
-		// 	// 	// console.log('hash',hash)
-		// 	// 	return hash
-		// 	// });
-			
-		// 	// let hashID = bcrypt.hashSync(ip)
-		// 	// console.log('hashID:',hashID)
-		// 	// return hashID
-
-		// 	return uuid
-		// });
-		
-		// return address.ip();
-
-		// console.log('ip:',ip)
-		// return ip;
-	},
 
 	createUUID: () => {
 		let date = Date.now().toString(36); // e.g. jovhey51
