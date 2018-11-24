@@ -2,7 +2,7 @@
 // $menu-bumper: 3rem;
 
 .menu-btn {
-	$menu-btn-size: 1.5rem;
+	$menu-btn-size: 2.25rem;
 	position: fixed;
 	font-size: $menu-btn-size;
 	top: 0rem;
@@ -29,6 +29,15 @@
 		// line-height: $menu-btn-size;
 		display: inline-block;
 	}
+
+
+	@media all and (min-width: $break-l){
+		font-size: 2.5rem;
+	}
+	@media all and (max-width: $break-m){
+		font-size: 2rem;
+	}
+	
 }
 
 .main-menu {

@@ -11,6 +11,7 @@ import {
 const Map = props => {
 	return (
 		<StaticMap>
+			{props.children}
 			<BusPath />
 			<Interface />
 		</StaticMap>

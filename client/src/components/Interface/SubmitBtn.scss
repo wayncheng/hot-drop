@@ -63,7 +63,7 @@
 
 
 .submit-btn {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	position: absolute;
 	bottom: 1rem;
 	left: 1rem;
@@ -96,6 +96,7 @@
 	}
 
 	i {
+		font-size: inherit;
 		// margin-left: .5em;
 		// position: absolute;
 		// right: 1em;
@@ -106,10 +107,10 @@
 	and (orientation: portrait)
 	and (max-aspect-ratio: 3/4)
 	{
-		@media (max-width: 800px){
+		@media (max-width: $break-m){
 			@include enlarged-btn;
 		}
-		@media (max-width: 500px){
+		@media (max-width: $break-s){
 			@include full-width-btn;
 		}
 	}

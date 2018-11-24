@@ -1,24 +1,29 @@
-//+ GENERAL COLORS ........................... 
-$offwhite: #ecf0f1;
-$gray    : #bdc3c7;
-$purple  : #9b59b6;
-$purple-d: #8e44ad;
-$blue    : #3498db;
-$blue-d  : #2980b9;
-$turq    : #1abc9c;
-$turq-d  : #16a085;
-$green   : #2ecc71;
-$green-d : #27ae60;
-$yellow  : #f1c40f;
-$yellow-d: #f39c12;
-$orange  : #e67e22;
-$orange-d: #d35400;
-$red     : #c0392b;
-$red-d   : #c0392b;
+// GENERAL COLORS ..........
+	$offwhite: #ecf0f1;
+	$gray    : #bdc3c7;
+	$purple  : #9b59b6;
+	$purple-d: #8e44ad;
+	$blue    : #3498db;
+	$blue-d  : #2980b9;
+	$turq    : #1abc9c;
+	$turq-d  : #16a085;
+	$green   : #2ecc71;
+	$green-d : #27ae60;
+	$yellow  : #f1c40f;
+	$yellow-d: #f39c12;
+	$orange  : #e67e22;
+	$orange-d: #d35400;
+	$red     : #c0392b;
+	$red-d   : #c0392b;
 
-//+ SELECTIONS ========================
+
+
+// COLORS ==============================================================
+
+// Background Color .........................
 $bg-light: #ecf0f1;
 
+// Text Colors ..............................
 $fg-primary  : rgba(#000,0.87);
 $fg-secondary: rgba(#000,0.5);
 $fg-disabled : rgba(#000,0.32);
@@ -32,15 +37,14 @@ $fg-light-divider  : rgba(#fff,0.2);
 $accent: #19B5FE;
 $link: #08c;
 
-//+=====================================
 
-//+ ICONS ..................................
+// Icon Colors ..............................
 $icon-active:     rgba(0,0,0,.54);
 $icon-inactive:   rgba(0,0,0,.38);
 $icon-white-active:     rgba(255,255,255,1);
 $icon-white-inactive:   rgba(255,255,255,.5);
 
-//+ BUTTONS ........................... 
+// Button Colors ..............................
 $btn-bg-inactive: $offwhite;
 $btn-bg         : $yellow-d;
 $btn-focus      : $orange;
@@ -49,20 +53,36 @@ $btn-fg-inactive: $fg-disabled;
 $btn-fg         : #fff;
 
 
-//+ Z-INDEX ............................
+//======================================================================
+
+// Z-Index .........................................
 $zidx-floor: 1;
-$zidx-low: 100;
-$zidx-mid: 1000;
-$zidx-top: 3000;
+$zidx-low:   100;
+$zidx-mid:   1000;
+$zidx-top:   3000;
 
 
-//+ BOX SHADOWS .........................
+// Box Shadows .....................................
 $big-box-shadow: 0px 8px 50px 2px rgba(0, 0, 0, 0.3);
 $big-box-shadow-focused: 0px 8px 50px 2px rgba(0, 0, 0, 0.45);
 
+//======================================================================
+// Break Points
+//======================================================================
+$break-xs: 420px;
+$break-s: 500px;
+$break-m: 800px;
+$break-l: 1200px;
+$break-xl: 1920px;
 
-// $bus-arrow: url('../static/bus-path-unit-flipped.svg');
 
+
+
+
+
+
+//======================================================================
+// Templates
 %copycat {
 	position: absolute;
 	top: 0;

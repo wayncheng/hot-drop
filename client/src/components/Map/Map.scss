@@ -9,13 +9,65 @@
 	position: relative;
 	font-size: 1rem;
 	
-	* {
-		// font-size: inherit;
-	}
+	.hero-section {
+		// outline: 1px solid red;
+		color: $fg-light-primary;
+		position: absolute;
+		top: 0;	
+		// left: 0;
+		left: 50%;
+		transform: translate(-50%,0%);
+		// right: 0;
+		font-size: 1rem;
+		padding: 1rem;
+		line-height: 1;
+		width: initial;
+		
+		.headline {
+			// outline: 1px solid blue;
+			font-size: 1.2em;
+			line-height: 1.4em;
+			// font-style: italic;
+			font-weight: 600;
+			// width: 7em;
+			// width: 13em; // 'hypothetically' on same line
+			text-transform: lowercase;
+			text-transform: uppercase;
+			// min-width: 20em;
 
-	// @media all and (min-width: 1000px and min-height: 1000px){
-	// 	font-size: 1.2rem;
-	// }
+
+			em {
+				display: inline-block;
+				color: $fg-light-disabled;
+				color: $fg-light-secondary;
+				// font-size: .9em;
+				font-weight: 400;
+				font-style: italic;
+				// text-transform: uppercase;
+				text-transform: lowercase;
+				// margin-left: 0.3em;
+				margin: 0 .2em;
+			}
+		}
+		
+		
+		@media all and (max-width: $break-l){
+			font-size: 1.1rem;
+			right: 0;
+			transform: unset;
+		}
+		@media all and (max-width: $break-m){
+			font-size: 1rem;
+			transform: translate(0%,-100%);
+			left: 0;
+		}
+		@media all and (max-width: $break-s){
+			// transform: translate(0%,-100%);
+			// left: 0;
+		}
+
+	}
+	
 }
 .map {
 	height: initial;

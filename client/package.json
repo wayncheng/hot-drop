@@ -1,6 +1,6 @@
 {
   "name": "fortnite-drops-client",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "private": true,
   "license": "Apache-2.0",
   "proxy": "http://localhost:5000/",
