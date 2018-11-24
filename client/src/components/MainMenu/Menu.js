@@ -12,7 +12,7 @@ import {
 const Menu = props => {
 
 	return(
-		<Modal id="menu_modal" className="default-modal main-menu">
+		<Modal id="menu_modal" className="default-modal main-menu" rootClass="menu-modal-root">
 			<section className="menu-header">
 				<h2 className="title">Fortnite Hot Drops</h2>
 				{/* <h4 className="subtitle">by Wayne Cheng</h4> */}

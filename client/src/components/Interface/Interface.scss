@@ -23,7 +23,7 @@
 	$dot-color: #07f;
 	$pulse-color: #000;
 	$spread: 12px;
-	$height: 1.2rem;
+	$height: 1.5rem;
 	$marker-color: #fff;
 	$marker-color-alt: #89C4F4;
 	
@@ -93,7 +93,7 @@
 	font-size: .75rem;
 	position: absolute;
 	transform: translate(-50%,-140%);
-	margin-left: 5px; // offset to center tooltip over marker
+	margin-left: .5em; // offset to center tooltip over marker
 	padding: .5em;
 	width: 7em;
 	border-radius: .5em;

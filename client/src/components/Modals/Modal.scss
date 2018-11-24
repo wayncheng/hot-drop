@@ -24,12 +24,14 @@
 	min-height: 100vh;
 	width: 100%;
 	margin: 0;
-	padding: 5vh 10%;
+	padding: 3rem;
+	// padding: 5vh 10%;
 	background-color: rgba(0,0,0,0.25);
 	display: none; // * IMPORTANT: hide overlay by default
 
 	@media all and (max-width: 420px){
-		padding: 5vh 5%;
+		padding: 4rem 2rem;
+		// padding: 5vh 5%;
 	}
 
 	&.w-modal-overlay_after-open {
@@ -171,4 +173,17 @@
 	&.pos-top { top: $p; }
 	&.pos-right { right: $p; }
 	&.pos-bottom { bottom: $p; }
+}
+
+
+/// Guide Modal _______________________________
+.guide-modal-root {
+	.w-modal-overlay {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+	.w-modal {
+		margin: 0;
+	}
 }

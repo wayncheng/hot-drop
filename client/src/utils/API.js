@@ -44,8 +44,10 @@ const API = {
 		// return ip;
 	},
 
-	getUUID: () => {
-		let uuid = Date.now();
+	createUUID: () => {
+		let date = Date.now().toString(36);
+		let rand = Math.random().toString(36).substr(2,3);
+		let uuid = date+rand;
 		return uuid;
 	},
 

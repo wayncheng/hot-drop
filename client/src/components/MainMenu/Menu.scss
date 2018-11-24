@@ -39,7 +39,17 @@
 	}
 	
 }
+.menu-modal-root {
+	.w-modal-overlay {
 
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-end;
+	}
+	.w-modal {
+		margin: 0;
+	}
+}
 .main-menu {
 	font-size: 1.1rem;
 	padding: 2.5rem 2rem 1rem;
