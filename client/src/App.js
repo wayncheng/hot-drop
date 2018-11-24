@@ -24,16 +24,16 @@ class App extends Component {
 
 		let localID = localStorage.getItem('uuid');
 		
-		if (localID){
-			this.props.setUUID(localID)
-		}
-		else {
+		if (!localID){
 			let newID = API.createUUID();
 			console.log('newID:',newID)
+			localID = newID;
 			// Save to localStorage and set UUID in redux state
 			localStorage.setItem('uuid',newID);
-			this.props.setUUID(newID)
 		}
+		console.log('uuid:',localID);
+
+		this.props.setUUID(localID)
 	}
 
 	render() {

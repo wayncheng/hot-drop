@@ -45,9 +45,9 @@ const API = {
 	},
 
 	createUUID: () => {
-		let date = Date.now().toString(36);
-		let rand = Math.random().toString(36).substr(2,3);
-		let uuid = date+rand;
+		let date = Date.now().toString(36); // e.g. jovhey51
+		let rand = Math.random().toString(36).substr(2,3); // e.g. uto
+		let uuid = date+rand; // e.g. jovhey51uto
 		return uuid;
 	},
 
