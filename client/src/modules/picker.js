@@ -10,6 +10,7 @@ export const GET_NEW_BUS =   'picker/GET_NEW_BUS';
 export const SET_BUS_PATH =   'picker/SET_BUS_PATH';
 export const SUBMIT_PLACEMENT = 'picker/SUBMIT_PLACEMENT';
 export const SET_UUID = 'picker/SET_UUID';
+export const REMOVE_FIRST_TIME_FLAG = 'picker/REMOVE_FIRST_TIME_FLAG';
 
 const initialState = {
 	location: { 
@@ -24,6 +25,7 @@ const initialState = {
 	},
 	markerPlaced: false,
 	uuid: null,
+	isFirstTime: true,
 };
 
 export default (state = initialState, action) => {
@@ -58,10 +60,11 @@ export default (state = initialState, action) => {
 				bus: action.bus
 			}
 
-		// case SUBMIT_PLACEMENT:
-		// 	return {
-		// 		...state,
-		// 	}
+		case REMOVE_FIRST_TIME_FLAG:
+			return {
+				...state,
+				isFirstTime: false,
+			}
 		case SET_UUID:
 			return {
 				...state,
@@ -91,7 +94,7 @@ export const submitPlacement = (path_id,location,uuid) => dispatch => {
 		dispatch( reset() )
 	})
 
-
+	dispatch(removeFirstTimeFlag())
 }
 
 // CYCLE,RESET ====================================
@@ -145,6 +148,12 @@ export const removeMarker = () => dispatch => {
 		type: REMOVE_MARKER
 	})
 }
+export const removeFirstTimeFlag = () => dispatch => {
+	dispatch({
+		type: REMOVE_FIRST_TIME_FLAG
+	})
+}
+
 
 // UUID ========================================
 export const setUUID = uuid => dispatch => {
