@@ -212,17 +212,25 @@ $fullpg-theme: #fff;
 
 .start-btn {
 	display: block;
-	font-size: 1.3rem;
-	background-color: $blue;
-	border-radius: 5px;
+	position: relative;
+	font-size: 1.5rem;
+	background-color: $green;
+	margin: auto;
 	color: #fff;
 	font-weight: 500;
-	text-transform: uppercase;
-	min-width: 2em;
-	min-height: 1em;
-	padding: 1em 2em;
-	margin-top: 1rem;
-	position: relative;
+
+	// border-radius: 5px;
+	// min-width: 1em;
+	// min-height: 1em;`
+	// padding: 0 1.5em;
+	// $h: 2.6em;
+	// line-height: $h;
+	// border-radius: $h/2;
+
+	$d: 4em;
+	height: $d;
+	width: $d;
+	border-radius: 50%;
 }
 
 .modal-body {
@@ -244,5 +252,27 @@ $fullpg-theme: #fff;
 
 	.close-btn {
 		color: #fff;
+	}
+}
+
+
+
+.big-list {
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: $fg-primary;
+	max-width: 15em;
+
+	&::before {
+		font-weight: 400;
+	}
+	li {
+		margin: .5em auto;
+		line-height: 1.25;
+		padding-left: 1rem;
+
+		&::before {
+			font-weight: 400;
+		}
 	}
 }

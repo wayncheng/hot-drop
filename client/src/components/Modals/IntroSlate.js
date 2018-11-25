@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
 	Modal,
-	ModalTrigger,
+	ModalTrigger
 	// CloseBtn
 } from '..';
 
@@ -18,29 +18,34 @@ const IntroSlate = (props) => {
 			initialOpen={true}
 		>
 			<div className="modal-body">
-				{/* <section className="modal-header"> */}
-					<h2 className="title">How it Works</h2>
-					{/* <h4 className="subtitle">by Wayne Cheng</h4> */}
-				{/* </section> */}
-				{/* <section className="modal-body"> */}
-					<ol>
-						<li>Click on the map to place your marker.</li>
-						<li> To <em>change</em> marker placement, just click on the new location. </li>
-						<li> Confirm the marker location by either clicking on the marker or clicking the submit button.{' '} </li>
-						<li>Once you have confirmed, you're all set!</li>
-						<li> A new bus will appear and just rinse and repeat however many times you'd like. The more the better! </li>
+				<section className="modal-header">
+					<p className="eyebrow">Submit Drop Spots</p>
+					<h2 className="headline">
+						Where we Hypothetically Droppin'?
+					</h2>
+					<h3 className="subheadline">
+						To contribute, all you need to do is place a few markers just like you would in the game. Here's what will happen...
+					</h3>
+				</section>
+				<section className="modal-content">
+					<ol className="big-list">
+						<li>Random bus is shown</li>
+						<li>Place your marker</li>
+						<li>Confirm placement</li>
+						<li>That's it! Just rinse and repeat with the next bus.</li>
 					</ol>
-				{/* </section> */}
-				{/* <section className="modal-footer"> */}
-					<ModalTrigger
-						className='close-modal-trigger end-intro start-btn'
-						modal_id='intro_slate'
-						modal_action="close"
-					>
-						Begin
-					</ModalTrigger>
-			{/* </section> */}
+					{/* <p className="modal-copy">
+						A new bus will appear and just rinse and repeat however many times you'd like. The more the better!
+					</p> */}
+				</section>
 			</div>
+			<ModalTrigger
+				className="close-modal-trigger end-intro start-btn"
+				modal_id="intro_slate"
+				modal_action="close"
+			>
+				Start
+			</ModalTrigger>
 			{/* <CloseBtn modal_id="intro_slate" top right /> */}
 			{/* <ModalTrigger className="close-btn" modal_id="menu_modal" modal_action="close">
 				<i className="material-icons">cancel</i>

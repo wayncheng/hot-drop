@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import './static/bulma.min.css';
 import './App.scss';
 import API from './utils/API';
 import { bindActionCreators } from 'redux';
@@ -9,6 +10,7 @@ import { setUUID } from './modules/picker';
 import HomePage from './pages/HomePage';
 import ViewPage from './pages/ViewPage';
 import DevSandboxPage from './pages/Sandbox/DevSandboxPage';
+
 
 
 class App extends Component {
