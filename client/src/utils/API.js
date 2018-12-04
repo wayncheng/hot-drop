@@ -1,8 +1,4 @@
 import axios from 'axios';
-// import address from 'address';
-// import publicIp from 'public-ip';
-// import bcrypt from 'bcryptjs';
-
 
 const API = {
 	saveMarker: (path_id, x, y, uuid) => {
@@ -27,10 +23,10 @@ const API = {
 		return uuid;
 	},
 
-	getRandomPath: () => {
+	getRandomPath: (path_id) => {
 		return axios({
 			method: "GET",
-			url: "/api/path/random"
+			url: "/api/path/random/"+path_id
 		})
 			.then(response => response)
 			.catch(error => console.log("error", error));

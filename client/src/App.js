@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
-import './static/bulma.min.css';
+// import './static/bulma.min.css';
 import './App.scss';
 import API from './utils/API';
 import { bindActionCreators } from 'redux';
@@ -12,7 +12,6 @@ import ViewPage from './pages/ViewPage';
 import DevSandboxPage from './pages/Sandbox/DevSandboxPage';
 
 
-
 class App extends Component {
 	constructor(props){
 		super(props);
@@ -21,7 +20,7 @@ class App extends Component {
 
 	componentDidMount = () => {
 		// Check for UUID in localstorage, then...
-		// - If not found --> getUUID then set in local and state
+		// - If not found --> createUUID then set in local and state
 		// - If found in local --> set UUID in state
 
 		let localID = localStorage.getItem('uuid');

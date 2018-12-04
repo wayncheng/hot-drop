@@ -23,6 +23,8 @@ const StatsPanel = props => {
 				</ul>
 				<ul>
 					<li>{'uuid: ' + props.uuid}</li>
+					<li>{'save count: ' + props.saveCount}</li>
+					<li>{'first time: ' + props.isFirstTime}</li>
 				</ul>
 			</div>
 			

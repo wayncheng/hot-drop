@@ -25,7 +25,6 @@ componentDidMount = () => {
 }
 
 componentWillReceiveProps = (nextProps) => {
-	console.log('new props');
 	let {id} = this.props;
 
 	if (nextProps.allModals[id] !== this.props.allModals[id]){

@@ -1,9 +1,11 @@
 @import "../../config/variables";
 
-// * Modal Root that exists outside of the app's root (sibling to #root) * //
-// - NOT the overlay / backdrop
-// - No "styling" here
-// - Purpose is to ensure it covers the app properly (modal on top, fills window, etc)
+/// Modal Root that exists outside of the app's root ----------
+//   - sibling to #root
+//   - NOT the overlay / backdrop
+//   - No "styling" here
+//   - Purpose is to ensure it covers the app properly (modal on top, fills window, etc)
+///------------------------------------------------------------
 .w-modal-root {
 	position: relative;
 	// position: fixed;
@@ -18,8 +20,9 @@
 	// z-index: 100000;
 }
 
-// * Container just inside the modal-root * //
-// - handles styling of the backdrop that will cover the app (overlay)
+/// Container just inside the modal-root ----------------------
+//  - handles styling of the backdrop that will cover the app (overlay)
+///------------------------------------------------------------
 .w-modal-overlay {
 	min-height: 100vh;
 	width: 100%;
@@ -29,7 +32,7 @@
 	background-color: rgba(0,0,0,0.25);
 	display: none; // * IMPORTANT: hide overlay by default
 
-	@media all and (max-width: 420px){
+	@media all and (max-width: $break-s){
 		padding: 4rem 2rem;
 		// padding: 5vh 5%;
 	}
@@ -43,13 +46,13 @@
 }
 
 
-// * "HIDDEN" Modal Window ---------------------------------
+/// "HIDDEN" Modal Window ---------------------------------
 //   - Generally contains properties that are independent 
 //     of modal state (open or closed)
 //   - HOWEVER, modal's default state is closed, so it 
 //     should be hidden initially as the starting point
 //     and have the active style in another class (w-modal_after-open)
-// ---------------------------------------------------------
+///---------------------------------------------------------
 .w-modal {
 	height: initial;
 	display: flex;
@@ -62,15 +65,17 @@
 	overflow: hidden; // hides corners of action bar
 	
 	
-	
-
-	// .ws-header {
-	// 	background-color: $blue;
-	// 	color: $primary;
+	// .modal-header {
+	// 	color: $fg-primary;
+	// 	text-align: center;
+	// 	* {
+	// 		margin-bottom: 1.25rem;
+	// 	}
 	// }
-	.modal-body {
-		padding: 2rem 1rem;
-	}
+	// .modal-body {
+	// 	padding: 2rem 1rem;
+	// }
+
 	.overlay-btn {
 		background-color: rgba(#000,0.4);
 		position: absolute;
@@ -95,7 +100,7 @@
 }
 
 
-// * VISIBLE Modal Window ------------------------------------
+//+  VISIBLE Modal Window ------------------------------------
 //   - ACTIVE, VISIBLE state of the modal window
 //   - This class is toggled on the modal when opened/closed
 .w-modal_after-open {
@@ -109,9 +114,8 @@
 
 
 
-// * Change Position Type for the root wrappers 
-// * so <body> dimensions is determined by the 
-// * modal's size rather than the app's root dimensions
+/// Change Position Type for the root wrappers so <body> dimensions 
+//  is determined by the modal's size rather than the app's root dimensions
 .w-modal_is-open {
 	#root {
 		position: fixed;
@@ -124,57 +128,45 @@
 
 
 
-.default-modal {
-	background-color: #fff;
-	border-radius: 0.5rem;
-	overflow-x: hidden;
-	padding: 2rem 3rem;
-	box-shadow: $big-box-shadow;
-	@media all and (max-width: 420px){
-		padding: .5rem 1.5rem;
-		font-size: 1.2rem;
-	}
-	&:focus {
-		outline: none;
-		// border: 2px solid $blue;
-		box-shadow: $big-box-shadow-focused;
-	}
+// Modal Sections _____________________________
+.modal-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 2rem 1rem;
 }
-$fullpg-theme: #fff;
-.fullpage-modal-root {
-	.w-modal-overlay {
-		padding: 0;
-		// background-color: rgba($fullpg-theme,0.5);
-		background-color: rgba(#000,0.25);
+.modal-header {
+	font-size: 1rem;
+	color: $fg-primary;
+	text-align: center;
+	* {
+		margin-bottom: 1.25rem;
 	}
-}
-.fullpage-modal {
-
-	background-color: rgba($fullpg-theme,0.95);
-	border-radius: 0;
-	overflow-x: hidden;
-	padding: 2rem 3rem;
-	box-shadow: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	max-width: 100vw;
-	height: 100vh;
-	
-	// &:focus {
-	// 	outline: none;
-	// }
-	.close-btn {
-		position: absolute;
+	.headline {
+		font-size: 2em;
+		font-weight: 500;
+		color: $fg-primary;
+	}
+	.subheadline {
+		font-size: 1.5em;
+		font-weight: 400;
+		color: $fg-secondary;
+	}
+	.eyebrow {
+		font-size: .9em;
+		font-weight: 700;
+		color: $fg-secondary;
+		text-transform: uppercase;
+		letter-spacing: 0px;
 	}
 
-	@media all and (max-width: 420px){
-		padding: 1rem 1.5rem;
-		font-size: 1.2rem;
+	@media all and (max-width: $break-s){
+		font-size: .9rem;
 	}
 }
 
+// Buttons,Triggers __________________________-
 .modal-trigger {
 	background-color: transparent;
 	padding: 0;
@@ -233,13 +225,31 @@ $fullpg-theme: #fff;
 	border-radius: 50%;
 }
 
-.modal-body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
+
+
+
+
+
+
+// Default Modal _______________________
+.default-modal {
+	background-color: #fff;
+	border-radius: 0.5rem;
+	overflow-x: hidden;
+	padding: 2rem 3rem;
+	box-shadow: $big-box-shadow;
+	@media all and (max-width: $break-s){
+		padding: .5rem 1.5rem;
+		font-size: 1.2rem;
+	}
+	&:focus {
+		outline: none;
+		// border: 2px solid $blue;
+		box-shadow: $big-box-shadow-focused;
+	}
 }
-/// Guide Modal _______________________________
+
+// Guide Modal _______________________________
 .guide-modal-root {
 	.w-modal-overlay {
 		flex-direction: column;
@@ -256,16 +266,22 @@ $fullpg-theme: #fff;
 }
 
 
-
+// Intro Slate ______________________________
+.intro-slate {
+	@media all and (max-width: $break-s){
+		padding: 0.5rem;
+	}
+}
 .big-list {
 	font-size: 1.75rem;
-	font-weight: 700;
+	font-weight: 500;
 	color: $fg-primary;
-	max-width: 15em;
-
+	max-width: 20em;
+	margin: 3rem auto;
 	&::before {
 		font-weight: 400;
 	}
+
 	li {
 		margin: .5em auto;
 		line-height: 1.25;
@@ -274,5 +290,59 @@ $fullpg-theme: #fff;
 		&::before {
 			font-weight: 400;
 		}
+	}
+
+	em {
+		// font-weight: 700;
+		font-weight: inherit;
+		font-style: inherit;
+		text-decoration: underline;
+	}
+
+
+	@media all and (max-width: $break-s){
+		margin: 1.5rem auto;
+		font-size: 1.5rem;
+		padding-left: 
+		li {
+			padding-left: .5em;
+		}
+	}
+}
+
+
+// Full Page Modal ___________________________
+$fullpg-theme: #fff;
+.fullpage-modal-root {
+	.w-modal-overlay {
+		padding: 0;
+		// background-color: rgba($fullpg-theme,0.5);
+		background-color: rgba(#000,0.25);
+	}
+}
+.fullpage-modal {
+
+	background-color: rgba($fullpg-theme,0.95);
+	border-radius: 0;
+	overflow-x: hidden;
+	padding: 2rem 3rem;
+	box-shadow: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-width: 100vw;
+	height: 100vh;
+	
+	// &:focus {
+	// 	outline: none;
+	// }
+	.close-btn {
+		position: absolute;
+	}
+
+	@media all and (max-width: $break-s){
+		padding: 1rem 1.5rem;
+		font-size: 1.2rem;
 	}
 }

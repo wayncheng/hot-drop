@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 import { 
 	// setMarker, 
 	// removeMarker, 
-	getNewBus 
+	getNewBus,
+	sendNextBus,
 } from '../../modules/picker';
 import './Interface.scss';
 import Overlay from './Overlay';
 import Marker from './Marker';
 import TargetRange from './Target/TargetRange';
-import SubmitBtn from './SubmitBtn';
+// import SubmitBtn from './SubmitBtn';
 
 class Interface extends Component {
 	constructor(props) {
@@ -20,6 +21,15 @@ class Interface extends Component {
 
 	componentDidMount = () => {
 		this.props.getNewBus();
+		
+		// console.log('this.props.saveCount:',this.props.saveCount);
+		// this.props.sendNextBus(this.props.saveCount);
+	}
+
+	componentWillUpdate = (nextProps) => {
+		// if (nextProps.bus.id === this.props.bus.id && !nextProps.markerPlaced){
+		// 	this.props.getNewBus();
+		// }
 	}
 
 
@@ -33,7 +43,7 @@ class Interface extends Component {
 				<Overlay/>
 				<TargetRange/>
 				<Marker/>
-				<SubmitBtn/>
+				{/* <SubmitBtn/> */}
 			</section>
 		)
 	}
@@ -41,11 +51,14 @@ class Interface extends Component {
 
 const mapStateToProps = state => ({
 	// location: state.picker.location,
-	markerPlaced: state.picker.markerPlaced,
+	// markerPlaced: state.picker.markerPlaced,
+	// saveCount: state.picker.saveCount,
+	...state.picker,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
 	getNewBus,
+	sendNextBus,
 	// setMarker,
 	// removeMarker,
 }, dispatch)
