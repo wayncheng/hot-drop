@@ -1,8 +1,4 @@
 import axios from 'axios';
-// import address from 'address';
-// import publicIp from 'public-ip';
-// import bcrypt from 'bcryptjs';
-
 
 const API = {
 	saveMarker: (path_id, x, y, uuid) => {
@@ -19,40 +15,18 @@ const API = {
 			.then(response => response)
 			.catch(error => console.log("error", error));
 	},
-	getIP: () => {
-		// return publicIp.v4().then(ip => {
-		// 	console.log(ip);
-		// 	let uuid = ip;
-		// 	// let uuid = ip.split('.').join('_')
 
-		// 	// let hashID = bcrypt.hashSync(ip, 3, function(err, hash) {
-		// 	// 	if (err) throw err;
-		// 	// 	// console.log('hash',hash)
-		// 	// 	return hash
-		// 	// });
-			
-		// 	// let hashID = bcrypt.hashSync(ip)
-		// 	// console.log('hashID:',hashID)
-		// 	// return hashID
-
-		// 	return uuid
-		// });
-		
-		// return address.ip();
-
-		// console.log('ip:',ip)
-		// return ip;
-	},
-
-	getUUID: () => {
-		let uuid = Date.now();
+	createUUID: () => {
+		let date = Date.now().toString(36); // e.g. jovhey51
+		let rand = Math.random().toString(36).substr(2,3); // e.g. uto
+		let uuid = date+rand; // e.g. jovhey51uto
 		return uuid;
 	},
 
-	getRandomPath: () => {
+	getRandomPath: (path_id) => {
 		return axios({
 			method: "GET",
-			url: "/api/path/random"
+			url: "/api/path/random/"+path_id
 		})
 			.then(response => response)
 			.catch(error => console.log("error", error));

@@ -8,6 +8,7 @@ import { openModal, closeModal } from '../../modules/modal'
 import Modal from 'react-modal'
 import './Modal.scss'
 
+
 class GeneralModal extends Component {
 	constructor(props){
 		super(props)
@@ -17,7 +18,10 @@ class GeneralModal extends Component {
 	}
 
 componentDidMount = () => {
-	
+	if (this.props.initialOpen === true){
+		console.log('this.props.id:',this.props.id);
+		this.props.openModal(this.props.id)
+	}
 }
 
 componentWillReceiveProps = (nextProps) => {
@@ -106,7 +110,6 @@ closeModal = () => {
 
 // RENDER ==================================================
 	render(){
-
 		return(
 			<Modal
 				{...this.props}
@@ -121,9 +124,14 @@ closeModal = () => {
 					afterOpen: "w-modal_after-open",
 					beforeClose: "w-modal_before-close"
 				}}
-				portalClassName={this.props.portalClassName}
-				overlayClassName={this.props.overlayClassName}
-				htmlOpenClassName={this.props.htmlOpenClassName}
+				overlayClassName={{
+					base: classNames("w-modal-overlay",this.props.overlayClass),
+					afterOpen: "w-modal-overlay_after-open",
+					beforeClose: "w-modal-overlay_before-close"
+				}}
+				portalClassName={classNames('w-modal-root',this.props.rootClass)}
+				htmlOpenClassName='w-modal_is-open'
+				// htmlOpenClassName={classNames('w-modal_is-open',this.props.htmlOpenClass)}
 
 				// Handlers -----------------------
 				onAfterOpen={this.afterOpenModal}
@@ -152,20 +160,22 @@ closeModal = () => {
 GeneralModal.defaultProps = {
 	isOpen: false,
 	rootSelector: '#root',
-	portalClassName: 'w-modal-root',
-	htmlOpenClassName: 'w-modal_is-open',
+	// rootClassName: 'w-modal-root',
+	// htmlOpenClassName: 'w-modal_is-open',
 	// className: {
 	// 	base: "w-modal",
 	// 	afterOpen: "w-modal_after-open",
 	// 	beforeClose: "w-modal_before-close"
 	// },
-	overlayClassName: {
-		base: "w-modal-overlay",
-		afterOpen: "w-modal-overlay_after-open",
-		beforeClose: "w-modal-overlay_before-close"
-	},
-}
+	// overlayClassName: {
+	// 	base: "w-modal-overlay",
+	// 	afterOpen: "w-modal-overlay_after-open",
+	// 	beforeClose: "w-modal-overlay_before-close"
+	// },
 
+	rootClass: '',
+	overlayClass: '',
+}
 GeneralModal.propTypes = {
 	id: PropTypes.string.isRequired,
 }

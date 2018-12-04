@@ -18,6 +18,7 @@ export {default as ModalTrigger} from './Modals/ModalTrigger';
 export {default as CloseBtn} from './Modals/CloseBtn';
 export {default as HelpTrigger} from './Modals/HelpTrigger';
 export {default as Guide} from './Modals/Guide';
+export {default as IntroSlate} from './Modals/IntroSlate';
 
 //+ Main Menu -------------
 export {default as MenuBtn} from './MainMenu/MenuBtn';

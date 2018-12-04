@@ -6,9 +6,9 @@ export const CLOSE_MODAL = 'modal/CLOSE_MODAL'
 const initialState = {
 	isOpen: false,
 	allModals: {
-		modal_id: false,
-		modal_id_2: false,
-		modal_search: false,
+		menu_modal: false,
+		guide_modal: false,
+		intro_slate: false,
 	}
 }
 

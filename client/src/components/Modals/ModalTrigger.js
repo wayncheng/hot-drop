@@ -22,8 +22,7 @@ class ModalTrigger extends Component {
 		// let modal_action = event.target.getAttribute('modal_action');
 		
 		let {modal_id,modal_action} = this.props;
-		console.log('modal_id:',modal_id)
-		console.log('modal_action:',modal_action)
+		// console.log(modal_action,modal_id)
 
 		if (modal_action === 'close'){
 			this.props.closeModal(modal_id)

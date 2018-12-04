@@ -17,6 +17,7 @@ body {
 	width: 100%;
 	min-height: 100vh;
 	overflow: hidden;
+	overflow: auto;
 }
 
 // Reset margins
@@ -30,7 +31,7 @@ h1,h2,h3,h4,h5,h6,p {
 	height: 100%;
 	width: 100%;
 	z-index: $zidx-low;
-	background-color: rgba(81,81,81,0.24);
+	background-color: rgba(81,81,81,0.4);
 }
 
 #outer-space {
@@ -82,10 +83,30 @@ main {
 
 
 
+
+.headline {
+	font-size: 2.5rem;
+	font-weight: 500;
+	color: $fg-primary;
+}
+.subheadline {
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: $fg-secondary;
+}
+.eyebrow {
+	font-size: .9rem;
+	font-weight: 700;
+	color: $fg-secondary;
+	text-transform: uppercase;
+	letter-spacing: 0px;
+}
+
+
 ol {
 	padding-left: 2rem;
 	
-	@media all and (max-width: 420px){
+	@media all and (max-width: $break-s){
 		padding-left: 1.25rem;
 	}
 	

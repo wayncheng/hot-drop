@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, HelpTrigger, Guide, PageRoot } from '../components';
+import { Map, HelpTrigger, Guide, PageRoot, IntroSlate } from '../components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 // import { } from '../modules/picker';
@@ -14,18 +14,16 @@ class HomePage extends Component {
 		return (
 			<PageRoot>
 				<Map>
-					<section className="hero-section">
+					{/* <section className="hero-section">
 						<h2 className="headline">
 							{"Where We "}
 							<em>hypothetically</em>
 							{" Droppin?"}
 						</h2>
-						{/* <h2 className="headline">
-							Where We Hypothetically Droppin?
-						</h2> */}
-					</section>
+					</section> */}
 				</Map>
 
+				<IntroSlate/>
 				<HelpTrigger />
 				<Guide />
 			</PageRoot>
