@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
@@ -22,7 +21,7 @@ const IntroSlate = (props) => {
 					<p className="eyebrow">Getting Started</p>
 					<h2 className="headline">Where we Hypothetically Droppin?</h2>
 					<h3 className="subheadline">
-						To contribute, all you need to do is place a few markers just like you would in the game. Here's
+						To start, all you need to do is place a few markers just like you would in the game. Here's
 						what will happen...
 						{/* To get started, just drop your marker where you would land just you do in-game. Submit your drop by clicking the marker again, and you're done! */}
 					</h3>

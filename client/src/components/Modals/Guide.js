@@ -17,16 +17,11 @@ const Guide = props => {
 				<ol>
 					<li>Click on the map to place your marker.</li>
 					<li>To <em>change</em> marker placement, just click on the new location.</li>
-					<li>Confirm the marker location by either clicking on the marker or clicking the submit button. </li>
+					<li>Confirm the marker location by either clicking on the marker.</li>
 					<li>Once you have confirmed, you're all set!</li>
-					<li>A new bus will appear and just rinse and repeat however many times you'd like. The more the better!</li>
-					{/* <h4>More Contributions &rarr; Better Results</h4> */}
+					<li>A new bus will appear and just rinse and repeat however many times you'd like.</li>
 				</ol>
 			</section>
-
-			{/* <ModalTrigger className="modal-trigger close-btn" modal_id="guide_modal" modal_action="close">
-				<i className="material-icons">cancel</i>
-			</ModalTrigger> */}
 			<CloseBtn modal_id="guide_modal" top left />
 
 		</Modal>
