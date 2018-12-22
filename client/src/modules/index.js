@@ -3,6 +3,7 @@ import { routerReducer } from 'react-router-redux';
 import picker from './picker';
 import general from './general';
 import modal from './modal';
+import heatmap from './heatmap';
 
 
 export default combineReducers({
@@ -10,4 +11,5 @@ export default combineReducers({
 	picker,
 	general,
 	modal,
+	heatmap,
 })
