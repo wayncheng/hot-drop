@@ -99,6 +99,20 @@
 					cb(result);
 				});
 			},
+			getPathByAngle: (angle, cb) => {
+				console.log(`---> getPathByAngle (paths)`);
+				const query = ` SELECT ${PTBL}.id, 
+						${PTBL}.x, 
+						${PTBL}.y,
+						${PTBL}.angle
+					FROM ${PTBL}
+					WHERE ${PTBL}.angle = ${angle}
+				;`;
+				connection.query(query, (err, result) => {
+					if (err) throw err;
+					cb(result);
+				});
+			},
 
 			getOneRandom: (currentPathID, cb) => {
 				console.log(`---> getOneRandom (paths)`);

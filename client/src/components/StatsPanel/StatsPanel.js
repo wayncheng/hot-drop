@@ -26,6 +26,11 @@ const StatsPanel = props => {
 					<li>{'save count: ' + props.saveCount}</li>
 					<li>{'first time: ' + props.isFirstTime}</li>
 				</ul>
+				<ul>
+					<li>Heatmap</li>
+					<li>{'pathAngle: ' + props.pathAngle}</li>
+					<li>{'pathID: ' + props.pathID}</li>
+				</ul>
 			</div>
 			
 			<i className="material-icons" >insert_chart</i>
@@ -36,7 +41,8 @@ const StatsPanel = props => {
 const mapStateToProps = state => ({
 	// location: state.picker.location,
 	...state.picker,
-	...state.general
+	...state.general,
+	...state.heatmap,
 })
 const mapDispatchToProps = dispatch => bindActionCreators({
 

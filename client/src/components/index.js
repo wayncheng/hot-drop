@@ -29,6 +29,8 @@ export {default as Menu} from './MainMenu/Menu';
 export {default as PointsDisplay} from './Display/PointsDisplay';
 export {default as HeatMap} from './HeatMap/HeatMap';
 export {default as HeatMapContainer} from './HeatMap/HeatMapContainer';
+export {default as DrawPathInput} from './PathInput/DrawPathInput';
+export {default as SliderPathInput} from './PathInput/SliderPathInput';
 
 
 //+ Background ----------------

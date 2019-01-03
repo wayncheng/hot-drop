@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 // import { bindActionCreators } from 'redux';
 // import { connect } from 'react-redux';
 // import { setBusPath } from '../modules/picker';
-import { StaticMap, BusPath, PageRoot, HeatMapContainer } from '../components';
-
+import { 
+	StaticMap, 
+	BusPath, 
+	PageRoot, 
+	HeatMapContainer, 
+	// DrawPathInput, 
+	SliderPathInput 
+} from '../components';
+import API from '../utils/API';
 
 class HeatMapPage extends Component {
 	constructor(props) {
@@ -13,14 +20,18 @@ class HeatMapPage extends Component {
 	componentDidMount = () => {
 		const { path_id } = this.props.match.params;
 		console.log('path_id:', path_id);
+
+		API.getAllPaths();
 	};
 	render() {
 		return (
-			<PageRoot>
+			<PageRoot className="heatmap-page">
 				<StaticMap>
-					<HeatMapContainer pathID={parseInt(this.props.match.params.path_id)}/>
+					<HeatMapContainer pathID={parseInt(this.props.match.params.path_id)} />
 					<BusPath />
 				</StaticMap>
+				<SliderPathInput />
+				{/* <DrawPathInput/> */}
 			</PageRoot>
 		);
 	}

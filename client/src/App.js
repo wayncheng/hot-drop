@@ -45,7 +45,7 @@ class App extends Component {
 					{process.env.NODE_ENV !== 'production' && (
 						<Route exact path="/dev" component={DevSandboxPage} />
 					)}
-					<Route exact path="/heatmap/:path_id" component={HeatMapPage} />
+					<Route exact path="/heatmap/:path_id?" component={HeatMapPage} />
 					<Route exact path="/view/:path_id" component={ViewPage} />
 					<Route exact path="/" component={HomePage} />
 				</Switch>
