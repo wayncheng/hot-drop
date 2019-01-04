@@ -9,14 +9,13 @@
 	});
 	let environment = process.env.NODE_ENV || 'dev';
 
-	if (process.env.NODE_ENV === 'production') {
+	if (environment === 'production') {
 		connection = mysql.createConnection(process.env.JAWSDB_URL);
 	}
 
 	connection.connect(function(err) {
 		if (err) throw err;
 		console.log(`mysql connected ${connection.threadId} (${environment})`);
-		// console.log(environment);
 	});
 
 	module.exports = connection;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { StaticMap, PointsDisplay, BusPath, PageRoot } from '../components';
-import API from '../utils/API';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { StaticMap, IndividualsHeatMap, BusPath, PageRoot } from '../components';
 import { setUUID, setBusPath } from '../modules/picker';
+import API from '../utils/API';
 
 class ViewPage extends Component {
 	constructor(props) {
@@ -34,7 +34,7 @@ class ViewPage extends Component {
 		return (
 			<PageRoot>
 				<StaticMap>
-					<PointsDisplay data={this.state.markers} />
+					<IndividualsHeatMap data={this.state.markers} />
 					<BusPath />
 				</StaticMap>
 			</PageRoot>

@@ -1,6 +1,7 @@
 @import '../../config/variables';
 
-.display {
+
+.individuals-heatmap {
 	@extend %copycat;
 	background-color: rgba(8,8,8,0.24);
 	z-index: $zidx-top;
@@ -9,7 +10,7 @@
 	// 	opacity: 0.5;
 	// 	animation: none;
 	// }
-	.data-point {
+	.individual {
 		display: inline-block;
 		position: absolute;
 		font-size: .75rem !important;
@@ -18,8 +19,16 @@
 		margin-left: -0.5em; // Using margin to offset rather than transform since dimensions are known and better compatibility
 		margin-top: -0.5em;
 		border-radius: 50%;
-		background-color: rgba(red,0.8);
-		opacity: 0.8;
-		border: 1px solid #fff;
+		// background-color: rgba(red,0.8);
+		// opacity: 0.8;
+		// border: 1px solid #fff;
+		background-color: transparent;
+		border: 2px solid red;
+		opacity: .85;
+	}
+	i {
+		color: red;
+		opacity: .4;
+		font-size: 1rem;
 	}
 }

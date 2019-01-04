@@ -11,7 +11,6 @@ export const REMOVE_FIRST_TIME_FLAG = 'picker/REMOVE_FIRST_TIME_FLAG';
 export const INCREMENT_SAVE_COUNT = 'picker/INCREMENT_SAVE_COUNT';
 
 const itinerary = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ];
-let allPaths = [];
 
 const initialState = {
 	location: {
@@ -19,11 +18,17 @@ const initialState = {
 		y: -100
 	},
 	bus: {
-		id: 1,
-		angle: 360,
+		id: 0,
+		angle: 0,
 		x: 50,
 		y: 50
 	},
+	// bus: {
+	// 	id: 1,
+	// 	angle: 360,
+	// 	x: 50,
+	// 	y: 50
+	// },
 	itinerary: itinerary,
 	markerPlaced: false,
 	uuid: null,

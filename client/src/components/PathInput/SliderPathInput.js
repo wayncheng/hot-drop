@@ -7,7 +7,7 @@ import {setHeatMapPathAngle} from '../../modules/heatmap';
 import {setBusPath} from '../../modules/picker';
 // import API from '../../utils/API';
 import './SliderPathInput.scss';
-
+import {getHeatMapMarkersByID} from '../../modules/heatmap';
 
 class SliderPathInput extends Component {
 	constructor(props) {
@@ -30,6 +30,8 @@ class SliderPathInput extends Component {
 		const pathID = sliderValue;
 		console.log('fetching markers for path', pathID);
 		// TODO: query for markers by id, then display 
+
+		this.props.getHeatMapMarkersByID(pathID)
 	}
 
 	render() {
@@ -53,11 +55,14 @@ class SliderPathInput extends Component {
 
 const mapStateToProps = state => ({
 	pathAngle: state.heatmap.pathAngle,
+	markers: state.heatmap.markers,
+	pathID: state.heatmap.pathID,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators( {
 	setHeatMapPathAngle,
 	setBusPath,
+	getHeatMapMarkersByID,
 }, dispatch );
 
 export default connect(

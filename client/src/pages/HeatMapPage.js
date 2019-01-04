@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import { bindActionCreators } from 'redux';
-// import { connect } from 'react-redux';
-// import { setBusPath } from '../modules/picker';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { getHeatMapMarkersByID } from '../modules/heatmap';
 import { 
 	StaticMap, 
 	BusPath, 
@@ -18,8 +18,12 @@ class HeatMapPage extends Component {
 		this.state = {};
 	}
 	componentDidMount = () => {
-		const { path_id } = this.props.match.params;
-		console.log('path_id:', path_id);
+		// const { path_id } = this.props.match.params;
+		// console.log('path_id:', path_id);
+
+		// if (path_id) {
+		// 	this.props.getHeatMapMarkersByID(path_id)
+		// }
 
 		API.getAllPaths();
 	};
@@ -27,8 +31,12 @@ class HeatMapPage extends Component {
 		return (
 			<PageRoot className="heatmap-page">
 				<StaticMap>
+					{/* <HeatMapContainer /> */}
+					{/* <HeatMapContainer pathID={this.props.match.params.path_id} /> */}
 					<HeatMapContainer pathID={parseInt(this.props.match.params.path_id)} />
-					<BusPath />
+					{this.props.bus.id >= 1 && (
+						<BusPath />
+					)}
 				</StaticMap>
 				<SliderPathInput />
 				{/* <DrawPathInput/> */}
@@ -36,14 +44,16 @@ class HeatMapPage extends Component {
 		);
 	}
 }
-export default HeatMapPage;
-// const mapStateToProps = state => ({ });
+// export default HeatMapPage;
+const mapStateToProps = state => ({ 
+	bus: state.picker.bus,
+});
 
-// const mapDispatchToProps = dispatch => bindActionCreators( {
-// 	setBusPath
-// }, dispatch );
+const mapDispatchToProps = dispatch => bindActionCreators( {
+	getHeatMapMarkersByID
+}, dispatch );
 
-// export default connect(
-// 	mapStateToProps,
-// 	mapDispatchToProps
-// )(HeatMapPage);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(HeatMapPage);
