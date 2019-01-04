@@ -28,6 +28,7 @@ export {default as Menu} from './MainMenu/Menu';
 //+ Display ---------------
 export {default as IndividualsHeatMap} from './HeatMap/IndividualsHeatMap';
 export {default as HeatMap} from './HeatMap/HeatMap';
+export {default as HeatMapTooltip} from './HeatMap/HeatMapTooltip';
 export {default as HeatMapContainer} from './HeatMap/HeatMapContainer';
 export {default as DrawPathInput} from './PathInput/DrawPathInput';
 export {default as SliderPathInput} from './PathInput/SliderPathInput';
