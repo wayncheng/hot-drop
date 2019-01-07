@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setBusPath } from '../../modules/picker';
-import { getHeatMapMarkersByID } from '../../modules/heatmap';
+import { getHeatMapMarkersByID, setColors } from '../../modules/heatmap';
 import {
 	IndividualsHeatMap,
 	HeatMap,
@@ -18,7 +18,7 @@ class HeatMapContainer extends Component {
 	}
 
 	componentDidMount = () => {
-		const { pathID } = this.props;
+		let { pathID,colorCold,colorHot } = this.props;
 
 		if (pathID) {
 			// Set Bus Path to the path we are currently viewing
@@ -26,19 +26,31 @@ class HeatMapContainer extends Component {
 
 			// Query DB for markers with matching pathID
 			this.props.getHeatMapMarkersByID(pathID);
+		}
 
-			// API.getMarkersByPathId(pathID).then(res => {
-			// 	const data = res.data;
-			// 	// console.log('data:', data);
-			// 	const formattedData = data.map((point) => {
-			// 		return {
-			// 			x: point.mark_x,
-			// 			y: point.mark_y
-			// 		};
-			// 	});
-			// 	// Set markers array in state equal to data returned
-			// 	this.setState({ markers: formattedData });
-			// });
+		const localCold = localStorage.getItem('colorCold')
+		const localHot = localStorage.getItem('colorHot')
+		if (localCold){ colorCold = localCold }
+		if (localHot){ colorHot = localHot }
+		
+		this.props.setColors(colorCold,colorHot);
+	};
+
+
+	componentDidUpdate = (prevProps, prevState, snapshot) => {
+		if (prevProps.markers !== this.props.markers) {
+			const formatted = this.props.markers.map((marker) => {
+				return {
+					x: marker.mark_x,
+					y: 100 - marker.mark_y
+					//* IMPORTANT to mirror the y values since our data is measured from top left, but chart uses bottom left as origin.
+				};
+			});
+
+			this.setState({
+				data: formatted,
+				totalCount: formatted.length
+			});
 		}
 	};
 
@@ -46,9 +58,16 @@ class HeatMapContainer extends Component {
 		// console.log('markers:',this.props.markers);
 		return (
 			<div id="heatmap-container" className="heatmap-container" data-path-id={this.props.bus.id}>
-				{/* <HeatMap data={this.state.markers}/> */}
-				<HeatMap data={this.props.markers}/>
-				{/* <IndividualsHeatMap data={this.props.markers} /> */}
+				{this.props.showingHexbin && (
+					<HeatMap 
+						data={this.state.data}
+						colors={[this.props.colorCold,this.props.colorHot]}
+					/>
+				)}
+
+				{this.props.showingIndividuals && (
+					<IndividualsHeatMap data={this.props.markers} />
+				)}
 			</div>
 		);
 	}
@@ -57,16 +76,17 @@ class HeatMapContainer extends Component {
 const mapStateToProps = (state) => ({
 	markers: state.heatmap.markers,
 	bus: state.picker.bus,
+	colorCold: state.heatmap.colorCold,
+	colorHot: state.heatmap.colorHot,
+	showingIndividuals: state.heatmap.showingIndividuals,
+	showingHexbin: state.heatmap.showingHexbin,
 });
 
-const mapDispatchToProps = (dispatch) =>
-	bindActionCreators(
-		{
-			setBusPath,
-			getHeatMapMarkersByID
-		},
-		dispatch
-	);
+const mapDispatchToProps = (dispatch) => bindActionCreators( {
+	setBusPath,
+	getHeatMapMarkersByID,
+	setColors,
+}, dispatch );
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeatMapContainer);
 

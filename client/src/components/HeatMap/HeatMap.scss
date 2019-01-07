@@ -17,14 +17,94 @@
 }
 
 .heatmap-tooltip {
-	top: 0; 
-	left: 50%;
-	width: 9em;
-	font-size: 1.2rem;
+	position: absolute;
+	// top: 2rem; 
+	// left: 50%;
+	margin-left: 0px;
+	// width: 9em;
+	// width: 5em;
+	// height: 3em;
+	width: unset;
+	height: unset;
+	padding: .25em .75em .5em;
+	transform: translate(-50%,-35%);
+	font-size: 1rem;
+	z-index: $zidx-top;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	
+	.focus {
+		font-size: 1.25em;
+		font-weight: 700;
+		line-height: 2;
+
+		&::after {
+			content: "%";
+			margin-left: 3px;
+			font-weight: 500;
+			font-size: 1rem;
+		}
+	}
+	.subfocus {
+		font-size: .75em;
+		color: $fg-secondary;
+	}
+
+
+	// Tooltip Caret ......
+	// &::before { 
+	// 		$caret-size: 12px;
+	// 	content: "";
+	// 	position: absolute;
+	// 	width: $caret-size;
+	// 	height: $caret-size;
+	// 	bottom: 0;
+	// 	left: 50%;
+	// 	transform: translate(-50%,50%) rotate(45deg);
+	// 	background-color: inherit;
+	// }
 }
 
-.react-heatmapjs {
-	width: 100%;
-	height: 100%;
+.heatmap-pref-modal-root {
+	.w-modal {
+		max-width: 350px;
+		// text-align: center;
+	}
+}
 
+
+.individuals-heatmap {
+	@extend %copycat;
+	// background-color: rgba(8,8,8,0.24);
+	z-index: $zidx-top -10;
+	pointer-events: none;
+	
+	// & + .bus-path {
+	// 	opacity: 0.5;
+	// 	animation: none;
+	// }
+	.individual {
+		display: inline-block;
+		position: absolute;
+		font-size: .5rem !important;
+		height: 1em;
+		width: 1em;
+		margin-left: -0.5em; // Using margin to offset rather than transform since dimensions are known and better compatibility
+		margin-top: -0.5em;
+		border-radius: 50%;
+		// background-color: rgba(red,0.8);
+		// opacity: 0.8;
+		// border: 1px solid #fff;
+		background-color: transparent;
+		border: 1px solid red;
+		opacity: .5;
+	}
+	i {
+		color: red;
+		opacity: .4;
+		font-size: 1rem;
+	}
 }

@@ -7,8 +7,9 @@ import {
 	BusPath, 
 	PageRoot, 
 	HeatMapContainer, 
-	// DrawPathInput, 
-	SliderPathInput 
+	SliderPathInput, 
+	HeatMapPrefTrigger,
+	HeatMapPrefModal,
 } from '../components';
 import API from '../utils/API';
 
@@ -28,6 +29,7 @@ class HeatMapPage extends Component {
 		API.getAllPaths();
 	};
 	render() {
+		// console.log('this.props.match.params.path_id:',this.props.match.params.path_id);
 		return (
 			<PageRoot className="heatmap-page">
 				<StaticMap>
@@ -39,6 +41,8 @@ class HeatMapPage extends Component {
 					)}
 				</StaticMap>
 				<SliderPathInput />
+				<HeatMapPrefTrigger/>
+				<HeatMapPrefModal />
 				{/* <DrawPathInput/> */}
 			</PageRoot>
 		);

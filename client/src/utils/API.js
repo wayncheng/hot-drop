@@ -42,6 +42,8 @@ const API = {
 			.then((response) => {
 				const paths = response.data;
 				allPathsInDB = paths;
+
+				return paths;
 			})
 			.catch((error) => console.log('error', error));
 	},

@@ -7,7 +7,7 @@ import {
 	// sendError,
 	sendWarning
 } from '../../Notifications/NotificationCenter';
-// import AreaLand from './AreaLand';
+import AreaLand from './AreaLand';
 // import AreaWater from './AreaWater';
 
 class TargetRange extends Component {
@@ -55,8 +55,9 @@ class TargetRange extends Component {
 
 	render() {
 		return (
-			<div className="target-container target" onClick={this.handleClick}>
-				{/* <AreaLand /> */}
+			// <div className="target-container target" onClick={this.handleClick}>
+			<div className="target-container" onClick={this.handleClick}>
+				<AreaLand />
 			</div>
 		);
 	}

@@ -22,9 +22,7 @@ const Menu = props => {
 			<section className="menu-section">
 				<ul>
 					<li><Link to='/'>Drop Markers</Link></li>
-					{process.env.NODE_ENV !== 'production' && (
-						<li><Link to='/heatmap'>Heat Maps</Link></li>
-						)}
+					<li><Link to='/heatmap'>Heat Maps</Link></li>
 					<li> <a href="https://github.com/wayncheng/hot-drop">View on GitHub</a> </li>
 				</ul>
 			</section>

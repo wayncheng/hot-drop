@@ -28,8 +28,7 @@ class SliderPathInput extends Component {
 	handleAfterChange = sliderValue => {
 		// console.log('slide done...',sliderValue);
 		const pathID = sliderValue;
-		console.log('fetching markers for path', pathID);
-		// TODO: query for markers by id, then display 
+		// console.log('fetching markers for path', pathID);
 
 		this.props.getHeatMapMarkersByID(pathID)
 	}
@@ -45,6 +44,7 @@ class SliderPathInput extends Component {
 					step={1}
 					onChange={this.handleChange}
 					onAfterChange={this.handleAfterChange}
+					value={this.props.bus.id}
 				/>
 			</div>
 		);
@@ -57,6 +57,7 @@ const mapStateToProps = state => ({
 	pathAngle: state.heatmap.pathAngle,
 	markers: state.heatmap.markers,
 	pathID: state.heatmap.pathID,
+	bus: state.picker.bus,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators( {

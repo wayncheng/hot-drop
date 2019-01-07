@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import './IndividualsHeatMap.scss';
 
 class IndividualsHeatMap extends Component {
 	constructor(props){
@@ -22,19 +21,7 @@ class IndividualsHeatMap extends Component {
 								top:  `${point.mark_y}%`,
 								left: `${point.mark_x}%`,
 							}}
-						>
-							 {/* <i className="material-icons"> close</i> */}
-						</span>
-						// <span 
-						// 	{...point}
-						// 	key={id} 
-						// 	id={id}
-						// 	className="individual"
-						// 	style={{
-						// 		top:  `${point.mark_y}%`,
-						// 		left: `${point.mark_x}%`,
-						// 	}} />
-						
+						/>						
 					)
 				})
 				}

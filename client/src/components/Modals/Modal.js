@@ -19,7 +19,7 @@ class GeneralModal extends Component {
 
 componentDidMount = () => {
 	if (this.props.initialOpen === true){
-		console.log('this.props.id:',this.props.id);
+		// console.log('this.props.id:',this.props.id);
 		this.props.openModal(this.props.id)
 	}
 }

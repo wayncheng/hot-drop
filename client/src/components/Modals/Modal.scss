@@ -171,7 +171,7 @@
 	background-color: transparent;
 	padding: 0;
 	line-height: 0;
-	z-index: $zidx-top + 10;
+	z-index: $zidx-top + 50;
 	border: none;
 	color: #fff;
 	cursor: pointer;
@@ -250,7 +250,22 @@
 }
 
 // Guide Modal _______________________________
-.guide-modal-root {
+// .guide-modal-root {
+// 	.w-modal-overlay {
+// 		flex-direction: column;
+// 		justify-content: flex-start;
+// 		align-items: flex-start;
+// 	}
+// 	.w-modal {
+// 		margin: 0;
+// 	}
+
+// 	.close-btn {
+// 		color: #fff;
+// 	}
+// }
+
+.top-left-modal-root {
 	.w-modal-overlay {
 		flex-direction: column;
 		justify-content: flex-start;
@@ -264,7 +279,6 @@
 		color: #fff;
 	}
 }
-
 
 // Intro Slate ______________________________
 .intro-slate {
@@ -345,4 +359,11 @@ $fullpg-theme: #fff;
 		padding: 1rem 1.5rem;
 		font-size: 1.2rem;
 	}
+}
+
+
+.modal-title {
+	font-size: 1.75rem;
+	line-height: 1.25;
+	margin-bottom: 2rem;
 }

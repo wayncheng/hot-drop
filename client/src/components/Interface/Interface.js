@@ -11,7 +11,6 @@ import './Interface.scss';
 import Overlay from './Overlay';
 import Marker from './Marker';
 import TargetRange from './Target/TargetRange';
-// import SubmitBtn from './SubmitBtn';
 
 class Interface extends Component {
 	constructor(props) {
@@ -21,29 +20,15 @@ class Interface extends Component {
 
 	componentDidMount = () => {
 		this.props.getNewBus();
-		
-		// console.log('this.props.saveCount:',this.props.saveCount);
 		// this.props.sendNextBus(this.props.saveCount);
 	}
 
-	componentWillUpdate = (nextProps) => {
-		// if (nextProps.bus.id === this.props.bus.id && !nextProps.markerPlaced){
-		// 	this.props.getNewBus();
-		// }
-	}
-
-
 	render() {
 		return (
-			<section 
-				id="interface" 
-				className="ui-container" 
-				// onKeyDown={this.handleSubmit}
-			>
+			<section id="interface" className="ui-container" >
 				<Overlay/>
 				<TargetRange/>
 				<Marker/>
-				{/* <SubmitBtn/> */}
 			</section>
 		)
 	}

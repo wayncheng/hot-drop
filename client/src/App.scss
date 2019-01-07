@@ -115,3 +115,123 @@ ol {
 		margin: 0.75em auto;
 	}
 }
+
+.form {
+	font-size: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+	.form-section {
+	}
+	.form-group {
+		padding: .5rem 0;
+		// margin: .5rem 0;
+		margin: 0;
+		margin-bottom: 1rem;
+		position: relative;
+		// display: flex;
+		// flex-direction: row;
+		// justify-content: space-between;
+	}
+	.input-group {
+		// flex: 1;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		font-size: 1rem;
+	}
+	label {
+		margin-right: .5rem;
+	}
+	input {
+		font-size: 1.2rem;
+		border: 2px solid $fg-divider;
+		border-radius: .25rem;
+
+		&:focus {
+		outline: none;
+		border-color: $blue;
+		}
+	}
+	// .color-input {
+	// 	font-size: 1.2rem;
+	// 	width: 6em;
+	// 	padding: .25rem;
+	// }
+	.form-sec-title {
+		line-height: 1.5;
+		font-size: 1.3rem;
+		font-weight: 500;
+	}
+
+	// .color-form-group {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	align-items: center;
+	// }
+	.color-input-group {
+		margin: .5rem 0;
+		label {
+			flex-basis: 3em;
+		}
+		input {
+			font-size: 1.2rem;
+			max-width: 5em;
+			padding: .25em;
+		}
+	}
+
+	[type="checkbox"] {
+		// margin: 0;
+		cursor: pointer;
+		& + label {
+			cursor: pointer;
+		}
+	}
+}
+.btn {
+	border: 2px solid transparent;
+	background-color: $bg-light;
+	padding: 0 1em;
+	line-height: 2em;
+	outline: none;
+	border-radius: .25rem;
+	font-size: inherit;
+	margin-left: .5rem;
+	cursor: pointer;
+
+	&:first-child{
+		margin-left: 0;
+	}
+	&:focus {
+		outline: none;
+		border-color: $blue;
+	}
+	&:hover {
+		border-color: $fg-divider;
+	}
+
+	&.btn-naked {
+		// border-color: $fg-secondary;
+		background-color: transparent;
+		color: $fg-secondary;
+		&:hover {
+			text-decoration: underline;
+			border-color: transparent;
+		}
+		&:focus {
+			border-color: $fg-divider;
+			// color: $fg-secondary;
+		}
+	}
+
+	&.save-btn {
+		background-color: $green;
+		color: #fff;
+		&:focus,&:hover {
+			border-color: $green-d;
+		}
+	}
+}

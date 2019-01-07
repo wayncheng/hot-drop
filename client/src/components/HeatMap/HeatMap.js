@@ -16,22 +16,22 @@ class HeatMap extends Component {
 		};
 	}
 
-	componentDidUpdate = (prevProps, prevState, snapshot) => {
-		if (prevProps.data !== this.props.data) {
-			const formatted = this.props.data.map((marker) => {
-				return {
-					x: marker.mark_x,
-					y: 100 - marker.mark_y
-					//* IMPORTANT to mirror the y values since our data is measured from top left, but chart uses bottom left as origin.
-				};
-			});
+	// componentDidUpdate = (prevProps, prevState, snapshot) => {
+	// 	if (prevProps.data !== this.props.data) {
+	// 		const formatted = this.props.data.map((marker) => {
+	// 			return {
+	// 				x: marker.mark_x,
+	// 				y: 100 - marker.mark_y
+	// 				//* IMPORTANT to mirror the y values since our data is measured from top left, but chart uses bottom left as origin.
+	// 			};
+	// 		});
 
-			this.setState({
-				formattedVisData: formatted,
-				totalCount: formatted.length
-			});
-		}
-	};
+	// 		this.setState({
+	// 			formattedVisData: formatted,
+	// 			totalCount: formatted.length
+	// 		});
+	// 	}
+	// };
 
 	componentDidMount = () => {};
 
@@ -43,56 +43,67 @@ class HeatMap extends Component {
 		this.setState({ hoveredNode: null });
 	};
 	handleValueMouseOver = (datapoint, event) => {
-		console.log('---> hovering ', datapoint.length);
-		// console.log('datapoint:',datapoint);
+		// console.log('---> hovering ', datapoint.length);
+		// console.log('datapoint:', datapoint);
 
 		this.setState({ hoveredNode: datapoint });
 	};
 
 	render() {
-		// console.log('HeatMap data:', this.props.data);`
+		// const formatted = this.props.data.map((marker) => {
+		// 	return {
+		// 		x: marker.mark_x,
+		// 		y: 100 - marker.mark_y
+		// 		//* IMPORTANT to mirror the y values since our data is measured from top left, but chart uses bottom left as origin.
+		// 	};
+		// });
+		// console.log('formatted:',formatted);
+
+		// console.log('this.state.formattedVisData:',this.state.formattedVisData);
+
 		return (
 			<div className="heatmap">
 				<FlexiblePlot
 					xDomain={[ 0, 100 ]}
 					yDomain={[ 0, 100 ]}
-					// width={785}
-					// height={785}
 					getX={(d) => d.x}
 					getY={(d) => d.y}
-					// onMouseLeave={this.handleMouseLeave}
 					margin={{ left: 0, right: 0, top: 0, bottom: 0 }}
+					// onMouseLeave={this.handleMouseLeave}
 				>
-					{/* <XAxis />
-				<YAxis /> */}
 					<HexbinSeries
-						data={this.state.formattedVisData}
+						// data={this.state.formattedVisData}
+						data={this.props.data}
 						radius={12}
 						style={{
-							stroke: 'transparent',
+							// stroke: 'transparent',
 							// stroke: 'yellow',
 							strokeLinejoin: 'round',
-							strokeWidth: 2,
+							// strokeWidth: 2,
 							opacity: 0.8
 						}}
 						sizeHexagonsWithCount={false}
 						// animation
-						className="hexbin-blah"
-						// onValueMouseOver={(d) => this.setState({ hoveredNode: d })}
+						className="heatmap-hexbin"
 						onValueMouseOver={this.handleValueMouseOver}
 						onValueMouseOut={this.handleValueMouseLeave}
 						// onValueRightClick={this.handleMouse}
 						// onValueClick={this.handleMouse}
-
-						colorRange={[ '#ffffcc', 'red' ]}
+						// colorRange={[ 'rgba(255,255,150,0.9)', 'red' ]}
+						// colorRange={[ '#ffffcc', 'red' ]}
+						colorRange={this.props.colors}
 						xOffset={0}
 						yOffset={0}
-						// colorRange={['orange', 'cyan']}
-						// data={this.props.data}
 					/>
 				</FlexiblePlot>
 
-				{this.state.hoveredNode && <HeatMapTooltip count={this.state.hoveredNode.length} total={this.state.totalCount} />}
+				{this.state.hoveredNode && (
+					<HeatMapTooltip
+						node={this.state.hoveredNode}
+						count={this.state.hoveredNode.length}
+						total={this.props.data.length}
+					/>
+				)}
 				{/* <HeatMapTooltip total={this.state.totalCount} /> */}
 			</div>
 		);
