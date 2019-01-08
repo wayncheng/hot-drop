@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import {Helmet} from 'react-helmet';
 import { getHeatMapMarkersByID } from '../modules/heatmap';
 import { 
 	StaticMap, 
@@ -32,6 +33,7 @@ class HeatMapPage extends Component {
 		// console.log('this.props.match.params.path_id:',this.props.match.params.path_id);
 		return (
 			<PageRoot className="heatmap-page">
+				<Helmet title="Fortnite Drops - Heat Maps" />
 				<StaticMap>
 					{/* <HeatMapContainer /> */}
 					{/* <HeatMapContainer pathID={this.props.match.params.path_id} /> */}

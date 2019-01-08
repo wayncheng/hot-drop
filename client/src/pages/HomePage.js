@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { DropMap, HelpTrigger, Guide, PageRoot, IntroSlate } from '../components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import {Helmet} from 'react-helmet';
 // import { } from '../modules/picker';
 
 class HomePage extends Component {
@@ -13,6 +14,7 @@ class HomePage extends Component {
 	render() {
 		return (
 			<PageRoot>
+				<Helmet title="Fortnite Drops - Where Would You Drop?" />
 				<DropMap/>
 				<HelpTrigger />
 				{/* Modals */}
