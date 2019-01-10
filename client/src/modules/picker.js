@@ -18,11 +18,17 @@ const initialState = {
 		y: -100
 	},
 	bus: {
-		id: 1,
-		angle: 360,
+		id: 0,
+		angle: 0,
 		x: 50,
 		y: 50
 	},
+	// bus: {
+	// 	id: 1,
+	// 	angle: 360,
+	// 	x: 50,
+	// 	y: 50
+	// },
 	itinerary: itinerary,
 	markerPlaced: false,
 	uuid: null,
@@ -133,16 +139,24 @@ export const sendNextBus = (saveCount) => (dispatch) => {
 // - path_id as input
 // - query DB to find corresponsing angle
 // - set in state
-export const setBusPath = (path_id) => (dispatch) => {
-	API.getPathById(path_id).then((response) => {
-		const pathData = response.data;
-		console.log('pathData:', pathData);
-
+export const setBusPath = (pathID) => (dispatch) => {
+	const localPathData = API.getPathByIdLocally(pathID);
+	if (localPathData) {
+		// console.log('local path data:',localPathData);
 		dispatch({
 			type: SET_BUS_PATH,
-			bus: pathData
+			bus: localPathData
 		});
-	});
+	} else {
+		// console.log('fetching path data from DB');
+		API.getPathById(pathID).then((response) => {
+			const pathData = response.data;
+			dispatch({
+				type: SET_BUS_PATH,
+				bus: pathData
+			});
+		});
+	}
 };
 
 export const incrementSaveCount = () => (dispatch) => {

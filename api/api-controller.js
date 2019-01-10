@@ -61,16 +61,25 @@
 	});
 
 	// GET PATH BY PATH_ID ....................
-	router.get('/path/:path_id?', (req, res) => {
+	router.get('/path/id/:path_id', (req, res) => {
 		// If a path_id is provided, return path for that path_id.
-		// If not provided, return all paths in database.
-		if (req.params.path_id) {
+		// if (req.params.path_id) {
 			dbPaths.getById(req.params.path_id, (data) => res.json(data[0]));
-		} else {
-			dbPaths.all((data) => {
-				return res.json(data);
-			});
-		}
+		// } 
+		// If not provided, return all paths in database.
+		// else {
+		// 	dbPaths.all((data) => {
+		// 		return res.json(data);
+		// 	});
+		// }
+	});
+	// GET PATH BY PATH_ID ....................
+	router.get('/path/angle/:angle', (req, res) => {
+		// Return path for specified angle.
+			dbPaths.getByAngle(req.params.angle, (data) => res.json(data[0]));
+	});
+	router.get('/path', (req, res) => {
+		dbPaths.all((data) => res.json(data));
 	});
 
 	//==================================================

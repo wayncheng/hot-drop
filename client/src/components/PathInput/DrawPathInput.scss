@@ -1,0 +1,14 @@
+@import '../../config/variables';
+
+
+.draw-input-area {
+		// background-color: yellow;
+		// opacity: .2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	z-index: $zidx-top;
+}

@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import './Display.scss';
 
-class PointsDisplay extends Component {
+class IndividualsHeatMap extends Component {
 	constructor(props){
 		super(props)
 		this.state = {}
@@ -9,7 +8,7 @@ class PointsDisplay extends Component {
 
 	render(){
 		return(
-			<div className="display points-display">
+			<div className="individuals-heatmap points-display">
 				{this.props.data.map( (point) => {
 					let id = 'point-'+point.id;
 					return (
@@ -17,12 +16,12 @@ class PointsDisplay extends Component {
 							{...point}
 							key={id} 
 							id={id}
-							className="data-point"
+							className="individual"
 							style={{
 								top:  `${point.mark_y}%`,
 								left: `${point.mark_x}%`,
 							}}
-						></span>
+						/>						
 					)
 				})
 				}
@@ -30,4 +29,4 @@ class PointsDisplay extends Component {
 		)
 	}
 }
-export default PointsDisplay
+export default IndividualsHeatMap

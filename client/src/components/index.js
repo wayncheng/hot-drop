@@ -1,5 +1,5 @@
 //+ Map -------------------
-export {default as Map} from './Map/Map';
+export {default as DropMap} from './Map/DropMap';
 export {default as StaticMap} from './Map/StaticMap';
 export {default as BusPath} from './BusPath/BusPath';
 
@@ -26,7 +26,15 @@ export {default as Menu} from './MainMenu/Menu';
 
 
 //+ Display ---------------
-export {default as PointsDisplay} from './Display/PointsDisplay';
+export {default as IndividualsHeatMap} from './HeatMap/IndividualsHeatMap';
+export {default as HeatMap} from './HeatMap/HeatMap';
+export {default as HeatMapPrefForm} from './HeatMap/HeatMapPrefForm';
+export {default as HeatMapPrefModal} from './HeatMap/HeatMapPrefModal';
+export {default as HeatMapPrefTrigger} from './HeatMap/HeatMapPrefTrigger';
+export {default as HeatMapTooltip} from './HeatMap/HeatMapTooltip';
+export {default as HeatMapContainer} from './HeatMap/HeatMapContainer';
+export {default as DrawPathInput} from './PathInput/DrawPathInput';
+export {default as SliderPathInput} from './PathInput/SliderPathInput';
 
 
 //+ Background ----------------

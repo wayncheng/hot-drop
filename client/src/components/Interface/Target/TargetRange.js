@@ -55,6 +55,7 @@ class TargetRange extends Component {
 
 	render() {
 		return (
+			// <div className="target-container target" onClick={this.handleClick}>
 			<div className="target-container" onClick={this.handleClick}>
 				<AreaLand />
 			</div>

@@ -99,14 +99,36 @@
 					cb(result);
 				});
 			},
+			getPathByAngle: (angle, cb) => {
+				console.log(`---> getPathByAngle (paths)`);
+				const query = ` SELECT ${PTBL}.id, 
+						${PTBL}.x, 
+						${PTBL}.y,
+						${PTBL}.angle
+					FROM ${PTBL}
+					WHERE ${PTBL}.angle = ${angle}
+				;`;
+				connection.query(query, (err, result) => {
+					if (err) throw err;
+					cb(result);
+				});
+			},
+
+			// TODO: Put more weight on paths with less responses, so the database gets "filled" evenly
 
 			getOneRandom: (currentPathID, cb) => {
 				console.log(`---> getOneRandom (paths)`);
 				currentPathID = currentPathID || 0;
 				const query = 
+				// `SELECT * 
+				// FROM ${PTBL} 
+				// WHERE ${PTBL}.id != ${currentPathID}
+				// ORDER BY RAND() 
+				// LIMIT 1;`;
 				`SELECT * 
 				FROM ${PTBL} 
-				WHERE ${PTBL}.id != ${currentPathID} 
+				WHERE ${PTBL}.id != ${currentPathID}
+				AND ${PTBL}.id > 18
 				ORDER BY RAND() 
 				LIMIT 1;`;
 				connection.query(query, (err, result) => {

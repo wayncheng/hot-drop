@@ -16,7 +16,8 @@ class ModalTrigger extends Component {
 	}
 
 	handleClick = event => {
-		event.preventDefault();
+		// event.preventDefault();
+		document.querySelector('html').blur();
 		
 		// let modal_id = event.target.getAttribute('modal_id');
 		// let modal_action = event.target.getAttribute('modal_action');

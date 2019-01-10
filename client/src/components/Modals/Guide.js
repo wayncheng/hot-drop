@@ -10,7 +10,7 @@ import {
 const Guide = props => {
 
 	return(
-		<Modal id="guide_modal" className="default-modal" rootClass="guide-modal-root">
+		<Modal id="guide_modal" className="default-modal" rootClass="top-left-modal-root guide-modal-root">
 
 			<section className="guide-section">
 				<h3>How to Choose your Drop Location:</h3>

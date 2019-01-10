@@ -9,14 +9,22 @@ const BusPath = props => {
 	// let lineStyle = {
 	// 	transform: transformValue
 	// }
+
+	let {bus} = props;
+
+	if (props.override){
+		bus = props.override
+	}
+
 	return (
 		<div 
-			className="bus-path" 
+			className="bus-path"
+			id={"bus-path-"+bus.id}
 			style={{
-				top: "50%",
-				left: "50%",
+				top:  bus.y +"%",
+				left: bus.x +"%",
 				// transform: "translate(-50%,-50%) rotateZ(90deg)",
-				transform: `translate(-50%,-50%) rotateZ(${props.bus.angle}deg)`,
+				transform: `translate(-50%,-50%) rotateZ(${bus.angle}deg)`,
 			}}
 		>
 		</div>

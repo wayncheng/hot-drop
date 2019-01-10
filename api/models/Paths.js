@@ -9,6 +9,12 @@ const Paths = {
 	getById: (path_id, cb) => {
 		orm.getPathById(path_id, (res) => cb(res));
 	},
+	getById: (path_id, cb) => {
+		orm.getPathById(path_id, (res) => cb(res));
+	},
+	getByAngle: (angle, cb) => {
+		orm.getPathByAngle(angle, (res) => cb(res));
+	},
 	random: (currentPathID, cb) => {
 		orm.getOneRandom(currentPathID, (res) => cb(res));
 	},

@@ -9,6 +9,7 @@ const initialState = {
 		menu_modal: false,
 		guide_modal: false,
 		intro_slate: false,
+		heatmap_pref_modal: false,
 	}
 }
 

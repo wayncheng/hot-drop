@@ -1,0 +1,61 @@
+@import '../../config/variables';
+
+.heatmap-page {
+	main {
+		flex-direction: column;
+	}
+	.map {
+		max-height: 90vh;
+	}
+}
+
+.slider-input-container {
+	// position: fixed;
+	z-index: $zidx-top;
+	// top: 0;
+	// left: 0;
+	width: 80%;
+	padding: 2rem 0% 1rem;
+	// max-width: 90vh;
+	max-width: 700px;
+}
+
+.rc-slider {
+	$slider-height: .5rem;
+	$handle-height: 20px;
+	// $handle-height: 2rem;
+	padding: 0;
+	height: $slider-height;
+
+	.rc-slider-rail {
+		height: $slider-height;
+	}
+	.rc-slider-track {
+		height: $slider-height;
+		background-color: $yellow;
+		background-color: transparent;
+	}
+	.rc-slider-step {
+		height: $slider-height;
+	}
+	.rc-slider-handle {
+		font-size: $handle-height;
+		width: $handle-height;
+		height: $handle-height;
+		margin-left: $handle-height/-2;
+		// margin-top: $handle-height/-2 + 2px;
+		// margin-top: $handle-height/-2 + 4px;
+		top: 0;
+		width: 1em;
+		height: 1em;
+		margin-left: -.5em;
+		margin-top: -6px;
+		// border: none;
+		border-color: #fff;
+		background-color: $orange;
+		box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
+		&:focus {
+			box-shadow: 0px 0px 0px 6px rgba(0,0,0,0.5);
+		}
+	}
+}

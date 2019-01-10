@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { setUUID } from './modules/picker';
 
 import HomePage from './pages/HomePage';
-import ViewPage from './pages/ViewPage';
+import HeatMapPage from './pages/HeatMapPage';
 import DevSandboxPage from './pages/Sandbox/DevSandboxPage';
 
 
@@ -27,24 +27,24 @@ class App extends Component {
 		
 		if (!localID){
 			let newID = API.createUUID();
-			console.log('newID:',newID)
+			// console.log('newID:',newID)
 			localID = newID;
 			// Save to localStorage and set UUID in redux state
 			localStorage.setItem('uuid',newID);
 		}
-		console.log('uuid:',localID);
+		// console.log('uuid:',localID);
 
 		this.props.setUUID(localID)
 	}
 
 	render() {
 		return (
-			<BrowserRouter>
+			<BrowserRouter forceRefresh>
 				<Switch>
 					{process.env.NODE_ENV !== 'production' && (
 						<Route exact path="/dev" component={DevSandboxPage} />
 					)}
-					<Route exact path="/view/:path_id" component={ViewPage} />
+					<Route exact path="/heatmap/:path_id?" component={HeatMapPage} />
 					<Route exact path="/" component={HomePage} />
 				</Switch>
 			</BrowserRouter>
