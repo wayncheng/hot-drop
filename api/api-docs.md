@@ -22,4 +22,18 @@
 	- `POST /api/mark/save`
 
 
+#### GET Paths
+
+- Get all paths
+	- `GET /api/path/all`
+- Get a new random path
+	- `GET /api/path/random/:currentPathID?`
+- Get quantity of paths in database
+	- `GET /api/path/count`
+- Get path data by path ID
+	- `GET /api/path/id/:path_id`
+- Get path data by path angle
+	- `GET /api/path/angle/:angle`
+
+
 

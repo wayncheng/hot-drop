@@ -1,6 +1,6 @@
 {
 	"name": "fortnite-drops-app",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"description": "Fortnite Drop Heat Map",
 	"author": {
 		"name": "Wayne Cheng",
@@ -19,14 +19,17 @@
 		"dev:server": "cd client && yarn build && cd .. && yarn start",
 		"start": "node server.js",
 		"heroku-postbuild": "cd client && yarn install && yarn install --only=dev --no-shrinkwrap && yarn build",
-		"logger": "scripting/commands/logger.js"
+		"logger": "scripting/commands/logger.js",
+		"test": "mocha client/src/utils/API.test.js"
 	},
 	"dependencies": {
 		"axios": "^0.18.0",
 		"body-parser": "^1.18.3",
 		"dotenv": "^6.0.0",
 		"express": "^4.16.3",
-		"mysql": "^2.16.0"
+		"mysql": "^2.16.0",
+		"mysql2": "^1.6.4",
+		"sequelize": "^4.42.0"
 	},
 	"devDependencies": {
 		"chai": "^4.2.0",

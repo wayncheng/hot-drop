@@ -82,6 +82,16 @@
 	// 	res.sendFile(path.join(__dirname, "./client/public/index.html"));
 	// });
 
+// CONNECT TO DATABASE =================================
+const {sequelize} = require('./api/db/connection.js');
+sequelize
+	.authenticate()
+	.then(() => {
+		console.log('connected to db');
+	})
+	.catch(err => {
+		console.error('Unable to connect to the database:', err);
+	});
 
 // START SERVER ===================================
 const server = app.listen( PORT, () => console.log("----------------------- @ " + PORT) );

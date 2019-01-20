@@ -41,8 +41,8 @@ class HeatMapContainer extends Component {
 		if (prevProps.markers !== this.props.markers) {
 			const formatted = this.props.markers.map((marker) => {
 				return {
-					x: marker.mark_x,
-					y: 100 - marker.mark_y
+					x: marker.x,
+					y: 100 - marker.y
 					//* IMPORTANT to mirror the y values since our data is measured from top left, but chart uses bottom left as origin.
 				};
 			});

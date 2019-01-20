@@ -119,6 +119,7 @@
 			getOneRandom: (currentPathID, cb) => {
 				console.log(`---> getOneRandom (paths)`);
 				currentPathID = currentPathID || 0;
+				// TODO: Add the first 18 paths back in once the off-centered paths catch up. 
 				const query = 
 				// `SELECT * 
 				// FROM ${PTBL} 

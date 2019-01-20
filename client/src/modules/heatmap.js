@@ -110,7 +110,7 @@ export const getHeatMapMarkersByID = (pathID) => (dispatch) => {
 	else {	
 		API.getMarkersByPathId(pathID).then(response => {
 			const markers = response.data;
-			// console.log('... new marker data:',markers);
+			console.log('... new marker data:',markers);
 			
 			// memoize
 			memo[pathID] = markers;
