@@ -23,6 +23,7 @@ const Menu = props => {
 				<ul>
 					<li><Link to='/'>Drop Markers</Link></li>
 					<li><Link to='/heatmap'>Heat Maps</Link></li>
+					<li><Link to='/chapter1/heatmap'>Heat Maps (Chapter 1)</Link></li>
 					<li> <a href="https://github.com/wayncheng/hot-drop">View on GitHub</a> </li>
 				</ul>
 			</section>

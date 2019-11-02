@@ -7,10 +7,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setUUID } from './modules/picker';
 
-import HomePage from './pages/HomePage';
-import HeatMapPage from './pages/HeatMapPage';
-import DevSandboxPage from './pages/Sandbox/DevSandboxPage';
-
+// import HomePage from './pages/HomePage';
+// import HeatMapPage from './pages/HeatMapPage';
+// import DevSandboxPage from './pages/sandbox/DevSandboxPage';
+import {
+	HeatMapPage,
+	DropPage,
+	// Chapter1DropPage,
+	Chapter1HeatMapPage,
+	DevSandboxPage,
+} from './pages';
 
 class App extends Component {
 	constructor(props){
@@ -44,8 +50,13 @@ class App extends Component {
 					{process.env.NODE_ENV !== 'production' && (
 						<Route exact path="/dev" component={DevSandboxPage} />
 					)}
+					{/* Current Routes */}
 					<Route exact path="/heatmap/:path_id?" component={HeatMapPage} />
-					<Route exact path="/" component={HomePage} />
+					<Route exact path="/" component={DropPage} />
+					
+					{/* Chapter 1 (Legacy) */}
+					<Route exact path="/chapter1/heatmap/:path_id?" component={Chapter1HeatMapPage} />
+					{/* <Route exact path="/chapter1/drop" component={Chapter1DropPage} /> */}
 				</Switch>
 			</BrowserRouter>
 

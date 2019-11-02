@@ -64,13 +64,15 @@
 	//> SAVE TO DATABASE ........................
 	router.post('/mark/save', (req, res) => {
 		console.log('marker data to save:', req.body);
-		const { path_id, x, y, uuid } = req.body;
+		const { path_id, x, y, uuid, } = req.body;
 
 		Markers.create({
 			path_id,
 			x,
 			y,
 			uuid,
+			chapter: 2,
+			season: 1,
 		})
 			.then(response => {
 				// console.log('... marker saved');

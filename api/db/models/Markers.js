@@ -28,6 +28,8 @@
 					type: Sequelize.STRING(45), 
 					defaultValue: '0.0.0.0' 
 				},
+				chapter: { type: Sequelize.INTEGER, },
+				season: { type: Sequelize.INTEGER, },
 				time: { 
 					type: Sequelize.DATE 
 				},

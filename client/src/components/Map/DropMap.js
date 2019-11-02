@@ -7,11 +7,15 @@ import {
 
 const DropMap = props => {
 	return (
-		<StaticMap>
+		<StaticMap chapter={props.chapter}>
 			{props.children}
 			<BusPath />
-			<Interface />
+			<Interface chapter={props.chapter}/>
 		</StaticMap>
 	)
 }
 export default DropMap;
+
+DropMap.defaultProps = {
+	chapter: '2',
+}

@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import './DevSandbox.scss';
-import { PageRoot, BusPath, StaticMap } from '../../components';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import API from '../../utils/API';
 import axios from 'axios';
+
+import API from '../../utils/API';
+import './DevSandbox.scss';
+import { 
+	PageRoot, 
+	// BusPath, 
+	// StaticMap,
+} from '../../components';
 
 class DevSandboxPage extends Component {
 	constructor(props) {

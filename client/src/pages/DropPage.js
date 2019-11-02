@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import {Helmet} from 'react-helmet';
 // import { } from '../modules/picker';
 
-class HomePage extends Component {
+class DropPage extends Component {
 	// constructor(props) {
 	// 	super(props);
 	// 	this.state = {};
@@ -14,7 +14,7 @@ class HomePage extends Component {
 	render() {
 		return (
 			<PageRoot>
-				<Helmet title="Fortnite Drops - Where Would You Drop?" />
+				<Helmet title="Fortnite Drops - Where Would You Drop? (Chapter 2)" />
 				<DropMap/>
 				<HelpTrigger />
 				{/* Modals */}
@@ -24,7 +24,7 @@ class HomePage extends Component {
 		);
 	}
 }
-// export default HomePage;
+// export default DropPage;
 
 const mapStateToProps = state => ({
 	// uuid: state.picker.uuid
@@ -34,4 +34,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(HomePage);
+)(DropPage);

@@ -2,8 +2,11 @@ import axios from 'axios';
 
 let allPathsInDB = [];
 
+// TODO: Fetch markers depending on chapter 
+
+
 const API = {
-	saveMarker: (path_id, x, y, uuid) => {
+	saveMarker: (path_id, x, y, uuid,) => {
 		return axios({
 			method: 'POST',
 			url: '/api/mark/save',
@@ -11,7 +14,7 @@ const API = {
 				path_id,
 				x,
 				y,
-				uuid
+				uuid,
 			}
 		})
 			.then((response) => response)
