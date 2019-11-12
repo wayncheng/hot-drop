@@ -37,7 +37,7 @@ class HeatMapPage extends Component {
 				<StaticMap>
 					{/* <HeatMapContainer /> */}
 					{/* <HeatMapContainer pathID={this.props.match.params.path_id} /> */}
-					<HeatMapContainer pathID={parseInt(this.props.match.params.path_id)} />
+					<HeatMapContainer pathID={parseInt(this.props.match.params.path_id)} chapter="2"/>
 					{this.props.bus.id >= 1 && (
 						<BusPath />
 					)}

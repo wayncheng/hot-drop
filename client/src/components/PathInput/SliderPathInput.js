@@ -40,7 +40,8 @@ class SliderPathInput extends Component {
 				id="slider-input"
 					// min={0} max={360} step={20}
 					min={1}
-					max={18}
+					// max={18}
+					max={54}
 					step={1}
 					onChange={this.handleChange}
 					onAfterChange={this.handleAfterChange}

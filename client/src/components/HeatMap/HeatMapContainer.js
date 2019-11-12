@@ -25,7 +25,7 @@ class HeatMapContainer extends Component {
 			this.props.setBusPath(pathID);
 
 			// Query DB for markers with matching pathID
-			this.props.getHeatMapMarkersByID(pathID);
+			this.props.getHeatMapMarkersByID(pathID, this.props.chapter);
 		}
 
 		const localCold = localStorage.getItem('colorCold')
@@ -91,5 +91,9 @@ const mapDispatchToProps = (dispatch) => bindActionCreators( {
 export default connect(mapStateToProps, mapDispatchToProps)(HeatMapContainer);
 
 HeatMapContainer.propTypes = {
-	pathID: PropTypes.number
+	pathID: PropTypes.number,
+	chapter: PropTypes.string,
 };
+HeatMapContainer.defaultProps = {
+	chapter: '2',
+}
