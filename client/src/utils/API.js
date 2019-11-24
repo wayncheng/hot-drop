@@ -20,11 +20,12 @@ const API = {
 			.catch(error => console.log('error', error));
 	},
 
-	getMarkersByPathId       : (path_id, chapter = '2') => {
+	getMarkersByPathId       : (path_id, chapter) => {
 		// let endpoint = '/api/mark/';
 		// if (chapter === '1') {
 		// 	endpoint = '/api/ch1/mark/';
 		// }
+		console.log('chapter:',chapter);
 		const endpoint = chapter === '1' ? '/api/ch1/mark/' : '/api/mark/';
 
 		return axios({

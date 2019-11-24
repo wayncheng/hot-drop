@@ -28,18 +28,14 @@ class App extends Component {
 		// Check for UUID in localstorage, then...
 		// - If not found --> createUUID then set in local and state
 		// - If found in local --> set UUID in state
-
-		let localID = localStorage.getItem('uuid');
-		
+		let localID = localStorage.getItem('uuid');	
+			
 		if (!localID){
 			let newID = API.createUUID();
-			// console.log('newID:',newID)
 			localID = newID;
 			// Save to localStorage and set UUID in redux state
 			localStorage.setItem('uuid',newID);
 		}
-		// console.log('uuid:',localID);
-
 		this.props.setUUID(localID)
 	}
 
@@ -50,13 +46,14 @@ class App extends Component {
 					{process.env.NODE_ENV !== 'production' && (
 						<Route exact path="/dev" component={DevSandboxPage} />
 					)}
+					{/* Chapter 1 (Legacy) */}
+					<Route exact path="/chapter1/heatmap/:path_id?" component={Chapter1HeatMapPage} />
+					{/* <Route exact path="/chapter1/drop" component={Chapter1DropPage} /> */}
+					
 					{/* Current Routes */}
 					<Route exact path="/heatmap/:path_id?" component={HeatMapPage} />
 					<Route exact path="/" component={DropPage} />
 					
-					{/* Chapter 1 (Legacy) */}
-					<Route exact path="/chapter1/heatmap/:path_id?" component={Chapter1HeatMapPage} />
-					{/* <Route exact path="/chapter1/drop" component={Chapter1DropPage} /> */}
 				</Switch>
 			</BrowserRouter>
 

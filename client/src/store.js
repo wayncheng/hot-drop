@@ -1,6 +1,12 @@
 
 import { createStore, applyMiddleware, compose } from 'redux'
-import { routerMiddleware } from 'react-router-redux'
+// import { browserHistory } from 'react-router'
+import { 
+	routerMiddleware,
+	// syncHistoryWithStore, 
+	// routerReducer,
+	// push,
+} from 'react-router-redux'
 import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
 import rootReducer from './modules'
@@ -13,6 +19,7 @@ const middleware = [
   thunk,
   routerMiddleware(history)
 ]
+
 
 // Redux Dev Tool -------------------
 if (process.env.NODE_ENV !== 'production') {
@@ -35,3 +42,6 @@ const store = createStore(
 )
 
 export default store;
+
+// Create an enhanced history that syncs navigation events with the store
+// export const syncedHistory = syncHistoryWithStore(history, store)

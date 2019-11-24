@@ -18,14 +18,15 @@ class HeatMapContainer extends Component {
 	}
 
 	componentDidMount = () => {
-		let { pathID,colorCold,colorHot } = this.props;
+		let { pathID,colorCold,colorHot,chapter } = this.props;
+		console.log('chapter:',chapter);
 
 		if (pathID) {
 			// Set Bus Path to the path we are currently viewing
 			this.props.setBusPath(pathID);
 
 			// Query DB for markers with matching pathID
-			this.props.getHeatMapMarkersByID(pathID, this.props.chapter);
+			this.props.getHeatMapMarkersByID(pathID, chapter);
 		}
 
 		const localCold = localStorage.getItem('colorCold')

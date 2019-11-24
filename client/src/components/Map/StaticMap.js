@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Map.scss';
 import mapImgChapter1 from '../../static/fortnite-map-s7.jpg';
-import mapImg from '../../static/fortnite-map-c2-1920.jpg';
+import mapImg from '../../static/fortnite-map-c2-labeled-1920.jpg';
 
 const mapConfig = {
 	'1' : {
@@ -29,12 +29,6 @@ class StaticMap extends Component {
 		return (
 			<div id='map-container' className='container'>
 				<img className='map' src={mapData.src} alt={mapData.alt} />
-				{/* {this.props.chapter === '1' ? (
-				<img className="map" src={mapImgChapter1} alt="Fortnite Map Chapter 1" />
-				) : (
-					<img className="map" src={mapImg} alt="Fortnite Map Chapter 2" />
-				)}  */}
-				{/* <img className="map" src={this.props.chapter === '1' ? mapImgChapter1 : mapImg} alt="Fortnite Map Season 7" /> */}
 				{this.props.children}
 			</div>
 		);
@@ -49,3 +43,15 @@ StaticMap.defaultProps = {
 StaticMap.propTypes = {
 	chapter : PropTypes.string,
 };
+
+
+// {chapter === "2" && (
+// 	<div className="poi-label-container">
+// 		<p className="poi-label" style={{top: '37%', left: '17%'}}>Sweaty Sands</p>
+// 		<p className="poi-label" style={{top: '25%', left: '39%'}}>Pleasant Park</p>
+// 		<p className="poi-label" style={{top: '53%', left: '15%'}}>Holly Hedges</p>
+// 		<p className="poi-label" style={{top: '44%', left: '34%'}}>Salty Springs</p>
+// 		<p className="poi-label" style={{top: '73%', left: '27%'}}>Slurpy Swamp</p>
+// 		<p className="poi-label" style={{top: '67%', left: '67%'}}>Lazy Lake</p>
+// 	</div>
+// )}

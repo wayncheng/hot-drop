@@ -95,7 +95,7 @@ const heatmapState = (state = initialState, action) => {
 export default heatmapState;
 
 
-export const getHeatMapMarkersByID = (pathID) => (dispatch) => {
+export const getHeatMapMarkersByID = (pathID,chapter = '2') => (dispatch) => {
 	// If we already have the data from previous calls, just use that.
 	// Not using for now since there aren't that many points and people
 	// might add more while others are viewing, and those new points 
@@ -108,7 +108,8 @@ export const getHeatMapMarkersByID = (pathID) => (dispatch) => {
 		});
 	}
 	else {	
-		API.getMarkersByPathId(pathID).then(response => {
+		// TODO: figure out why chapter is not being passed correctly 
+		API.getMarkersByPathId(pathID,chapter).then(response => {
 			const markers = response.data;
 			console.log('... new marker data:',markers);
 			

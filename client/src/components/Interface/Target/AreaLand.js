@@ -1,5 +1,8 @@
 import React from 'react';
-import { Circle, Rect } from './TargetPieces';
+import { 
+	Circle, 
+	// Rect, 
+} from './TargetPieces';
 
 const AreaLand = props => {
 	return (

@@ -23,7 +23,6 @@ const BusPath = props => {
 			style={{
 				top:  bus.y +"%",
 				left: bus.x +"%",
-				// transform: "translate(-50%,-50%) rotateZ(90deg)",
 				transform: `translate(-50%,-50%) rotateZ(${bus.angle}deg)`,
 			}}
 		>

@@ -134,7 +134,7 @@
 			where : {
 				id : {
 					[Op.ne]: currentPathID,
-					[Op.gt]: 18,
+					// [Op.gt]: 18,
 				},
 			},
 			order : sequelize.random(),
